@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+ADL SCORM 2004 4th Edition MSCE 
+
+The ADL SCORM 2004 4th Ed. MSCE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SCORM Extension Error Codes</title>
+<script type="text/javascript" src="../Shared Files/scripts/Functions.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript">
+<!--
+function showDiv( exempt )
+{
+	// if older browsers can't understand a document.getElementsByTagName
+	if (!document.getElementsByTagName) {
+		return null;
+	}
+	// otherwise, proceed...
+	var divs = document.getElementsByTagName("div");
+	for ( var i = 0; i < divs.length; i++ )
+	{
+		var div = divs[i];
+		var id = div.id;
+		if ( ( id == "default" ) || ( id == "one" ) || ( id == "two" ) || ( id == "three" ) || ( id == "four" ) || ( id == "five" ) || ( id == "six" ) || ( id == "seven" ) || ( id == "eight" ) || ( id == "nine" ) || ( id == "ten" ) || ( id == "eleven" ) || ( id == "twelve" ) || ( id == "thirteen" ) )
+		{
+			div.style.display = "none";
+		}
+		if ( ( id == exempt ) )
+		{
+			div.style.display = "block";
+		}
+
+	}
+}
+-->
+</script>
+<link href="../Shared Files/css/Styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onLoad="javascript:showDiv( 'default' ),SetContinue(); " onUnload="javascript:onUnexpectedExit();">
+<div class="page">
+	<div class="content">
+		<p><strong>SCORM Extension Error Codes</strong></p>
+		<p>SCORM currently defines the following eight conditions:</p>
+		<div class="vocabularyContainer">
+			<div class="terms">
+				<p>
+					<a href="javascript:showDiv('one');">Data Model Element Does Not Have Children</a><br />
+					<a href="javascript:showDiv('two');">Data Model Element Cannot Have Count</a><br />
+					<a href="javascript:showDiv('three');">Data Model Element Collection Set Out Of Order</a><br />
+					<a href="javascript:showDiv('four');">Data Model Collection Element Request Out Of Range</a><br />
+					<a href="javascript:showDiv('five');">Data Model Element Not Specified</a><br />
+					<a href="javascript:showDiv('six');">Unique Identifier Constraint Violated</a><br />
+					<a href="javascript:showDiv('seven');">Smallest Permitted Maximum (SPM) Exceeded</a><br />
+					<a href="javascript:showDiv('eight');">Data Model Element Does Not Have Version.</a><br />
+				</p>
+			</div>
+			<div class="definitions">
+				<div id="default"><p><em>Click the error conditions to learn more about them.</em></p></div>
+				<div id="one"><p><strong>Data Model Element Does Not Have Children</strong> - A SCO attempted to retrieve a list of supported data model elements (children) for a data model element that does not have children (refer to the SCORM RTE Data Model for information regarding the data model elements).  This error condition can only happen if the conceptual communication state is &quot;Running&quot;.  If this error condition is encountered, the conceptual communication state shall remain unchanged (&quot;Running&quot;).</p></div>
+				<div id="two"><p><strong>Data Model Element Cannot Have Count</strong> - A SCO attempted to retrieve the number of entries (count) currently stored in a data model element that is not an array (refer to the SCORM RTE Data Model for data model elements that are arrays and array handling).  This error condition can only happen if the conceptual communication state is &quot;Running&quot;.  If this error condition is encountered, the conceptual communication state shall remain unchanged (&quot;Running&quot;).</p></div>
+				<div id="three"><p><strong>Data Model Element Collection Set Out Of Order</strong> - Indicates that a SCO attempted to set a value in an array where the index number used (n) is not the next available position in the array.  All collections (Refer to the SCORM RTE document, Section 4.1.1.3: <em>Handling Collections</em>) are required to be packed arrays (no skipped positions).  This error condition can only happen if the conceptual communication state is &quot;Running&quot;.  If this error condition is encountered, the conceptual communication state shall remain unchanged (&quot;Running&quot;).</p></div>
+				<div id="four"><p><strong>Data Model Collection Element Request Out Of Range</strong> - A SCO attempted to retrieve a data model element found in a collection and the index value provided is larger than what is currently being maintained by the LMS.  All collections (Refer to the SCORM RTE document, Section 4.1.1.3: <em>Handling Collections</em>) are required to be packed arrays (no skipped positions).  This error condition can only happen if the conceptual communication state is &quot;Running&quot;.  If this error condition is encountered, the conceptual communication state shall remain unchanged (&quot;Running&quot;).</p></div>
+				<div id="five">
+					<p><strong>Data Model Element Not Specified</strong> - A SCO attempted to make a GetValue() or SetValue() API method call without providing any indication of the data model element to retrieve or store.  Both of the API method calls require the presence of a data model element:</p>
+					<ul>
+						<li>GetValue(parameter_1)</li>
+						<li>SetValue(parameter_1, parameter_2)</li>
+					</ul>
+					<p>This error condition can only happen if the conceptual communication state is &quot;Running&quot;.  If this error condition is encountered, the conceptual communication state shall remain unchanged (&quot;Running&quot;).</p>
+				</div>
+				<div id="six"><p><strong>Unique Identifier Constraint Violated</strong> - Used by an API Instance if the value passed as parameter_2 in a SetValue() request is to be used to set an identifier for which the identifier is required to be unique.  This error condition can only happen if the conceptual communication state is &quot;Running&quot;.  If this error condition is encountered, the conceptual communication state shall remain unchanged (&quot;Running&quot;).</p></div>
+				<div id="seven">
+					<p><strong>Smallest Permitted Maximum (SPM) Exceeded</strong> - Used in two situations:</p>
+					<ul>
+						<li>If the value passed as parameter_2 in a SetValue() request is to be used to set a data model element that has a SPM and the length of parameter_2 exceeds the SPM for the data model element</li>
+						<li>If the value is being placed in a collection and the collection's SPM has been exceeded</li>
+					</ul>
+					<p>This error condition can only happen if the conceptual communication state is &quot;Running&quot;.  If this error condition is encountered, the conceptual communication state shall remain unchanged (&quot;Running&quot;).</p>
+				</div>
+				<div id="eight"><p><strong>Data Model Element Does Not Have Version</strong> - A SCO attempted to retrieve the version of the data model (_version) on a data model element for which it is not permitted.  The _version keyword should only be applied to the base data model identified by the SCORM RTE Data Model (cmi._version).  This error condition can only happen if the conceptual communication state is &quot;Running&quot;.  If this error condition is encountered, the conceptual  communication state shall remain unchanged (&quot;Running&quot;).</p></div>
+			</div>
+		</div>
+	</div>
+
+  <div class="navigation"> <img class="prevBtn" alt="Previous" src="../Shared Files/images/previous.gif" onClick="javascript:GoToPage( 'seec_p2.html' );" width="78" height="25" border="0" /></a> 
+    <img class="nextBtn" alt="Next" src="../Shared Files/images/next.gif" onClick="javascript:Continue();" width="74" height="25" border="0" style="VISIBILITY:hidden;"/></div>
+
+</div>
+</body>
+</html>

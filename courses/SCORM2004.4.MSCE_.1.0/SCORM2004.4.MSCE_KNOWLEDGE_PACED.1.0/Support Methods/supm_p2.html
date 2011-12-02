@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition MSCE 
+
+The ADL SCORM 2004 4th Ed. MSCE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Error Codes Overview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../Shared Files/css/Styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Shared Files/scripts/Functions.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+</head>
+<body onUnload="javascript:onUnexpectedExit();"><div class="page">
+	<div class="content">
+		
+			<p><strong>GetLastError</strong></p>
+			<p>Listed below is the syntax, description, parameter and return value for &quot;GetLastError.&quot;</p>
+			<p>Method Syntax: <span style="font-family:'Courier New', Courier, mono ">return_value = GetLastError()</span></p>
+			<p>Description: This method requests the error code for the current error state of the API Instance.  If a SCO calls this method, the API Instance shall not alter the current error state, but simply return the requested information.</p>
+			
+    <p>A best practice recommendation is to check to see if a session method or 
+      data-transfer method was successful. The <span style="font-family:'Courier New', Courier, mono">GetLastError()</span> 
+      can be used to return the current error code. If an error was encountered 
+      during the processing of a function, the SCO may take appropriate steps 
+      to alleviate the problem.</p>
+			<p>Parameter: The API method shall not accept any parameters.</p>
+			<p>Return Value: The API Instance shall return the error code reflecting the current error state of the API Instance.  The return value shall be a characterstring (convertible to an integer in the range from 0 to 65536 inclusive) representing the error code of the last error encountered.</p>
+			
+      <div class="navigation"><img class="prevBtn" alt="Previous" src="../Shared Files/images/previous.gif" onClick="javascript:GoToPage( 'supm_p1.html' );" width="78" height="25" border="0" /></a> 
+        <img class="nextBtn" alt="Next" src="../Shared Files/images/next.gif" onClick="javascript:GoToPage( 'supm_p3.html' );" width="74" height="25" border="0"/></div>
+		
+	</div>
+</div>		</body>
+</html>

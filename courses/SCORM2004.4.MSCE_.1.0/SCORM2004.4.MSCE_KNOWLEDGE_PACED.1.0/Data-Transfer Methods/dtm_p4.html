@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition MSCE 
+
+The ADL SCORM 2004 4th Ed. MSCE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Error Codes Overview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../Shared Files/css/Styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Shared Files/scripts/Functions.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+</head>
+<body onUnload="javascript:onUnexpectedExit();">
+<div class="page">
+	<div class="content">
+		
+			<p><strong>Commit</strong></p>
+			<p>Listed below and on the next page is the syntax, description, parameter and return value for <span style="font-family:'Courier New', Courier, mono ">&quot;Commit.&quot;</span></p>
+			<p>Method Syntax: <span style="font-family:'Courier New', Courier, mono ">return_value = Commit(parameter)</span></p>
+			<p>Description: This method requests forwarding to the persistent data store, any data from the SCO that may have been cached by the API Instance since the last call to <span style="font-family:'Courier New', Courier, mono ">Initialize(&quot;&quot;)</span> or <span style="font-family:'Courier New', Courier, mono ">Commit(&quot;&quot;)</span>, whichever occurred most recently. The LMS would then set the error code to <span style="font-family:'Courier New', Courier, mono ">&quot;0&quot;</span> (no error encountered) and return <span style="font-family:'Courier New', Courier, mono ">&quot;true&quot;</span>.</p>
+			<p>If the API Instance does not cache values, <span style="font-family:'Courier New', Courier, mono ">Commit(&quot;&quot;)</span> shall return <span style="font-family:'Courier New', Courier, mono ">&quot;true&quot;</span> and set the error code to &quot; 0&quot; (no error encountered) and do no other processing.</p>
+			<p>Cached data shall not be modified because of a call to the commit data method. For example, if the SCO sets the value of a data model element, then calls the commit data method, and then subsequently gets the value of the same data model element, the value returned shall be the value set in the call prior to invoking the commit data method. The <span style="font-family:'Courier New', Courier, mono ">Commit(&quot;&quot;)</span> method can be used as a precautionary mechanism by the SCO. The method can be used to guarantee that data set by the SetValue() is persisted to reduce the likelihood that data is lost because the communication session is interrupted, ends abnormally or otherwise terminates prematurely prior to a call to <span style="font-family:'Courier New', Courier, mono ">Terminate(&quot;&quot;)</span>.</p>
+		    
+            <div class="navigation"> <img class="prevBtn" alt="Previous" src="../Shared Files/images/previous.gif" onClick="javascript:GoToPage( 'dtm_p3.html' );" width="78" height="25" border="0" /></a> 
+        <img class="nextBtn" alt="Next" src="../Shared Files/images/next.gif" onClick="javascript:GoToPage( 'dtm_p5.html' );" width="74" height="25" border="0"/></div>
+		
+	</div>
+</div>		</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition MSCE 
+
+The ADL SCORM 2004 4th Ed. MSCE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Error Codes Overview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../Shared Files/css/Styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Shared Files/scripts/Functions.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+</head>
+<body onUnload="javascript:onUnexpectedExit();">
+<div class="page">
+	<div class="content">
+		
+<p><strong>Methods</strong></p>
+			
+    <p>The SCORM API includes eight methods that SCOs may access to communicate 
+      with the LMS. The methods can be grouped into three categories: session 
+      methods, data-transfer methods and support methods. Brief descriptions of 
+      the method categories appear below. Additional detail is provided in content 
+      that addresses each method. (<em>To demonstrate best practices for reusable 
+      content, this information is provided in other content.</em>)</p>
+			<table cellpadding="2" cellspacing="2">
+				<tr title="Headers">
+					<th align="left" width="25%">Category</th>
+					<th align="left" width="50%">Description</th>
+					<th align="left" width="25%">Method</th>
+				</tr>
+				<tr title="Session Methods" valign="top">
+					<td>Session Methods</td>
+					<td>The calls required for minimal SCORM conformance to &quot;initialize&quot; when the content starts and &quot;terminate&quot; when it exits.</td>
+					<td>
+						<span style="font-family:'Courier New', Courier, mono ">Initialize</span><br />
+						<span style="font-family:'Courier New', Courier, mono ">Terminate</span>
+					</td>
+				</tr>
+				<tr title="Data-Transfer Methods" valign="top">
+					<td>Data-Transfer Methods</td>
+					<td>The calls that enable reporting data, such as test results or the time a learner spent in a SCO.</td>
+					<td>
+						<span style="font-family:'Courier New', Courier, mono ">GetValue</span><br />
+						<span style="font-family:'Courier New', Courier, mono ">SetValue</span><br />
+						<span style="font-family:'Courier New', Courier, mono ">Commit</span>
+					</td>
+				</tr>
+				<tr title="Support Methods" valign="top">
+					<td>Support Methods</td>
+					<td>The calls that allow the SCO to handle errors.</td>
+					<td>
+						<span style="font-family:'Courier New', Courier, mono ">GetLastError</span><br />
+						<span style="font-family:'Courier New', Courier, mono ">GetErrorString</span><br />
+						<span style="font-family:'Courier New', Courier, mono ">GetDiagnostic</span>
+					</td>
+				</tr>
+			</table>
+		    
+            <div class="navigation"> <img class="prevBtn" alt="Previous" src="../Shared Files/images/previous.gif" onClick="javascript:GoToPage( 'ams_p2.html' );" width="78" height="25" border="0" /></a> 
+        <img class="nextBtn" alt="Next" src="../Shared Files/images/next.gif" onClick="javascript:GoToPage( 'ams_p4.html' );" width="74" height="25" border="0"/></div>
+		
+	</div>
+</div>		</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition MSCE 
+
+The ADL SCORM 2004 4th Ed. MSCE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Error Codes Overview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../Shared Files/css/Styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Shared Files/scripts/Functions.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+</head>
+<body onUnload="javascript:onUnexpectedExit();">
+<div class="page">
+	<div class="content">
+		
+			<div class="image">
+				<img name="n2" src="Images/cssm1.jpg" width="497" height="186" border="0" usemap="#m_2" alt="" />
+				<map name="m_2" id="m_2">
+					<area shape="rect" coords="362,70,492,151" href="javascript:showDiv('4');" title="Terminated" alt="Terminated" />			
+					<area shape="rect" coords="248,7,351,151" href="javascript:showDiv('3');" title="Running" alt="Running" />	
+					<area shape="rect" coords="124,68,218,158" href="javascript:showDiv('2');" title="Not Initialized" alt="Not Initialized" />
+				</map>
+			</div>
+			<p><strong>Running:</strong> The state that describes the conceptual communication state once the <span class="vocabularyContainer">Initialize(&quot;&quot;)</span> API method is successfully invoked by the SCO and before the <span class="vocabularyContainer">Terminate(&quot;&quot;)</span> API method call is successfully invoked by the SCO. The SCO is permitted to call the following set of API functions:</p>
+			<ul>
+              			<li class="vocabularyContainer">Terminate() </li>
+              			<li class="vocabularyContainer">GetValue() </li>
+              			<li class="vocabularyContainer">SetValue() </li>
+              			<li class="vocabularyContainer">Commit() </li>
+              			<li class="vocabularyContainer">GetLastError() </li>
+              			<li class="vocabularyContainer">GetErrorString() </li>
+              			<li class="vocabularyContainer">GetDiagnostic() </li>
+			  </ul>
+		    
+            <div class="navigation"> <img class="prevBtn" alt="Previous" src="../Shared Files/images/previous.gif" onClick="javascript:GoToPage( 'cssm_p2.html' );" width="78" height="25" border="0" /></a> 
+        <img class="nextBtn" alt="Next" src="../Shared Files/images/next.gif" onClick="javascript:GoToPage( 'cssm_p4.html' );" width="74" height="25" border="0"/></div>
+		
+	</div>
+</div>		</body>
+</html>
