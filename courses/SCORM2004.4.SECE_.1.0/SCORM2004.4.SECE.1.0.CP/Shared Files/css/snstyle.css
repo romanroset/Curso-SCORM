@@ -1,0 +1,172 @@
+BODY {
+	font-family: Veranda, Arial, Helvetica, sans-serif;
+	line-height: 1.2em;
+	font-size: 9pt;
+	text-align: left;
+	position: absolute;
+	top:0;
+	margin: 0;
+}
+
+p {
+	color: #444B5E;
+	margin: 1.2em;
+}
+
+ul {
+	color: #444B5E;
+}
+
+ol {
+	color: #444B5E;
+}
+
+ol li {
+	margin-top: 1.6em;
+}
+
+h1 {
+	margin: 1.7em;
+	font-size: 1.7em;
+	font-weight: normal;
+	letter-spacing: 0.075em;
+}
+
+h2 {
+	margin: 1.2em;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+h3 {
+	margin: 0em 2em;
+	font-size: 1.0em
+}
+
+h4, h5 {
+	font-size: 1.0em
+}
+
+a:link {
+	font-weight: bold;
+}
+
+a:visited {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+}
+
+.centered {
+	display: block;
+	padding: 20px;
+	margin: 0 auto 0;
+}
+
+.right {
+	display: block;
+	float: right;
+	padding: 3px 0 20px 20px;
+	margin: 0 30px 0 40px;
+}
+
+.container {
+	position: absolute;
+	width: 800px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.page {
+	visibility: hidden;
+	width: inherit;
+	position: absolute;
+	top:0px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+.header {
+	color: #ffffff;
+	margin: 0px;
+	position: absolute;
+	width:800px;
+	height: 79px;
+	top:0px;
+	background: #838592 url(../images/top.gif) no-repeat top left;
+}
+
+.content {
+	position: absolute;
+	top:79px;
+	width:800px;
+	height: 498px;
+	overflow: auto;
+	padding: 0;
+	margin: 0;
+}
+
+.moreDetailsLink{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.moreDetails {
+	display:none;
+	border:1px solid #ccc;
+	background:#f2f2f2;
+	padding:5px;
+	margin: 12px;
+}
+
+.instructions {
+	color: #fff;
+	background-color: inherit;
+	position: absolute;
+	top:580px;
+	display: block;
+}
+
+.navigation {
+	margin: 0px;
+	width: 800px;
+	position: absolute;
+	top:577px;
+	display: block;
+	background: url(../images/bottom.gif) no-repeat top left;
+	height: 26px;
+}
+
+#previousBtn a, #previousBtn a:link, #previousBtn a:visited, #previousBtn a:active{
+	margin: 0px;
+	display: inherit;
+	position: absolute;
+	left: 519px;
+	background: url(../images/previous.gif) no-repeat top left;
+	width: 144px;
+	height: 26px;
+}
+
+#previousBtn a:hover{
+	margin: 0px;
+	background: url(../images/previous_rollover.gif) no-repeat top left;
+}
+
+#nextBtn a, #nextBtn a:link, #nextBtn a:visited, #nextBtn a:active{
+	margin: 0px;
+	display: inherit;
+	position: absolute;
+	left: 663px;
+	background: url(../images/next.gif) no-repeat top left;
+	width: 137px;
+	height: 26px;
+}
+
+#nextBtn a:hover {
+	margin: 0px;
+	background: url(../images/next_rollover.gif) no-repeat top left;
+}

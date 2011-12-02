@@ -1,0 +1,633 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition SECE
+
+ 
+
+The ADL SCORM 2004 4th Ed. SECE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Sequencing Essentials</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/courseFunctions.js"></script>
+<style type="text/css" media="all">
+@import "../Shared Files/css/snstyle.css";
+</style>
+</head>
+
+<body onload="javascript:Initialize();" onunload="javascript:Terminate();">
+<div class="container"> 
+  <div class="header"> </div>
+  <div class="navigation"> 
+    <div id="previousBtn"> <a href="javascript:PreviousPage();"></a> </div>
+    <div id="nextBtn"> <a href="javascript:NextPage();"></a> </div>
+  </div>
+  <div class="page" id="p1"> 
+    <div class="content"> 
+      <h2>Overview</h2>
+      <p>Cluster activities are not associated with content objects; therefore 
+        there is no direct way for learner progress information to be applied 
+        to a cluster activity. The Instructional Management Systems Simple Sequencing 
+        (IMS SS) Specification provides a way to define how learner progress for 
+        cluster activities is to be evaluated. A set of zero or more rollup rules 
+        may be applied to a cluster activity and the rules are evaluated during 
+        the overall rollup process.</p>
+      <p>Each rollup rule consists of:</p>
+      <ul>
+        <li>a set of child activities to consider</li>
+        <li>a set of conditions evaluated against the tracking information of 
+          the included child activities</li>
+        <li>a corresponding action that sets the cluster&rsquo;s tracking status 
+          information if the set of conditions evaluates to <code>True</code></li>
+      </ul>
+      <p>Rollup rules have no effect when defined on a leaf activity.</p>
+      <img class="centered" src="images/rr1.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p2"> 
+    <div class="content"> 
+      <h2>Default Rules</h2>
+      <p>If rollup rules are not defined, the default rules are implemented. There 
+        are two pairs of default rules, completed/incomplete and satisfied/not 
+        satisfied. These are defined in the Rollup Behavior section of the Sharable 
+        Content Object Reference Model (SCORM&reg;) Sequencing and Navigation 
+        book.</p>
+      <p>The rules are:</p>
+      <ol>
+        <li>If all satisfied, Then satisfied<br/>
+          If all (attempted or not satisfied), Then not satisfied</li>
+        <li>If all completed, Then completed<br/>
+          If all (attempted or incomplete), Then incomplete</li>
+      </ol>
+      <p>The defaults are applied in pairs, if either action of the pair (complete/incomplete 
+        or satisfied/not satisfied) is defined; neither default of the pair is 
+        applied. Defining one action of a pair does not affect the other pair 
+        applying in default.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p3"> 
+    <div class="content"> 
+      <h2>Default Rules Examples</h2>
+      <p>The following are two examples of how default rules function:</p>
+      <p>Example 1:</p>
+      <p>If any not satisfied, then not satisfied.</p>
+      <ul>
+        <li>No default satisfied rule applied, but default completed/incomplete 
+          rules are applied. </li>
+      </ul>
+      <p>Example 2:</p>
+      <p>If at least 50% of the children attempted, then completed.<br/>
+        If any incomplete, then not satisfied.</p>
+      <ul>
+        <li>No default rules at all. </li>
+      </ul>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p4"> 
+    <div class="content"> 
+      <h2>Condition Combinations</h2>
+      <p>For each activity included in rollup, individual conditions can be combined 
+        to create a set of conditions such that any one individual condition must 
+        be <code>True</code> or all conditions must be <code>True</code>. The 
+        result of evaluating the <em>Condition Combination</em> for each activity 
+        included in rollup is evaluated against the rollup rule&rsquo;s defined 
+        <em>Child Activity Set</em> to determine if the resulting action should 
+        be triggered. Rule conditions are combined in evaluating the rule using 
+        either &ldquo;all&rdquo; or &ldquo;any&rdquo;. The table below gives a 
+        description of the <em>Condition Combination</em> element.</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td width="20%" height="40">
+<div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Name</font></strong><strong><br>
+        </strong></div></td>
+    <td width="80%"><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Condition 
+        Combination </em></font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">How 
+          rule conditions are combined in evaluating the rule.</font></p>
+      </div>
+      <ul>
+        <li> 
+          <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            &nbsp;&nbsp;&nbsp;<em>All </em>- The overall rule condition evaluates 
+            to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if and only if all of the individual conditions<br>
+            &nbsp;&nbsp;&nbsp;evaluate to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font> 
+            <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">(logical 
+            <em>and)</em></font></div>
+        </li>
+        <li>
+          <div align="left">
+            <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              &nbsp;&nbsp;&nbsp;<em>Any</em> - The overall rule condition evaluates 
+              to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              if and only if any of the individual conditions<br>
+              &nbsp;&nbsp;&nbsp;evaluate to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font> 
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">(logical 
+              <em>or)</em> </font></div>
+            <font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> </font></div>
+        </li>
+      </ul></td>
+  </tr>
+
+
+</table>
+</font></div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p5"> 
+    <div class="content"> 
+      <h2>Rollup Conditions</h2>
+      <p>The <em>Rollup Conditions</em> element contains a set of conditions that 
+        are evaluated in the context of each activity included in the evaluation 
+        of the rollup rule. The <em>Rollup Conditions</em> element consists of 
+        one or more individual <em>Rollup Condition</em> elements that are combined 
+        as defined by the <em>Condition Combination</em> applied to the rollup 
+        rule. Each <em>Rollup Condition</em> element must be one member of the 
+        set of restricted vocabulary tokens that are based on elements in the 
+        sequencing tracking model.</p>
+     <font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td height="40">
+<div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Name</font></strong><strong><br>
+        </strong></div></td>
+    <td><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Satisfied</font></div></td>
+    <td><div align="left">
+        <div align="left">
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+              Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the rolled-up objective associated with the child activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+              </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and<em> 
+              </em>the</font></div>
+          </li>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+              Satisfied Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the rolled-up objective associated with the child activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font></div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30">
+<div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+        Status Known</font></div></td>
+    <td><div align="left">
+        <div align="left">
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+              Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the rolled-up objective associated with the child activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+              </code></font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+              </code></font></div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+    <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+        Objective Measure<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+        </font>Known</font></div></td>
+    <td><div align="left">
+        <div align="left">
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+              Measure Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the rolled-up objective associated with the child activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font></div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30">
+<div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Completed</font></div></td>
+    <td><div align="left">
+        <div align="left">
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempt 
+              Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the child activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+              </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and 
+              the </font></div>
+          </li>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempt 
+              Completion Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the child activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font></div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+    <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Activity 
+        Progress Known<br>
+        </font></div></td>
+    <td><div align="left">
+        <div align="left">
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Activity 
+              Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the child activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+              </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and 
+              the </font></div>
+          </li>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempt 
+              Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the child activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font></div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30">
+<div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempted<br>
+        </font></div></td>
+    <td><div align="left">
+        <div align="left">
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Activity 
+              Attempt Count </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the child activity is positive</font></div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+      <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempt 
+        Limit Exceeded<br>
+        </font></div></td>
+    <td><div align="left">
+        <div align="left">
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Activity 
+              Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the child activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+              </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and<em> 
+              </em>the</font></div>
+          </li>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Limit 
+              Condition Attempt Limit Control </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the child activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+              </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and<em> 
+              </em>the</font></div>
+          </li>
+          <li>
+            <div align="left"><em></em><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+              </code></font></div>
+          </li>
+       
+        <em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Activity 
+        Attempt Count </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+        the child activity is greater than or equal to the <em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Limit 
+        Condition <br>Attempt Limit </font></em>for 
+        the child activity </font></ul></div></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30">
+<div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Never<br>
+        </font></div></td>
+    <td><div align="left">
+        <div align="left">
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Never 
+              (always evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>False</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">)</font></div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+</table>
+</font> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p6"> 
+    <div class="content"> 
+      <h2>Rollup Condition Operator</h2>
+      <p>The <em>Rollup Condition Operator</em> element is an optional element 
+        that may be applied to each <em>Rollup Condition</em> element. It indicates 
+        a unary logical operation to be applied after the evaluation of the <em>Rollup 
+        Condition</em>. The table below describes the two unary logical operations 
+        supported.</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td width="20%" height="40">
+<div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Name</font></strong><strong><br>
+        </strong></div></td>
+    <td width="80%"><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Rollup 
+        Condition &nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em></em></font>Operator</em></font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+          unary logical operator to be applied to the condition evaluation.</font></p>
+      </div>
+      <ul>
+        <li> 
+          <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            &nbsp;&nbsp;&nbsp;<em>Not</em> - The negated condition evaluation 
+            result is used for rule evaluation</font></div>
+        </li>
+        <li><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;<em>NO-OP 
+          </em>- The condition evaluation result is used for rule evaluation</font></li>
+      </ul></td>
+  </tr>
+
+
+</table>
+</font> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p7"> 
+    <div class="content"> 
+      <h2>Rollup Child Activity Set</h2>
+      <p>By default, tracking status information for all children of a cluster 
+        is considered in the rollup evaluations of the cluster. A content developer 
+        may explicitly restrict how and when an activity’s tracking status information 
+        should be included during rollup evaluations:</p>
+      <ul>
+        <li>By defining <em>Tracked</em> to be <code>False</code> – This indicates 
+          that the activity does not maintain any tracking status information; 
+          therefore the activity is never included during rollup.</li>
+        <li>By defining <em>Rollup Objective Satisfied</em> to be <code>False</code> 
+          – This indicates that the activity is not included in the evaluation 
+          of rollup rules having a Satisfied or Not Satisfied <em>Rollup Action</em>.</li>
+        <li>By defining <em>Rollup Objective Measure Weight</em> to be 0.0 – This 
+          indicates that the activity&rsquo;s measure does not contribute to the 
+          average weighted measure of its parent.</li>
+        <li>By defining <em>Rollup Progress Completion</em> to be <code>False</code> 
+          – This indicates that the activity is not included in the evaluation 
+          of rollup rules having a Completed or Incomplete <em>Rollup Action</em>. 
+        </li>
+      </ul>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p8"> 
+    <div class="content"> 
+      <h2>Rollup Child Activity Set</h2>
+      <p>The <em>Rollup Conditions</em> are applied to all of the included activities 
+        during a rollup rule evaluation. The <em>Rollup Child Activity Set</em> 
+        element defines how the results of the included activity&rsquo;s condition 
+        evaluations are used to determine if the <em>Rollup Action</em> applies. 
+        The <em>Child Activity Set</em> consists of a fixed vocabulary describing 
+        when the <em>Rollup Action</em> should be applied and is described in 
+        the table to the right.</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td width="20%" height="40">
+<div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Name</font></strong><strong><br>
+        </strong></div></td>
+    <td width="80%"><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Rollup 
+        Child Activity Set</em></font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+          set of children of the activity whose data values are used to evaluate 
+          the rollup condition.</font></p>
+      </div>
+      <ul>
+        <li> 
+          <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            &nbsp;&nbsp;&nbsp;<em>All</em> - The rollup rule evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><code> 
+            </code> if and only if all of the children have a rollup condition 
+            value of<br>
+            &nbsp;&nbsp;&nbsp;</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">.</font></div>
+        </li>
+        <li><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;<em>Any</em> 
+          - The rollup rule evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><code> 
+          </code> if any of the children have a rollup condition value&nbsp;</font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">of</font> 
+          <font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">.</font></li>
+        <li><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;<em>None 
+          </em>- The rollup rule evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><code> 
+          </code> if none of the children have a rollup condition value of<br>
+          &nbsp;&nbsp;&nbsp;</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">.</font></li>
+        <li><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;<em>At 
+          Least Count </em>- The rollup rule condition evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><code> 
+          </code> if at least the number of children &nbsp;&nbsp;&nbsp;specified 
+          by the&nbsp;<em>Rollup Minimum Count </em>attribute have a rollup condition 
+          value of </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">.</font></li>
+        <li><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;<em>At 
+          Least Percent </em>- The rollup rule condition evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><code> 
+          </code> if at least the percentage of children &nbsp;&nbsp;&nbsp;specified 
+          in the&nbsp;<em>Rollup Minimum Percent </em>attribute have a rollup 
+          condition value of </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">.</font></li>
+      </ul></td>
+  </tr>
+
+
+</table>
+</font> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p9"> 
+    <div class="content"> 
+      <h2>Rollup Actions</h2>
+      <p>The <em>Rollup Action</em> element describes the desired action that 
+        should be applied to the cluster activity that defines the rollup rule. 
+        The <em>Rollup Action</em> is applied during the rollup behavior if the 
+        condition set applies to the activities included in the rollup evaluation 
+        as defined by the rule&rsquo;s <em>Rollup Child Activity Set</em>. The 
+        <em>Rollup Action</em> may affect the tracking status model for the activity 
+        the rollup rule is associated with, as defined in the table to the right.</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td height="40"> <div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Rollup 
+        Action </font></strong><strong><br>
+        </strong></div></td>
+    <td><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Descriptio<font face="Geneva, Arial, Helvetica, sans-serif">n 
+        of Action</font></font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Satisfied 
+        (<em>default value</em>) </font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Set 
+          the :</font></div>
+      <ul>
+        <li> 
+          <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+            Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+            the rolled-up objective associated with the activity to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code><font size="-1">.</font></font><font face="Geneva, Arial, Helvetica, sans-serif"></font></div>
+        </li>
+        <li> 
+          <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+            Satisfied Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+            the rolled-up objective associated with the activity to</font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code><font size="-1">.</font></font></div>
+        </li>
+      </ul></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30"> <div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Not 
+        Satisfied</font></div></td>
+    <td><div align="left"> 
+        <div align="left"> 
+          <div align="left">
+            <p>&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Set 
+              the :</font></div>
+          <ul>
+            <li> 
+              <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+                Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+                the rolled-up objective associated with the activity to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code><font size="-1">.</font></font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+                </code></font></div>
+            </li>
+            <li> 
+              <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+                Satisfied Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+                the rolled-up objective associated with the activity to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>False</code><font size="-1">.</font></font></div>
+            </li>
+          </ul>
+        </div>
+        </div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Completed</font></div></td>
+    <td><div align="left"> 
+        <div align="left">
+          <p>&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Set 
+            the :</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempt 
+              Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the activity to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code><font size="-1">.</font><code> 
+              </code></font></div>
+          </li>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempt 
+              Completion Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the activity to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code><font size="-1">.</font></font></div>
+          </li>
+        </ul>
+      </div>
+      </td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30"> <div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Incomplete</font></div></td>
+    <td><div align="left"> 
+        <div align="left"> 
+          <div align="left">
+            <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Set 
+              the :</font></div>
+          <ul>
+            <li> 
+              <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempt 
+                Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+                the activity to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code><font size="-1">.</font><code> 
+                </code></font></div>
+            </li>
+            <li> 
+              <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempt 
+                Completion Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+                the activity to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>False</code><font size="-1">.</font></font></div>
+            </li>
+          </ul>
+        </div>
+        </div></td>
+  </tr>
+</table>
+</font> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p10"> 
+    <div class="content"> 
+      <h2>Conclusion</h2>
+      <p>The ability to track learner progress throughout a learning experience 
+        is key for content developers and instructional designers. Without rollup 
+        rules, tracking specific aspects of learner progress is limited and therefore 
+        based on the default rollup rules.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+</div>
+</body>
+</html>
+
+

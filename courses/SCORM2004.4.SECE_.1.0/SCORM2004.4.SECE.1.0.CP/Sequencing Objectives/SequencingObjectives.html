@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition SECE
+
+ 
+
+The ADL SCORM 2004 4th Ed. SECE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Sequencing Essentials</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/courseFunctions.js"></script>
+<style type="text/css" media="all">
+@import "../Shared Files/css/snstyle.css";
+</style>
+</head>
+
+<body onload="javascript:Initialize();" onunload="javascript:Terminate();">
+<div class="container"> 
+  <div class="header"> </div>
+  <div class="navigation"> 
+    <div id="previousBtn"> <a href="javascript:PreviousPage();"></a> </div>
+    <div id="nextBtn"> <a href="javascript:NextPage();"></a> </div>
+  </div>
+  <div class="page" id="p1"> 
+    <div class="content"> 
+      <h2>Overview</h2>
+      <p>During the development of content, there may be a need to associate one 
+        or more objectives with an activity. These objectives may or may not be 
+        true &ldquo;instructional&rdquo; learning objectives, but rather an &ldquo;internal&rdquo; 
+        objective that that is used by an activity in order to implement a specific 
+        sequencing strategy. The objective description enables the content developer 
+        to capture this objective information in regards to the activity for which 
+        it maps.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p2"> 
+    <div class="content"> 
+      <h2>Objective Description</h2>
+      <p>To define objectives for an activity, a set of elements are defined. 
+        Objectives for the activity are defined using the <em>Objective ID</em>, 
+        <em>Objective Satisfied by Measure</em>, <em>Objective Minimum Satisfied 
+        for Normalized Measure</em> and <em>Objective Contributes to Rollup</em>.</p>
+      <p>When defining objectives for activities, it should be noted that these 
+        elements do have default values. The objectives are optional; sequencing 
+        does not require an objective to be defined. These default values apply 
+        if and only if the elements are not used in defining the objectives:</p>
+      <ul>
+        <li>Objective ID: No defined default value, an identifier is required.</li>
+        <li>Objective Satisfied By Measure: Default value of <code>False</code>.</li>
+        <li>Objective Minimum Satisfied Normalized Measure: Default value of 1.0.</li>
+        <li>Objective Contributes To Rollup: Default value of <code>False</code>.</li>
+      </ul>
+      <p>The following table describes the elements for objective description:</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif"> 
+      <table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <tr bgcolor="#F0E0C0"> 
+          <td height="40"> <div align="left"><strong> <font size="-1">Name</font></strong><strong><br>
+              </strong></div></td>
+          <td><div align="left"><strong> <font size="-1">Description</font><br>
+              </strong></div></td>
+        </tr>
+        <tr bgcolor="E7EAEC"> 
+          <td height="30"><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Objective 
+              ID </em></font></div></td>
+          <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+              identifier of an objective associated with the activity.<br>
+              <br>
+              The ID is a link to the corresponding <em>Objective 
+              Progress Information</em>.</font></div></td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td height="30"> <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Objective 
+              Satisfied by Measure</em></font></div></td>
+          <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+              that the value of <em>Objective Minimum Satisfied Normalized Measure 
+              </em>is to be used (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              or </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>False</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+              in place of any other method to determine of the 
+              objective associated with the activity has been satisfied.</font></div></td>
+        </tr>
+        <tr bgcolor="E7EAEC"> 
+          <td height="30"><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Objective 
+              Minimum Satisfied 
+              Normalized&nbsp;Measure</em></font></div></td>
+          <td><div align="left"> 
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+                the minimum satisfaction measure for the objective, normalized 
+                between -1 and 1. If the <em>Objective Measure 
+                Status </em>for the objective is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+                and the <em>Objective Normalized Measure </em>for the objective 
+                is equal to or 
+                exceeds the value, the <em>Objective Progress Status </em>is set 
+                to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font> 
+                <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and 
+                the <em>Objective Satisfied Status </em>is set 
+                to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code><font size="-1">.</font></p>
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">If 
+                the <em>Objective Measure Status </em>for the objective </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+                </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and 
+                the <em>Objective Normalized Measure </em>for the objective 
+                is less than this value, the <em>Objective Progress Status</em> 
+                is set to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+                and the <em>Objective Satisfied Status 
+                </em>is set to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>False</code></font>.</p>
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+                value is unreliable unless <em>Objective Satisfied by Measure 
+                </em>is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code><font size="-1">.</font></p>
+            </div></td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td height="30"> <div align="left"> 
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Objective 
+                Contributes to 
+                Rollup</em></font></p>
+            </div></td>
+          <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+              that the <em>Objective Satisfied Status </em>and <em>Objective Normalized 
+              Measure</em> for the objective are used (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              or </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>False</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+              during rollup.</font></div></td>
+        </tr>
+      </table>
+      </font> 
+	  </div>
+    
+  <div class="page" id="p3"> 
+    <div class="content"> 
+      <h2>Objective Description</h2>
+      <p>For sequencing purposes, each objective associated with an activity has 
+        a set of tracking status information that allows the progress toward the 
+        objective to be measured. This allows for the progress to be tracked and 
+        sequencing to be enabled. For more information about the sequencing tracking 
+        model, please refer to section 4.2 of the SCORM 2004 Sequencing and Navigation 
+        documentation.</p>
+      <img class="centered" src="images/so3.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p4"> 
+    <div class="content"> 
+      <h2>Local Objectives and Shared Objectives</h2>
+      <p>Objectives are represented as a set of locally and globally scoped data 
+        items. Each has a set of <em>Objective Progress Information</em> and is 
+        considered separate from attempt progress information associated with 
+        the learning activities. By default, an activity will only be able to 
+        access <em>Objective Progress Information</em> for the set of learning 
+        objectives defined for the activity, called local objectives.</p>
+      <p>Other activities cannot directly reference the <em>Objective Progress 
+        Information</em> associated with another activity&rsquo;s objectives. 
+        But an <em>Objective Map</em> may be defined to relate a local objective 
+        to a globally shared objective. Activities may have more than one associated 
+        local objective and may reference multiple shared global objectives. Multiple 
+        activities may reference the same shared global objective, thus sharing 
+        the sets of <em>Objective Progress Information</em>.</p>
+      <p>In this example, all objectives except Objective 5 are local to their 
+        associated activities. Objective 5 is a shared global objective shared 
+        between Activity B and Activity C.</p>
+      <img class="centered" src="images/so4.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p5"> 
+    <div class="content"> 
+      <h2>Objectives Global to System </h2>
+      <p>The <em>Objectives Global to System</em> element applies to the entire 
+        activity tree and indicates the scope of shared global objective in the 
+        activity tree. It also implies the lifetime of the sets of <em>Objective 
+        Progress Information</em> for the shared global objectives associated 
+        with the activity tree. However, it does not specify how to manage sets 
+        of <em>Objective Progress Information</em> or how resolution of local 
+        and shared global objective IDs is performed.</p>
+      <p>This element contains a boolean (<code>True/False</code>) value. The 
+        default value for <em>Objective Global to System</em>, if not defined 
+        explicitly for an activity tree, is <code>True</code>; shared global objective 
+        information will exist per learner, for the lifetime of the learner in 
+        the system.</p>
+      <p>If the <em>Objectives Global to System</em> element on an activity tree 
+        is defined as <code>False</code>, the learning management system LMS will 
+        maintain and resolve shared global objective IDs scoped to only the activity 
+        tree. Shared global objective information will exist per learner per activity 
+        tree.</p>
+      <p>The <em>Objectives Global to System</em> element has no effect when defined 
+        on any activity, for it only applies to an activity tree.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p6"> 
+    <div class="content"> 
+      <h2>Objective Map</h2>
+      <p>An objective map describes how the LMS should relate local objectives 
+        with shared global objectives. It also relates when the LMS should access 
+        referenced sets of <em>Objective Progress Information</em>. An objective 
+        map is defined by a set of elements. These elements defined characteristics 
+        and properties of the objective map. These elements are described in the 
+        following table:</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif"> 
+      <table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <tr bgcolor="#F0E0C0"> 
+          <td width="19%" height="40"> <div align="left"><strong> <font size="-1">Name</font></strong><strong><br>
+              </strong></div></td>
+          <td width="81%"><div align="left"><strong> <font size="-1">Description</font><br>
+              </strong></div></td>
+        </tr>
+        <tr bgcolor="E7EAEC"> 
+          <td height="30"><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Activity 
+              Objective ID</em></font></div></td>
+          <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+              identifier of a local objective associated with the activity.<br>
+              <strong>Note: </strong>There is no default value 
+              defined for the <em>Activity Objective ID</em>. If an objective 
+              map is being defined <strong></strong>for the 
+              activity, the <em>Target Objective ID</em> is a required value.</font></div></td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td height="30"> <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Target 
+              Objective ID</em></font></div></td>
+          <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+              identifier of shared global objective targeted for the mapping.<br>
+              <strong>Note: </strong>There is no default value 
+              defined for the <em>Target Objective ID</em>. If an objective map 
+              is being defined <strong></strong>for the activity, 
+              the <em>Target Objective ID</em> is a required value.</font></div></td>
+        </tr>
+        <tr bgcolor="E7EAEC"> 
+          <td height="30"><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Read 
+              Objective Satisfied Status</em></font></div></td>
+          <td><div align="left"> 
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+                that the <em>Objective Progress Status </em>and <em>Objective 
+                Satisfied Status</em> values for the identified local 
+                objective (<em>Activity Objective ID), </em>should be retrieved 
+                (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+                </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+                False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+                from the identified shared global objective 
+                (<em>Target Objective ID</em>), when the progress for the global 
+                objective is defined (<em>Objective Progress 
+                Status </em>for the identified global objective is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">).</font></p>
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">This 
+                operation does not change the objective information associated 
+                with the local objective.</font></p>
+            </div></td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td height="30"> <div align="left"> 
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Write 
+                Objective Satisfied Status</em></font></p>
+            </div></td>
+          <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+              that the <em>Objective Progress Status </em>and <em>Objective Satisfied 
+              Measure </em> values for the identified local 
+              objective (<em>Activity Objective ID), </em>should be transferred 
+              (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+              </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+              False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              to the identified shared global objective (<em>Target 
+              Objective ID</em>), upon termination of an attempt on the activity.</font></div></td>
+        </tr>
+        <tr bgcolor="E7EAEC"> 
+          <td height="30"><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Read 
+              Objective Normalized Measure </em></font></div></td>
+          <td><div align="left"> 
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+                that the <em>Objective Measure Status </em>and <em>Objective Normalized 
+                Status</em> values for the identified local 
+                objective (<em>Activity Objective ID), </em>should be retrieved 
+                (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+                </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+                False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+                from the identified shared global objective 
+                (<em>Target Objective ID</em>), when the progress for the global 
+                objective is defined (<em>Objective Progress 
+                Status </em>for the identified global objective is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">).</font></p>
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">This 
+                operation does not change the objective information associated 
+                with the local objective.</font></p>
+            </div></td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td height="30"> <div align="left"> 
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Write 
+                Objective Normalized Measure</em></font></p>
+            </div></td>
+          <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+              that the <em>Objective Measure Status </em>and <em>Objective Normalized 
+              Measure </em> values for the identified local 
+              objective (<em>Activity Objective ID), </em>should be transferred 
+              (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+              </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+              False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              to the identified shared global objective (<em>Target 
+              Objective ID</em>), upon termination of an attempt on the activity.</font></div></td>
+        </tr>
+      </table>
+      </font> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p7"> 
+    <div class="content"> 
+      <h2>Extended Objective Map</h2>
+      <p>ADL proveds an extension for objective mapping for sharing attempt completion 
+        information. These elements are described in the following table:</p>
+<font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="95%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td width="19%" height="40"> <div align="left"><strong> <font size="-1">Name</font></strong><strong><br>
+        </strong></div></td>
+    <td width="81%"><div align="left"><strong> <font size="-1">Description</font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Objective 
+        ID</em></font></div></td>
+    <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+        identifier of a local objective associated with the activity.<br>
+        <strong>Note: </strong>There is no default value defined 
+        for the <em>Objective ID</em>. If an objective map is being defined&nbsp;<strong></strong>for 
+        the activity, the<em> Objective ID</em> is a required 
+        value and shall match a defined IMS SS Objective.</font></div></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30"> <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Target 
+        Objective ID</em></font></div></td>
+    <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+        identifier of shared global objective targeted for the mapping.<br>
+        <strong>Note: </strong>There is no default value defined 
+        for the <em>Target Objective ID</em>. If an objective map is being defined 
+        <strong></strong>for the activity, the <em>Target Objective ID</em> is 
+        a required value.</font></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Read 
+        Raw Score</em></font></div></td>
+    <td><div align="left"> 
+        <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+          that the <em>Raw Score </em>(via the SCO's </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>cmi.objectives.n</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+          for the identified local objective (<em>Objective 
+          ID</em>), should be retrieved (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+          </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+          False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+          from the identified shared global objective <em> </em>(<em>Target 
+          Objective ID</em>) when the tracking status of the global objective 
+          is defined.</font></p>
+      </div></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30"> <div align="left"> 
+        <font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Write 
+          Raw Score</em></font></p>
+      </div></td>
+    <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+        that the <em>Raw Score </em>(via the SCO's </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>cmi.objectives.n</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+        for the identified local objective (<em>Objective ID</em>), 
+        should be transferred (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+        </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+        False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+        to the identified shared global objective <em> </em>(<em>Target 
+        Objective ID</em>) upon termination of an attempt on the activity.</font></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Read 
+        Min Score</em></font></div></td>
+    <td><div align="left"> 
+        <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+          that the <em>Min Score </em>(via the SCO's </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>cmi.objectives.n</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+          for the identified local objective (<em>Objective 
+          ID</em>), should be retrieved (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+          </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+          False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+          from the identified shared global objective <em> </em>(<em>Target 
+          Objective ID</em>) when the tracking status of the global objective 
+          is defined.</font></p>
+      </div></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30"> <div align="left"> 
+        <font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Write 
+          Min Score</em></font></p>
+      </div></td>
+    <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+        that the <em>Min Score </em>(via the SCO's </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>cmi.objectives.n</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+        for the identified local objective (<em>Objective ID</em>), 
+        should be transferred (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+        </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+        False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+        to the identified shared global objective <em> </em>(<em>Target 
+        Objective ID</em>) upon termination of an attempt on the activity.</font></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Read 
+        Max Score</em></font></div></td>
+    <td><div align="left"> 
+        <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+          that the <em>Max Score </em>(via the SCO's </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>cmi.objectives.n</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+          for the identified local objective (<em>Objective 
+          ID</em>), should be retrieved (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+          </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+          False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+          from the identified shared global objective <em> </em>(<em>Target 
+          Objective ID</em>) when the tracking status of the global objective 
+          is defined.</font></p>
+      </div></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30"> <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Write 
+        Max Score</em></font></div></td>
+    <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+        that the <em>Max Score </em>(via the SCO's </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>cmi.objectives.n</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+        for the identified local objective (<em>Objective ID</em>), 
+        should be transferred (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+        </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+        False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+        to the identified shared global objective <em> </em>(<em>Target 
+        Objective ID</em>) upon termination of an attempt on the activity.</font></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Read 
+        Completion Status</em></font></div></td>
+    <td><div align="left"> 
+        <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+          that the <em>Completion Status </em>(via the SCO's </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>cmi.objectives.n</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+          for the identified local <em> </em>objective (<em>Objective 
+          ID</em>), should be retrieved (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+          </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+          False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+          from the identified shared global <em> </em>objective 
+          (<em>Target Objective ID</em>) when the tracking status of the global 
+          objective is defined.</font></p>
+        <font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em> </em>This 
+          operation does not change the tracking information associated with the 
+          activity. </font></p>
+      </div></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30"> <div align="left"> 
+        <font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Write 
+          Completion Status</em></font></p>
+      </div></td>
+    <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+        that the <em>Completion Status </em>(via the SCO's </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>cmi.objectives.n</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+        for the identified local objective (<em>Objective ID</em>), 
+        should be transferred (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+        </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+        False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+        to the identified shared global <em> </em>objective 
+        (<em>Target Objective ID</em>) upon termination of an attempt on the activity.</font></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Read 
+        Progress Measure</em></font></div></td>
+    <td><div align="left"> 
+        <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+          that the <em>Progress Measure </em>(via the SCO's </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>cmi.objectives.n</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+          for the identified local <em> </em>objective (<em>Objective 
+          ID</em>), should be retrieved (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+          </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+          False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+          from the identified shared global <em> </em>objective 
+          (<em>Target Objective ID</em>) when the tracking status of the global 
+          objective is defined.</font></p>
+        <font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em> </em>This 
+          operation does not change the tracking information associated with the 
+          activity. </font></p>
+      </div></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30"> <div align="left"> 
+        <font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Write 
+          Progress Measure</em></font></p>
+      </div></td>
+    <td><div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+        that the <em>Progress Measure </em>(via the SCO's </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>cmi.objectives.n</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">) 
+        for the identified local objective (<em>Objective ID</em>), 
+        should be transferred (</font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+        </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">or</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+        False</code></font>)<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+        to the identified shared global <em> </em>objective 
+        (<em>Target Objective ID</em>) upon termination of an attempt on the activity.</font></div></td>
+  </tr>
+</table>
+</font>
+</div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p8"> 
+    <div class="content"> 
+      <h2>Objective Map</h2>
+      <p>Each objective map defines the mapping of an activity&rsquo;s local <em>Objective 
+        Progress Information</em> to and from a shared global objective. The objective 
+        map is the key enabler for sharing <em>Objective Progress Information</em> 
+        between activities. There are several rules when applying objective maps:</p>
+      <ul>
+        <li>Each activity may have an unlimited number of objective maps.</li>
+        <li>By default, no <em>Objective Progress Information</em> is shared between 
+          activities. Each activity must define a set of objective maps to describe 
+          how local objective information is mapped to shared global objectives.</li>
+        <li>The objective map is utilized whenever local objective information 
+          is altered, as described by the tracking behavior.</li>
+        <li>A local objective can only &ldquo;read&rdquo; from one shared global 
+          objective.</li>
+        <li>Multiple local objectives cannot &ldquo;write&rdquo; information to 
+          the same shared global objective.</li>
+      </ul>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p9"> 
+    <div class="content"> 
+      <h2>Conclusion</h2>
+      <p>The Objective Description elements of <em>Objective ID</em>, <em>Objective 
+        Satisfied by Measure</em> and <em>Objective Minimum Satisfied for Normalized 
+        Measure</em> enable the Content Developer to better implement the design 
+        of sequencing strategy of the Instructional Designer, giving the learner 
+        a varied path through the content</p>
+      <img class="centered" src="images/so9.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+</div>
+</body>
+</html>
+
+

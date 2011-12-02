@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition SECE
+
+ 
+
+The ADL SCORM 2004 4th Ed. SECE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Sequencing Essentials</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/courseFunctions.js"></script>
+<style type="text/css" media="all">
+@import "../Shared Files/css/snstyle.css";
+</style>
+</head>
+
+<body onload="javascript:Initialize();" onunload="javascript:Terminate();">
+<div class="container"> 
+  <div class="header"> </div>
+  <div class="navigation"> 
+    <div id="previousBtn"> <a href="javascript:PreviousPage();"></a> </div>
+    <div id="nextBtn"> <a href="javascript:NextPage();"></a> </div>
+  </div>
+  <div class="page" id="p1"> 
+    <div class="content"> 
+      <h2>Overview</h2>
+      <p>Each learning activity in the activity tree has a collection of sequencing 
+        state information associated with it for each learner. This sequencing 
+        state information is called the sequencing tracking model.</p>
+      <p>The purpose of the sequencing tracking model is to capture information 
+        gathered from the learner&rsquo;s interaction with the content objects 
+        associated with learning activities.</p>
+      <img class="centered" src="images/tm1.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p2"> 
+    <div class="content"> 
+      <h2>How the Tracking Model Applies to You</h2>
+      <div style="margin:0 auto; width:762px"> 
+        <object
+				id="swf2"
+				type="application/x-shockwave-flash" data="flash/tm2.swf"
+				width="762" height="440">
+          <param name="movie" value="flash/tm2.swf" />
+          <param name="wmode" value="transparent" />
+        </object>
+      </div>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p3"> 
+    <div class="content"> 
+      <h2>How the Tracking Model Relates to the Run-Time Data Model</h2>
+      <p>The sequencing tracking model is related to the SCORM Run-Time Data Model. 
+        It all ties together in that the run-time data model tracks an individual 
+        learner's experience within a Sharable Content Object (SCO). The sequencing 
+        tracking model in turn relies on portions of the SCO's tracked information 
+        and relates that information to the activity tree. This informs the learning 
+        management system (LMS) with certain pieces of information that might 
+        be used to evaluate sequencing decisions.</p>
+      <img class="centered" src="images/tm3.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p4"> 
+    <div class="content"> 
+      <h2>Primary and Non-Primary Objectives</h2>
+      <p>Every activity defined in the activity tree may have one or more objectives. 
+        Each activity in the activity tree has a primary objective. A primary 
+        objective is explicitly defined by using the <code>primaryObjective</code> 
+        element. If an objective is not defined explicitly, then one is assigned 
+        by default.</p>
+      <p>If the activity has multiple objectives, one must be defined as the primary 
+        objective. The primary objective is the objective that is used by the 
+        sequencing engines to help determine status of the parent activities (i.e. 
+        through the rollup process). All of the other defined objectives do not 
+        contribute to the rollup process.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p5"> 
+    <div class="content"> 
+      <h2>Tracking Status Information</h2>
+      <p>The sequencing tracking model defines the following sets of tracking 
+        status information:</p>
+      <ul>
+        <li> <a class="moreDetailsLink" onclick="SwitchMenu('tm5a');">Objective 
+          Progress Information</a> 
+          <div class="moreDetails" id="tm5a"> 
+            <p>Objective Progress Information describes the learner&rsquo;s progress 
+              related to a learning objective. It is important to understand that 
+              a learning activity can have more than one objective associated 
+              with it.</p>
+          </div>
+        </li>
+        <li> <a class="moreDetailsLink" onclick="SwitchMenu('tm5b');">Activity 
+          Progress Information</a> 
+          <div class="moreDetails" id="tm5b"> 
+            <p>Activity Progress Information describes a learner&rsquo;s progress 
+              on an activity. This information describes the total learner progress 
+              across all attempts on an activity.</p>
+          </div>
+        </li>
+        <li> <a class="moreDetailsLink" onclick="SwitchMenu('tm5c');">Attempt 
+          Progress Information</a> 
+          <div class="moreDetails" id="tm5c"> 
+            <p>Like Activity Progress, Attempt Progress Information describes 
+              a learner&rsquo;s progress on an activity. However, Attempt Progress 
+              Information describes the progress on an activity per each attempt.</p>
+          </div>
+        </li>
+        <li> <a class="moreDetailsLink" onclick="SwitchMenu('tm5d');">Activity 
+          State Information</a> 
+          <div class="moreDetails" id="tm5d"> 
+            <p>The Activity State Information describes the state of an activity 
+              on a per activity tree per learner basis.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p6"> 
+    <div class="content"> 
+      <h2>SCOs and the Tracking Model</h2>
+      <img class="right" src="images/tm6.jpg" alt="" /> 
+      <p>SCOs communicate information to an LMS about the learner experience.</p>
+      <p>When a SCO calls Terminate(), some of its Sharable Content Object Reference 
+        Model (SCORM&reg;) Run-Time Data Model elements are &ldquo;mapped&rdquo; 
+        to the sequencing tracking model elements managed for the SCO&rsquo;s 
+        associated activity:</p>
+      <ul>
+        <li>The SCO&rsquo;s &ldquo;<code>cmi.exit</code>&rdquo; value identifies if the current 
+          activity is &ldquo;<code>suspended</code>&rdquo;.</li>
+        <li>The SCO&rsquo;s &ldquo;<code>cmi.success_status</code>&rdquo; value affects the 
+          current activity&rsquo;s primary objective&rsquo;s <em>Objective 
+          Satisfied Status</em>.</li>
+        <li>The SCO&rsquo;s &ldquo;<code>cmi.score.scaled</code>&rdquo; value affects the current 
+          activity&rsquo;s primary objective&rsquo;s <em>;Objective Normalized 
+          Measure</em>.</li>
+        <li>The SCO&rsquo;s &ldquo;<code>cmi.completion_status</code>&rdquo; value affects 
+          the current activity&rsquo;s <em>Attempt Completion Status</em>.</li>
+        <li>The SCO&rsquo;s &ldquo;<code>cmi.progress_measure</code>&rdquo; value affects the 
+          current activity&rsquo;s <em>Attempt Completion Amount</em>.</li>
+      </ul>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p7"> 
+    <div class="content"> 
+      <h2>SCOs and the Tracking Model</h2>
+      <p>The activity&rsquo;s other, non-primary objectives are also affected 
+        by the SCORM Run-Time Data Model elements associated with the SCO:</p>
+      <ul>
+        <li>The SCO&rsquo;s &ldquo;<code>cmi.objectives.n.success_status</code>&rdquo; affects 
+          the current activity&rsquo;s objective&mdash;that shares the 
+          same ID as &ldquo;<code>cmi.objectives.n.id</code>&rdquo;&mdash;<em>Objective 
+          Satisfied Status</em>.</li>
+        <li>The SCO&rsquo;s &ldquo;<code>cmi.objectives.n.score.scaled</code>&rdquo; affects 
+          the current activity&rsquo;s objective&mdash;that shares the same ID 
+          as &ldquo;<code>cmi.objectives.n.id</code>&rdquo;&mdash;<em>Objective Normalized 
+          Measure</em>.</li>
+        <li>The SCO&rsquo;s &ldquo;<code>cmi.objectives.n.completion_status</code>&rdquo; affects 
+          the current activity&rsquo;s objective&mdash;that shares the 
+          same ID as &ldquo;<code>cmi.objectives.n.id</code>&rdquo;&mdash;<em>Attempt Completion 
+          Status</em>.</li>
+        <li>The SCO&rsquo;s &ldquo;<code>cmi.objectives.n.progress_measure</code>&rdquo; affects 
+          the current activity&rsquo;s objective&mdash;that shares the same ID 
+          as &ldquo;<code>cmi.objectives.n.id</code>&rdquo;&mdash;&ldquo;<em>Attempt Completion 
+          Amount</em>.</li>
+      </ul>
+      <p>If the activities contain associated objectives and these objectives 
+        are shared with other activities, then this data will be used and applied 
+        to these other objectives.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p8"> 
+    <div class="content"> 
+      <h2>Global vs. Local Objectives</h2>
+      <img class="right" src="images/tm8.jpg" alt="" /> 
+      <p>Each activity has its own set of learning objectives defined for it called 
+        &ldquo;local&rdquo; objectives. Each activity has these by default, no 
+        explicit association to objectives is needed. The content developer can 
+        associate objectives to activities by defining them in the activity tree 
+        (via the content package manifest). All objectives defined for an activity 
+        (explicitly or by default) are local to the activity. This means that 
+        the activity is aware they exist and only that activity&rsquo;s SCO can 
+        affect them.</p>
+      <p>A local activity can be defined as a "global" objective. This global 
+        objective then can be shared with other learning activities. If an objective 
+        is declared to be global (via XML in the content package manifest), then 
+        the tracking model elements associated with the objective are available 
+        to other learning activities that share that same "global" objective.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p9"> 
+    <div class="content"> 
+      <h2>Objective Mapping</h2>
+      <p>Objective maps need to be defined in order to share objective status 
+        information between activities. For any defined objective, on any activity, 
+        any number of objective maps can be defined. Objective maps can &ldquo;read&rdquo; 
+        and/or &ldquo;write&rdquo; local objective status &ldquo;from&rdquo; and 
+        &ldquo;to&rdquo; a global objective.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p10"> 
+    <div class="content"> 
+      <h2>Objective Mapping</h2>
+      <p>The ID of a global objective defines a set of managed objective information, 
+        the same fields used for local objectives. A sequencing implementation 
+        will manage these sets of objective information across activities and 
+        across a course for a learner, using the ID to reference state. There 
+        is no defined naming convention for global objectives, but they should 
+        be unique. SCORM does not define a standard unique naming scheme.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p11"> 
+    <div class="content"> 
+      <h2>&ldquo;Read&rdquo; Objective Mapping</h2>
+      <div style="margin:0 auto; width:762px"> 
+        <object
+				id="swf11"
+				type="application/x-shockwave-flash" data="flash/tm11.swf"
+				width="750" height="175">
+          <param name="movie" value="flash/tm11.swf" />
+          <param name="wmode" value="transparent" />
+        </object>
+      </div>
+      <p>If a &ldquo;read&rdquo; objective map is defined on a local objective 
+        and the referenced global objective has a known status, then the global 
+        objective status is always utilized for sequencing and rollup rule evaluations. 
+        If a &ldquo;read&rdquo; objective map is defined and the global objective 
+        has an unknown status, then the local status is utilized for sequencing 
+        and rollup rule evaluations. &ldquo;Reading&rdquo; the status from a global 
+        objective does not change the local objective state.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p12"> 
+    <div class="content"> 
+      <h2>&ldquo;Write&rdquo; Objective Mapping</h2>
+      <div class="right" style="margin-right:35px; margin-top:-2px;"> 
+        <object
+				id="swf12"
+				type="application/x-shockwave-flash" data="flash/tm12.swf"
+				width="325" height="235">
+          <param name="movie" value="flash/tm12.swf" />
+          <param name="wmode" value="transparent" />
+        </object>
+      </div>
+      <p>If a &ldquo;write&rdquo; objective map is defined, then the local objective 
+        status will be copied to the associated global objectives each time an 
+        attempt on the activity ends. For example, if the SCO says &ldquo;passed&rdquo; 
+        and the primary objective is &ldquo;written&rdquo; to objective &ldquo;X&rdquo;, 
+        objective &ldquo;X&rdquo; will become &ldquo;<code>satisfied</code>&rdquo; when the 
+        SCO terminates.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p13"> 
+    <div class="content"> 
+      <h2>Putting It All Together</h2>
+      <img class="right" src="images/tm13.jpg" alt="" width="293px" /> 
+      <p>The sequencing tracking model and mapping objectives are key components 
+        in tracking, capturing and communicating information about a learner&rsquo;s 
+        interactions. </p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+</div>
+</body>
+</html>
+
+

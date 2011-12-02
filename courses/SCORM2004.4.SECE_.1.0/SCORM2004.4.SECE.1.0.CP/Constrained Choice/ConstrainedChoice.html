@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition SECE
+
+ 
+
+The ADL SCORM 2004 4th Ed. SECE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Sequencing Essentials</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/courseFunctions.js"></script>
+<style type="text/css" media="all">
+@import "../Shared Files/css/snstyle.css";
+</style>
+</head>
+
+<body onload="javascript:Initialize();" onunload="javascript:Terminate();">
+<div class="container"> 
+  <div class="header"> </div>
+  <div class="navigation"> 
+    <div id="previousBtn"> <a href="javascript:PreviousPage();"></a> </div>
+    <div id="nextBtn"> <a href="javascript:NextPage();"></a> </div>
+  </div>
+  <div class="page" id="p1"> 
+    <div class="content"> 
+      <h2>Overview</h2>
+      <p>If <em>Sequencing Control Choice</em> is set to <code>True</code>, any 
+        child activities are allowed to be navigated to by the learner. But there 
+        are times when the instructional designer has determined that the learner 
+        should not be able to navigate to certain child activities due to instructional 
+        aspects of the content. This could be an activity that must be completed 
+        before another activity is started or an assessment activity that must 
+        only be completed after the content has been completed. The content developer 
+        has the ability to restrict the child activities by use of <em>Constrained 
+        Choice Controls.</em></p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p2"> 
+    <div class="content"> 
+      <h2>Constrained Choice</h2>
+      <p><em>Constrained Choice</em> allows the instructional designer and the 
+        content developer to limit how the choice navigation requests are applied 
+        to the content and the processing of sequencing requests.</p>
+      <div style="margin:0 auto; width:394px"> 
+        <object
+				id="swf2"
+				type="application/x-shockwave-flash" data="flash/cc2.swf"
+				width="394" height="262">
+          <param name="movie" value="flash/cc2.swf" />
+          <param name="wmode" value="transparent" />
+        </object>
+      </div>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p3"> 
+    <div class="content"> 
+      <h2>Description of Constrained Choice Controls</h2>
+      <p>This table gives a description of the <em>Constrained Choice Control</em> 
+        controls. By using the constraints, the content developer is able to limit 
+        the learner&rsquo;s ability to exercise choice in certain areas of the 
+        content.</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif"> 
+      <table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <tr bgcolor="#F0E0C0"> 
+          <td width="20%" height="40"> <div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Name</font></strong><strong><br>
+              </strong></div></td>
+          <td width="80%"><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+              </strong></div></td>
+        </tr>
+        <tr bgcolor="E7EAEC"> 
+          <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1"><em>Constrain 
+              Choice</em></font></div></td>
+          <td><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+              that a <em>Choice </em>sequencing request should only allow activities 
+              that are logically next in a<br>
+              &nbsp;&nbsp;&nbsp;&quot;flow&quot; from this activity</font></div></td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td height="30"> <div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Prevent 
+              Activation </em></font></div></td>
+          <td><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+              that a <em>Choice </em>sequencing request should only allow descendents 
+              (children and their children,<br>
+              &nbsp;&nbsp;&nbsp;etc.) of the activity to be identified for delivery, 
+              if the activity is already active</font></div></td>
+      </table>
+      </font></div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p4"> 
+    <div class="content"> 
+      <h2>Constrained Choice</h2>
+      <p><em>Constrained Choice</em> is used when the instructional sequencing 
+        design determines that only the previous and next child activities will 
+        be allowed. <em>Constrained Choice</em> limits the learner from jumping 
+        too far in the content and keeps them in the logical flow.</p>
+      <p>In this example, the sequencing strategy for the learner is to attempt 
+        Activity B, Activity 4, Activity 5 and Activity C. If the learner chooses 
+        Activity B, then a constrained choice rule is adhered to. The learner 
+        must complete the child activities (Activity 1, Activity 2, Activity 3) 
+        before attempting other activities. They are constrained from choosing 
+        other activities in the tree.</p>
+      <p>Sharable Content Object Reference Model (SCORM&reg;) does not define 
+        any requirements for the learning management system (LMS) user interface. 
+        The user interface for LMSs may vary.</p>
+      <img class="centered" src="images/cc4.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p5"> 
+    <div class="content"> 
+      <h2>Prevent Activation</h2>
+      <p>The <em>Prevent Activation</em> element being set to <code>True</code> 
+        indicates that an attempt on any descendent activity can not begin until 
+        the affected activity has been reached &ndash; it is either active or 
+        has become the current activity. This limits the learner from selecting, 
+        through a <em>Choice</em> navigation request, the descendent activities 
+        before the affected activity has been reached by the learner.</p>
+      <p>In the example shown, the instructional designer has determined that 
+        the learner must reach Activity C before they are allowed to choose Activity 
+        3, 4 or 5.</p>
+      <img class="centered" src="images/cc5.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p6"> 
+    <div class="content"> 
+      <h2>Conclusion</h2>
+      <p>The <em>Constrained Choice Control</em> modes allow the Content Developer 
+        to interpret the intentions of the Instructional Designer by implementing 
+        the constraints on the content. By using <em>Constrained Choice</em> and 
+        <em>Prevent Activation</em>, the learner will be restricted to the areas 
+        of content the Instructional Designer has determined. The learner will 
+        still have a choice of which content they wish to participate in, but 
+        will be restricted to completion of certain aspects of the content before 
+        navigating to other sections.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+</div>
+</body>
+</html>

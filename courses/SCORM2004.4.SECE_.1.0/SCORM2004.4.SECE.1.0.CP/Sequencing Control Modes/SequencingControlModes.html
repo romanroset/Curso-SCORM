@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition SECE
+
+ 
+
+The ADL SCORM 2004 4th Ed. SECE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Sequencing Essentials</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/courseFunctions.js"></script>
+<style type="text/css" media="all">
+@import "../Shared Files/css/snstyle.css";
+</style>
+</head>
+
+<body onload="javascript:Initialize();" onunload="javascript:Terminate();">
+<div class="container"> 
+  <div class="header"> </div>
+  <div class="navigation"> 
+    <div id="previousBtn"> <a href="javascript:PreviousPage();"></a> </div>
+    <div id="nextBtn"> <a href="javascript:NextPage();"></a> </div>
+  </div>
+  <div class="page" id="p1"> 
+    <div class="content"> 
+      <h2>Overview</h2>
+      <p>The Sequencing Control Modes are an important factor in the sequencing 
+        of content. With control modes, the content developer is able to interpret 
+        the sequencing information from the instructional designer into a technical 
+        format that will affect how requests for navigation are applied to learning 
+        content.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p2"> 
+    <div class="content"> 
+      <h2>Sequencing Control Modes</h2>
+      <p>The Sequencing Control Modes allow the content developer to affect how 
+        the navigation requests are applied to the content and the processing 
+        of sequencing requests. Sequencing Control Modes are used to:</p>
+      <ul>
+        <li>Restrict processing of invalid navigation requests.</li>
+        <li>Sequence requested subprocesses to affect how activities will be identified 
+          for delivery.</li>
+        <li>Determine how tracking status information is to be utilized for evaluating 
+          sequencing and rollup rules.</li>
+      </ul>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p3"> 
+    <div class="content"> 
+      <h2>Description of Sequencing Control Modes</h2>
+      <p>The following table gives a description of the various control modes. 
+        Combinations of the control modes can be enabled on an activity at the 
+        same time to create various different control modes.</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif"> 
+      <table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <tr bgcolor="#F0E0C0"> 
+          <td height="40"> <div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Name</font></strong><strong><br>
+              </strong></div></td>
+          <td><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+              </strong></div></td>
+        </tr>
+        <tr bgcolor="E7EAEC"> 
+          <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1">Choice</font></div></td>
+          <td><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+              that navigation will allow the learner to choose children of this 
+              activity via a <em>Choice</em><br>
+              &nbsp;&nbsp;&nbsp;navigation request</font></div></td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td height="30"> <div align="left">&nbsp;&nbsp;&nbsp;<font size="-1">Choice 
+              Exit</font></div></td>
+          <td><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+              if this activity is allowed to terminate if <em>Choice</em> navigation 
+              is requested</font></div></td>
+        </tr>
+        <tr bgcolor="E7EAEC"> 
+          <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Flow</font></div></td>
+          <td><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+              <em>Flow Subprocess</em> may be applied to the children of this 
+              activity</font></div></td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td height="30"> <div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Forward 
+              Only </font></div></td>
+          <td><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+              learner may not navigate to previous content (backwards on the activity 
+              tree) from the activity</font></div></td>
+        </tr>
+        <tr bgcolor="E7EAEC"> 
+          <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Use 
+              Current Objective Status<br>
+              &nbsp;&nbsp;&nbsp;Information </font></div></td>
+          <td><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Objective 
+              Progress Information</em> for the children of this activity will 
+              only be used in rollup if that<br>
+              &nbsp;&nbsp;&nbsp;information was recorded during the current attempt 
+              on the activity</font></div></td>
+        </tr>
+        <tr bgcolor="#FFFFFF"> 
+          <td height="30"> <div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Use 
+              Current Attempt Progress<br>
+              &nbsp;&nbsp;&nbsp;Information </font></div></td>
+          <td><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Attempt 
+              Progress Information</em> for the children of the activity will 
+              only be used in rollup if that <br>
+              &nbsp;&nbsp; information was recorded during the current attempt 
+              on the activity</font></div></td>
+        </tr>
+      </table>
+      </font> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p4"> 
+    <div class="content"> 
+      <h2>Choice</h2>
+      <p><em>Choice</em> means that the learner is free to choose any activity, 
+        in any order, without restrictions. In this example, the learner enters 
+        the activity and may choose any of the defined child activities (Content 
+        A, Content B or Content C).</p>
+      <div style="margin:0 auto; width:350px"> 
+        <object
+				id="swf4"
+				type="application/x-shockwave-flash" data="flash/scm4.swf"
+				width="350" height="200">
+          <param name="movie" value="flash/scm4.swf" />
+          <param name="wmode" value="transparent" />
+        </object>
+      </div>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p5"> 
+    <div class="content"> 
+      <h2>Default Behavior of the Choice Mode</h2>
+      <img class="right" src="images/scm5.jpg" alt="" width="232px" /> 
+      <p>This is a depiction of the default behavior for the choice element. In 
+        this mode, the learner will be able to choose any of the activities, without 
+        restriction.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p6"> 
+    <div class="content"> 
+      <h2>Choice with Flow Enabled</h2>
+      <p>When a learner chooses a cluster activity, if <em>Choice with Flow</em> 
+        is enabled, they will navigate to the first available leaf of the activity. 
+        This includes the children of the activity.</p>
+      <img class="centered" src="images/scm6.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p7"> 
+    <div class="content"> 
+      <h2>Choice with Flow Disabled</h2>
+      <p>If <em>Choice with Flow</em> is disabled, it prevents child activities 
+        from being delivered when a learner chooses a cluster. In the graphic, 
+        no content will be delivered to the learner if they choose Activity B 
+        because the sequencing flow has been set to <code>False</code>.</p>
+      <img class="centered" src="images/scm7.jpg" alt="" /> 
+      <p>In this case, the only way the learner can experience a child of Activity 
+        B is to directly choose one of them. Activities 1, 2 and 3 of Activity 
+        B should be made available to the learner through an LMS provided table 
+        of contents.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p8"> 
+    <div class="content"> 
+      <h2>Choice Exit</h2>
+      <p>If <em>Choice Exit</em> is set to <code>True</code>, the learner may 
+        choose any activities that would cause the current attempt on the activity 
+        to end. For example, Activity B has <em>Choice Exit</em> = <code>True</code>. 
+        If the learner is experiencing Activity 3 (or any other child of Activity 
+        B), then the learner could choose Activity 1, causing the current attempt 
+        on Activity B to end</p>
+      <img class="centered" src="images/scm8.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p9"> 
+    <div class="content"> 
+      <h2>Control Mode Flow</h2>
+      <img class="right" src="images/scm9.jpg" alt="" width="297px" /> 
+      <p>In a <em>Control Flow</em> mode, the learner has the ability to flow 
+        forward or backward through the cluster&rsquo;s activities.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p10"> 
+    <div class="content"> 
+      <h2>Sequencing Control Flow Forward Only</h2>
+      <img class="right" src="images/scm10.jpg" alt="" width="253px" /> 
+      <p>In a <em>Forward Only</em> mode (<em>Forward Only</em> is set to <code>True</code>), 
+        the learner is only permitted to flow forward in the cluster&rsquo;s child 
+        activities.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p11"> 
+    <div class="content"> 
+      <h2>Use Current Attempt</h2>
+      <p><em>Use Current Attempt Objective Status</em></p>
+      <img class="center" src="images/scm11.jpg" alt=""  /> 
+	  <br>
+	  <br>
+      <p>The <em>Use Current Attempt Objective Status</em> indicates how the Objective 
+        Progress Information, as defined in the Tracking Model, for the children 
+        of the activities will be used during the sequencing behaviors. The default 
+        value is set to True. If the value is set to False, the LMS will use the 
+        Objective Progress Information from the last attempt on the content. This 
+        element has no effect when defined on a leaf activity.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p12"> 
+    <div class="content"> 
+      <h2>Use Current Attempt</h2>
+      <p><em>Use Current Attempt Progress Status</em></p>
+      <img class="center" src="images/scm12.jpg" alt=""  /> 
+	  <br>
+      <p>The <em>Use Current Attempt Progress Status</em> designates how Attempt 
+        Progress Information for the children will be managed and used during 
+        the sequencing behaviors. The default value is set to True. If the element 
+        is defined as False, the LMS will use the Attempt Progress Information 
+        from the last attempt on the content. This element has no effect when 
+        defined on a leaf activity.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p13"> 
+    <div class="content"> 
+      <h2>Conclusion</h2>
+      <p>The Sequencing Control modes allow the content developer to interpret 
+        the intentions of the instructional designer by implementing the various 
+        technical aspects. By using <em>Choice</em>, <em>Choice Exit</em>, <em>Flow</em>, 
+        <em>Forward Only</em> and the two <em>Use Current Attempt</em> elements, 
+        <em>Objective Status</em> and <em>Progress Status</em>, the learner will 
+        be able to navigate through the content in the set instructional sequencing 
+        strategy determined by the designer.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+</div>
+</body>
+</html>
+
+
