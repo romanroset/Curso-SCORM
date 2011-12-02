@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition BKME 
+
+The ADL SCORM 2004 4th Ed. BKME is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+
+<title>Overview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/courseFunctions.js"></script>
+<style type="text/css" media="all">
+@import "../Shared Files/css/style.css";
+</style>
+</head>
+
+<body onload="javascript:Initialize();" onunload="javascript:Terminate();">
+<div class="container"> 
+  <div class="header"> </div>
+  <div class="navigation"> 
+    <div id="previousBtn"> <a href="javascript:PreviousPage();"></a> </div>
+    <div id="nextBtn"> <a href="javascript:NextPage();"></a> </div>
+  </div>
+  <div class="page" id="p1"> 
+    <div class="content"> 
+      <h2>Overview</h2>
+      <img class="right" src="images/bo_1.jpg" alt="" /> 
+      <p>When learners are in a course, it is sometimes necessary to leave the 
+        content. The content may be too long to complete in one sitting or other 
+        situations may require the learner&rsquo;s attention.</p>
+      <p>For example, if the learner has to remember where they were in the content, 
+        frustration could arise if they have to navigate through content until 
+        they find the place they left off. Depending on the instructional strategy, 
+        the learner may be able to return to the exact location they left the 
+        content. This action is enabled by using bookmarking. Bookmarking allows 
+        the learner to return to their previous location in the content when they 
+        re-enter the course.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p2"> 
+    <div class="content"> 
+      <div style="margin:15px auto; width:762px"> 
+        <object
+				id="swf2"
+				type="application/x-shockwave-flash" data="images/Intro_bkmg.swf"
+				width="762" height="440">
+          <param name="movie" value="images/Intro_bkmg.swf" />
+          <param name="wmode" value="transparent" />
+        </object>
+      </div>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p3"> 
+    <div class="content"> 
+      <h2>Purpose</h2>
+      <p>This content example has been developed to provide content developers, 
+        instructional designers and others with conceptual information and examples 
+        on how to track where the learner has been in the content using bookmarking. 
+        This information can be used in the design of courses. Tracking where 
+        the learner has been in the content is referred to as bookmarking. Bookmarking 
+        enables a more fluid content experience by making access easier from a 
+        learner&rsquo;s point of view.</p>
+      <p>Occasionally, there is confusion with the term bookmarking. Some confuse 
+        bookmarking with favorites (a common term used in Internet browsers). 
+        In certain web browsers, &ldquo;bookmarking&rdquo; is used to save Uniform 
+        Resource Locator (URL) addresses into a list for later access. For example, 
+      </p>
+      <ul>
+        <li>Internet Explorer: Favorites</li>
+        <li>Netscape: Bookmarks</li>
+        <li>FireFox: Bookmarks</li>
+      </ul>
+      <p>In Sharable Content Object Reference Model (SCORM&reg;) 2004 content 
+        development, bookmarking is defined as the functionality of building content 
+        to allow a learner to return to a specific location if the content is 
+        exited prior to completion. So in essence, this is considered a way of 
+        check pointing a learner&rsquo;s progress through the content. As they 
+        reach certain places in the content, the content may record where the 
+        learner is.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p4"> 
+    <div class="content"> 
+      <h2>Importance of Bookmarking</h2>
+      <img class="right" src="images/bo_2.jpg" alt="" /> 
+      <p>By allowing the learner to re-enter the content, without actually remembering 
+        which page or set of content they had last interacted with, frustration 
+        can be alleviated and the experience will be more appealing. By stopping 
+        frustration, the learner will be more willing to participate and complete 
+        the sections of content. Bookmarking is also important to the designer 
+        and developer, allowing the learner more ease with the learning experience, 
+        allowing the course to become more learner-centric and fulfilling a common 
+        project requirement.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p5"> 
+    <div class="content"> 
+      <h2>Implementation of Bookmarking</h2>
+      <p>In order to implement bookmarking in content, the content developer must 
+        understand what happens when bookmarking is added to the content requirements. 
+        The following five things must happen in order to successfully implement 
+        a bookmarking feature in content:</p>
+      <ul>
+        <li>Navigating to the SCO is the responsibility of the LMS since it handles 
+          all of the sequencing aspects for the course content. The LMS is responsible 
+          for keeping track where in the course the learner left off.</li>
+        <li>The SCO is responsible for keeping track of where the learner is in 
+          the context of the SCO (i.e., within the SCO).</li>
+        <li>The LMS allows the SCO to access information set in a learner attempt 
+          as long as the previous learner session in the learner attempt was suspended.</li>
+        <li>The learner&rsquo;s session can be suspended by the SCO setting cmi.exit 
+          to &ldquo;suspend&rdquo; or a Suspend All Navigation Request that comes 
+          from the SCO or LMS. These basic requests enable the use of bookmarking, 
+          letting the learner return to a previous location after leaving the 
+          content.</li>
+        <li>The SCO is responsible for retrieving the location and state data 
+          it stored in the LMS during the previous session and resuming the content 
+          from that point. This action is a function of the SCO.</li>
+      </ul>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p6"> 
+    <div class="content"> 
+      <h2>Conclusion</h2>
+      <p>Bookmarking can be an important part to any course design and development 
+        process. By using bookmarking, learners are able to enter and exit a course 
+        without remembering where they last left off, creating a more seamless, 
+        learner-centric experience.</p>
+      <p>For more information about SCORM and the Data Model elements used in 
+        bookmarking, please visit <a href="http://www.adlnet.gov" target="_blank">ADLNet.gov</a>.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition BKME 
+
+The ADL SCORM 2004 4th Ed. BKME is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+
+<title>SCO Bookmarking</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/courseFunctions.js"></script>
+<script type="text/javascript">
+
+<!-- This function writes an html image link where it is called on the page. This is one image for entering the course ab-initio, one for resuming, and one for no rte present  -->
+function displayBanner() {
+	// call initialize to check for rte
+	CallInitialize();
+
+	// if not running in run-time enviroment
+	if(noAPIFound == "true"){
+		document.write('<img class="centered" src="images/Banner_3.jpg" alt="" />');
+	}
+	// running in rte
+	else{
+		// check for ab-initio entry state
+		var entryMode = retrieveDataValue( "cmi.entry" );
+
+		// check whether resuming SCO
+		if (entryMode == "ab-initio") {
+			// use first time banner
+			document.write('<img class="centered" src="images/Banner_1.jpg" alt="" />');
+			}
+		else{
+			document.write('<img class="centered" src="images/Banner_2.jpg" alt="" />');
+		}
+	}
+}
+
+</script>
+<style type="text/css" media="all">
+@import "../Shared Files/css/style.css";
+</style>
+</head>
+<!-- Initialize() is being called in the displayBanner function -->
+<body onload="javascript:Initialize();" onunload="javascript:Terminate();">
+<div class="container"> 
+  <div class="header"> </div>
+  <div class="navigation"> 
+    <div id="previousBtn"> <a href="javascript:PreviousPage();"></a> </div>
+    <div id="nextBtn"> </div>
+  </div>
+  <div class="page" id="p1"> 
+    <div class="content"> 
+      <h2>Introduction</h2>
+      <img class="right" src="images/be_1.jpg" alt="" /> 
+      <p>The learner leaves the content to attend to other responsibilities or 
+        just is done for the time being, but they do not note where they stopped. 
+        When they return, the content is returned to the page they last attempted. 
+        This learner-centric function is enabled by using the bookmarking concept 
+        within the Sharable Content Object (SCO). The developer, by coding the 
+        content to allow for bookmarking, makes it possible for the learner to 
+        return back to the place last attempted, when the content is resumed.</p>
+      <p>Bookmarking can be used in a variety of ways, depending upon the project 
+        requirements. The premise of bookmarking is that the learner can return 
+        to the content at the same location as in a last attempt. This information 
+        can be used not only to return the learner to that place, but to track 
+        the information in the LMS. This can then be used to determine the learner&rsquo;s 
+        first and subsequent entries in the content. The uses are varied and can 
+        be used in testing situations, where a learner might have more than one 
+        opportunity to complete the test.</p>
+      <p>By allowing the learner to re-enter the content at a previous location, 
+        the content becomes more learner-centric and the flow of the content is 
+        enhanced.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p2"> 
+    <div class="content"> 
+      <h2>Data Model Elements</h2>
+      <p>The data model elements - Entry, Exit and Location are used primarily 
+        to implement bookmarking. The first time the learner has viewed this page, 
+        the welcome banner has been initiated. On subsequent entries to the content, 
+        the welcome back banner will be displayed.</p>
+      <p>At this time, please exit the content by leaving this SCO and re-enter 
+        to view the welcome back banner.</p>
+      <script type="text/javascript" >
+				displayBanner();
+			</script>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p3"> 
+    <div class="content"> 
+      <h2>Entry Data Model Element</h2>
+      <p>The Entry data model element (<em>cmi.entry</em>) is used to determine 
+        if the learner is entering the content for the first time or if they are 
+        returning from a suspended learner attempt. The determination of whether 
+        or not the learner is a first time visitor can be used to customize output 
+        information to the learner.</p>
+      <p>The Entry data model element has three values to enable the developer 
+        to determine what kind of information will be gathered. The values are:</p>
+      <ul>
+        <li><em>ab-initio</em> – the learner has not accessed the SCO during the 
+          current learner attempt. It is used for the first learner session, for 
+          a learner attempt. For example, the developer can customize the information 
+          for the first entry to the content.</li>
+        <li><em>resume</em> – the learner attempt is resuming from a suspended 
+          learner attempt. Data from a previous attempt is available for use. 
+          A use case example would have the developer customizing the entry information 
+          on subsequent entries.</li>
+        <li><em>&ldquo;&rdquo; (empty characterstring)</em> – Used when information 
+          cannot be obtained whether the learner is in the first attempt or has 
+          previously entered the SCO and returning from a suspended attempt. This 
+          value indicates that there is no information of previous access.</li>
+      </ul>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p4"> 
+    <div class="content"> 
+      <h2>Exit Data Model element</h2>
+      <p>The Exit data model element (<em>cmi.exit</em>) tracks information as 
+        to why or how the learner left the content. There are four values that 
+        can be used to describe the reason the learner exited or left the SCO. 
+      <p> 
+      <p>The four values are:</p>
+      <ul>
+        <li><em>time-out</em> - is used if a limit on the amount of time the learner 
+          is allowed in the content is reached. When that time has expired, the 
+          learner attempt ends.</li>
+        <li><em>suspend</em> - indicates the learner has suspended the learning 
+          attempt and will return at a later time.</li>
+        <li><em>normal</em> - indicates that the learner has exited the SCO normally, 
+          as determined by the developer. When the learner returns to the SCO, 
+          a new learner attempt is begun and a new set of run-time data will be 
+          available.</li>
+        <li><em>&ldquo;&rdquo; Empty characterstring</em> - This is the default 
+          value of Exit data model element. This value indicates that information 
+          about how or why the learner exited the SCO could not be determined.</li>
+      </ul>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p5"> 
+    <div class="content"> 
+      <h2>Location Data Model Element</h2>
+      <p>The Location data model element (<em>cmi.location</em>) can be used to 
+        store a location in the SCO. The location could be used to allow the learner 
+        to re-enter the SCO at the same point from the previous learner session.</p>
+      <p>Using the Location data model element enables learners to return to previous 
+        points in content after they temporarily stop the learning process. The 
+        learners do not have to write down or in some other way note where they 
+        were last in the content before they stop the learning process to, for 
+        example, take a phone call or attend a meeting.</p>
+      <p>The Location data model element allows the learner to return to the SCO 
+        at the point that was &ldquo;bookmarked&rdquo; or set as the stopping 
+        point. When the learners re-launch the content, the bookmarked location 
+        will be the return point.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p6"> 
+    <div class="content"> 
+      <h2>SCO Bookmarking</h2>
+      <p>The use of the three data model elements - Entry, Exit, and Location 
+        make SCO bookmarking possible. An example of bookmarking code is shown 
+        on the next page. There are various ways to code for bookmarking, but 
+        this is just an example.</p>
+      <p>Navigating to the SCO is the responsibility of the LMS since it handles 
+        all the sequencing aspects for the course content. The LMS stores and 
+        allows the SCO to access information set in learner attempt as long as 
+        the previous learner session was suspended.</p>
+      <p>The learner&rsquo;s session can be suspended by the SCO setting <em>cmi.exit</em> 
+        to &ldquo;suspend&rdquo; or a Suspend All Navigation Request that comes 
+        from the SCO or LMS. These basic requests enable the use of bookmarking, 
+        letting the learner return to a previous location after leaving the content.</p>
+      <p>The SCO must also set the location of where to return. This is handled 
+        by setting the <em>cmi.location</em> element to a value. This value is 
+        dependent on the implementation of the SCO. There are no requirements 
+        on the value of this content, other than it must be a characterstring 
+        and LMSs are only required to store up to 1000 characters.</p>
+      <p>Upon re-entry into the SCO (resuming a learner attempt), the SCO should 
+        determine if the learner attempt is being resumed. This is done by retrieving 
+        the <em>cmi.entry</em> value. If this value is set to &ldquo;resume&rdquo;, 
+        then this indicates that the learner attempt is being resumed from a suspended 
+        state.</p>
+      <p>If the learner attempt is being resumed, then the SCO can retrieve the 
+        <em>cmi.location</em> to determine where the learner left off. Once this 
+        value is retrieved the SCO can use it to take the learner back to where 
+        they left of in the SCO.</p>
+      <p>Key Points to Remember:</p>
+      <ul>
+        <li>SCO should set the location (<em>cmi.location</em>). How many times 
+          this is set is determined by the content creator and the design of the 
+          content.</li>
+        <li>SCO should provide a way to suspend the learner attempt. Suspending 
+          the learner attempt is handled either by setting the <em>cmi.exit</em> 
+          to &ldquo;suspend&rdquo; or issuing a Suspend All Navigation Request 
+          (either from the SCO or LMS). How this is done is outside the scope 
+          of SCORM.</li>
+        <li>On re-entry, the SCO should check to see if the learner attempt is 
+          being resumed (<em>cmi.entry</em> set to &ldquo;resume&rdquo;), then 
+          retrieve the <em>cmi.location</em> value and take the learner back to 
+          where they left off.</li>
+      </ul>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p7"> 
+    <div class="content"> 
+      <h2>Code for Bookmarking</h2>
+      <p>The following is an example of code that could be used to enable bookmarking.</p>
+      <p><code>function Initialize(){<br/>
+        &nbsp;&nbsp;// Initialize the communication with the LMS’s API Implementation<br/>
+        &nbsp;&nbsp;initializeCommunication();<br/>
+        <br/>
+        &nbsp;&nbsp;// Set completion status to incomplete<br/>
+        &nbsp;&nbsp;SetIncomplete();<br/>
+        <br/>
+        &nbsp;&nbsp;// Set exit to suspended<br/>
+        &nbsp;&nbsp;storeDataValue( "cmi.exit","suspend" );<br/>
+        <br/>
+        &nbsp;&nbsp;// Check for resumed entry state<br/>
+        &nbsp;&nbsp;var entryMode = retrieveDataValue( "cmi.entry" );<br/>
+        <br/>
+        &nbsp;&nbsp;// Set a local variable to page 1<br/>
+        &nbsp;&nbsp;var location = 1;<br/>
+        <br/>
+        &nbsp;&nbsp;// Check whether resuming SCO<br/>
+        &nbsp;&nbsp;if (entryMode == "resume")<br/>
+        &nbsp;&nbsp;{<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;// Check if a prior location was set<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;location = retrieveDataValue( "cmi.location" );<br/>
+        <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;// Get the Error code from the last call<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;var errorCode = retrieveErrorCode();<br/>
+        <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;// if not set or at the last page, go to first 
+        page<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;if (errorCode == "403" || location == TotalPages())<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location = 1;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+        &nbsp;&nbsp;}<br/>
+        <br/>
+        &nbsp;&nbsp;// present page to learner<br/>
+        &nbsp;&nbsp;DisplayPage( location );<br/>
+        }<br/>
+        <br/>
+        function DisplayPage( pn )<br/>
+        {<br/>
+        &nbsp;&nbsp;pageNumber = parseInt(pn);<br/>
+        &nbsp;&nbsp;// catch out of range pages<br/>
+        <br/>
+        &nbsp;&nbsp;if (pageNumber <1 || pageNumber > TotalPages())<br/>
+        &nbsp;&nbsp;{<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;pageNumber = 1;<br/>
+        &nbsp;&nbsp;}<br/>
+        <br/>
+        &nbsp;&nbsp;// set location value for bookmark<br/>
+        &nbsp;&nbsp;storeDataValue( "cmi.location", pageNumber );<br/>
+        <br/>
+        &nbsp;&nbsp;// render page<br/>
+        &nbsp;&nbsp;.<br/>
+        &nbsp;&nbsp;.<br/>
+        &nbsp;&nbsp;.<br/>
+        }<br/>
+        </code></p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p8"> 
+    <div class="content"> 
+      <h2>SCO Bookmarking</h2>
+      <img class="right" src="images/be_2.jpg" alt="" /> 
+      <p>This is a graphical rendering of the process of bookmarking.</p>
+      <p>The learner enters the content; the SCO checks the entry state for either 
+        a new learner attempt or a returning learner attempt.</p>
+      <p>Depending upon the state, the learner will be directed to a new SCO or 
+        a previous location that has been stored by <em>cmi.location</em>.</p>
+      <p>The content is then displayed to the learner.</p>
+      <p>The content state change occurs, the page is changed, interactions are 
+        submitted or other changes occur.</p>
+      <p>The location is then updated (<em>cmi.location</em>) to go to the new 
+        place in the content.</p>
+      <p>The other Data Model elements are then updated as needed, including <em>cmi.interactions</em>, 
+        and <em>cmi.suspend_data</em>.</p>
+      <p>The decision to be made concerning the exit of the SCO. If yes, then 
+        the question is asked, is the learner attempt complete? If no, then there 
+        will be a loop back to display the content to the learner.</p>
+      <p>The next decision if exiting the SCO was selected, was for completion 
+        of the learner’s attempt on the SCO. If the attempt was complete (yes) 
+        then the SCO will set Exit Mode (<em>cmi.exit</em>) to <em>normal</em>. 
+        If no, then Exit Mode will be set to <em>suspend</em>.</p>
+      <p>The SCO is exited.</p>
+      <p>Click <a href="../Shared Files/resources/BookmarkingFlowChart.pdf" target="_blank">here</a> 
+        to download a copy of this bookmarking flow.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p9"> 
+    <div class="content"> 
+      <h2>Conclusion</h2>
+      <img class="right" src="images/be_3.jpg" alt="" /> 
+      <p>SCO bookmarking can be a dynamic and usable tool for both instructional 
+        designers and content developers. By enabling it, the learner&rsquo;s 
+        experience in the content is more positive by allowing re-entry to the 
+        location last experienced, seamlessly, without notation.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+</div>
+</body>
+</html>
