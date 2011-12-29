@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Thie example adapted from the PET Handbook, copyright University of Cambridge ESOL Examinations -->
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 imsqti_v2p1.xsd" 
+identifier="choice" title="Simple choice and picture inside a text." adaptive="false" timeDependent="false">
+	<responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+		<correctResponse>
+			<value>ChoiceA</value>
+		</correctResponse>
+	</responseDeclaration>
+  <outcomeDeclaration identifier="RESPONSE-PREVIOUS" cardinality="multiple" baseType="directedPair"/>
+  <outcomeDeclaration identifier="RESPONSE-LASTCHANGE" cardinality="multiple" baseType="directedPair"/>
+	<outcomeDeclaration identifier="SCORE" cardinality="single" baseType="integer">
+		<defaultValue>
+			<value>0</value>
+		</defaultValue>
+	</outcomeDeclaration>
+	<styleDeclaration>
+		<link href="choice_single_style.css" userAgent=".*"/>
+	</styleDeclaration>
+	<itemBody>
+		<p>
+			This is simple choice interaction with no shuffled answers. 
+			Also you can see that text can contain pictures.
+		</p>
+		<p>
+			<img src="media/eiffeltower.jpg" alt="Eiffel tower"/>
+		</p>
+		
+		
+		<choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+			<prompt>Looook at the picture. Can you guess from the picture which city is it?<math><mi>x</mi><mo>=</mo><msqrt><msup><mi>y</mi><mn>9</mn></msup></msqrt></math></prompt>
+			<simpleChoice identifier="ChoiceA">It is Paris.</simpleChoice>
+			<simpleChoice identifier="ChoiceB">It is Berlin.</simpleChoice>
+			<simpleChoice identifier="ChoiceC">It is London.</simpleChoice>
+		</choiceInteraction>
+		
+		
+	</itemBody>
+	<responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
+</assessmentItem>

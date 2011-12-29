@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p0 imsqti_v2p0.xsd" identifier="order" title="Drag and drop interaction demo" adaptive="false" timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="commutative" baseType="identifier">
+        <correctResponse>
+            <value group="0">OptionA</value>
+            <value group="0">OptionB</value>
+            <value>OptionC</value>
+        </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="integer"/>
+	<styleDeclaration>
+		<link href="order.css" userAgent=".*"/>
+	</styleDeclaration>
+    <itemBody>
+		Some inline <mathInline><apply><times/><cn>2</cn><cn>3</cn></apply></mathInline>
+		<dragDropInteraction responseIdentifier="RESPONSE">
+			<contents>
+				Here is the example of drag and drop interaction with the slot 
+				<slot><feedbackInline outcomeIdentifier="RESPONSE" identifier="OptionA;.*" showHide="show" senderIdentifier="^RESPONSE$">Correct!</feedbackInline></slot>
+				Here is the other slot:
+				<slot></slot>
+				Here is the third slot:
+				<slot></slot>
+			</contents>
+			<sourcelist>
+				<dragElement identifier="OptionA">element 1</dragElement>
+				<dragElement identifier="OptionB">element 2</dragElement>
+				<dragElement identifier="OptionC">element 3</dragElement>
+			</sourcelist>
+		</dragDropInteraction>
+		Below the vocabox is presented:<br/>
+		<vocabox>
+			<vocaItem text="Britain" src="media/ok.mp3" />
+			<vocaItem text="Bangkok" src="media/ok.mp3" />
+			<vocaItem text="Tokyo" src="media/ok.mp3" />
+			<vocaItem text="Budapest" src="media/ok.mp3" />
+			<vocaItem text="Japan" src="media/ok.mp3" />
+			<vocaItem text="Canada" src="media/ok.mp3" />
+			<vocaItem text="London" src="media/ok.mp3" />
+			<vocaItem text="Mexico" src="media/ok.mp3" />
+			<vocaItem text="Thailand" src="media/ok.mp3" />
+			<vocaItem text="Hungary" src="media/ok.mp3" />
+			<vocaItem text="Australia" src="media/ok.mp3" />
+			<vocaItem text="Brazil" src="media/ok.mp3" />
+		</vocabox>
+    </itemBody>
+    <responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
+</assessmentItem>

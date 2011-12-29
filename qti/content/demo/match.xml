@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:qy="http://www.w3.org/TR/html4/"
+xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 http://www.imsglobal.org/xsd/imsqti_v2p1.xsd" 
+identifier="match" title="Characters and Plays" adaptive="false" timeDependent="false">
+	<responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="directedPair">
+		<correctResponse>
+			<value>C R</value>
+			<value>D M</value>
+			<value>L M</value>
+			<value>P T</value>
+		</correctResponse>
+		<mapping defaultValue="0">
+			<mapEntry mapKey="C R" mappedValue="1"/>
+			<mapEntry mapKey="D M" mappedValue="0.5"/>
+			<mapEntry mapKey="L M" mappedValue="0.5"/>
+			<mapEntry mapKey="P T" mappedValue="1"/>
+		</mapping>
+	</responseDeclaration>
+	<outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float"/>
+	<outcomeDeclaration identifier="SCOREHISTORY" cardinality="multiple" baseType="float"/>
+	<outcomeDeclaration identifier="SCORECHANGES" cardinality="multiple" baseType="float"/>
+	<outcomeDeclaration identifier="RESPONSE-LASTCHANGE" cardinality="single" baseType="directedPair"/>
+	<itemBody>
+		<qy:comment>asd</qy:comment>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+		<math><msqrt><msup><mi>x</mi><mn>71</mn></msup></msqrt></math>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+			<!--mathInline expression="-(-(1/(3$2)+4))$(1/2)"/-->
+		<matchInteraction responseIdentifier="RESPONSE" shuffle="false" maxAssociations="4">
+			<prompt>Match the following 
+			<!--mathInline expression="-(-(1/(3$2)+4))$(1/2)"/-->
+		characters to the Shakespeare play they appeared in:<br/><br/><br/></prompt>
+			<simpleMatchSet>
+				<simpleAssociableChoice identifier="C" matchMax="1">Capulet<img src="http://ryb.nspace.pl/lab/11j1.jpg"/></simpleAssociableChoice>
+				<simpleAssociableChoice identifier="D" matchMax="1">Demetrius<feedbackInline outcomeIdentifier="RESPONSE" identifier=".*D M.*" showHide="show" senderIdentifier="^RESPONSE$" sound="http://qti-player.googlecode.com/svn/trunk/qtiplayer/war/content/test/click.mp3" align="BOTTOM_RIGHT" mark="AUTO" fadeEffect="2000">Demetrius is great!</feedbackInline></simpleAssociableChoice>
+				<simpleAssociableChoice identifier="L" matchMax="1">Lysander<mathInline><apply><root/><cn>2</cn><cn>3</cn></apply></mathInline></simpleAssociableChoice>
+				<simpleAssociableChoice identifier="P" matchMax="1">Prospero<math><msqrt><msup><mi>x</mi><mn>71</mn></msup></msqrt></math></simpleAssociableChoice>
+			</simpleMatchSet>
+			<simpleMatchSet>
+				<simpleAssociableChoice identifier="M" matchMax="4">A Midsummer-Night's Dream</simpleAssociableChoice>
+				<simpleAssociableChoice identifier="R" matchMax="4">Romeo and Juliet</simpleAssociableChoice>
+				<simpleAssociableChoice identifier="T" matchMax="4">The	Tempest<feedbackInline outcomeIdentifier="RESPONSE" identifier=".*L T.*" showHide="show" senderIdentifier="^RESPONSE$" mark="AUTO"><div style="color:#f02f00">Wrong!<mathInline><apply><times/><cn>2</cn><cn>3</cn></apply></mathInline></div></feedbackInline></simpleAssociableChoice>
+			</simpleMatchSet>
+			<feedbackInline outcomeIdentifier="RESPONSE" identifier=".*C R.*" showHide="show" senderIdentifier="^RESPONSE$">Capulet correct!</feedbackInline>
+			<feedbackInline outcomeIdentifier="RESPONSE-LASTCHANGE" identifier="+L R" showHide="show" senderIdentifier="^RESPONSE$">Lysander wrong!</feedbackInline>
+			<feedbackInline outcomeIdentifier="RESPONSE-LASTCHANGE" identifier="+P M" showHide="show" senderIdentifier="^RESPONSE$">Prospero wrong!</feedbackInline>
+		</matchInteraction>
+		<br/>
+		Here is the audio player:
+		<audioPlayer data="../test/media/demo-sound.mp3" />
+	</itemBody>
+	<responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
+	<modalFeedback outcomeIdentifier="SCORECHANGES" identifier=".*;1$" showHide="show"  senderIdentifier="^RESP.*">Score is +1</modalFeedback>
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier=".*P T.*" showHide="show">Very good! Prospero is correct!<mathInline expression="-(-(1/(3$2)+4))$(1/2)"/></modalFeedback>
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier=".*C [^R].*" showHide="show" ><span style="color:#ff0000;">Capulet is wrong</span></modalFeedback>
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier=".*((D M;.*L M)|(L M;.*D M)).*" showHide="show">A Midsummer-Night's Dream is correct</modalFeedback>
+	<modalFeedback outcomeIdentifier="SCORE" identifier="==0" showHide="show" >Click if exercise is not done</modalFeedback>
+	
+</assessmentItem>

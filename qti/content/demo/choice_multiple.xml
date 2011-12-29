@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Thie example adapted from the PET Handbook, copyright University of Cambridge ESOL Examinations -->
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 imsqti_v2p1.xsd" 
+identifier="choice" title="Multiple choice" adaptive="false" timeDependent="false" styleLink="http://rlab.pl/resources/s.css">
+	<responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="identifier">
+		<correctResponse>
+			<value>ChoiceA</value>
+			<value>ChoiceB</value>
+		</correctResponse>
+	</responseDeclaration>
+	<outcomeDeclaration identifier="SCORE" cardinality="single" baseType="integer">
+		<defaultValue>
+			<value>0</value>
+		</defaultValue>
+	</outcomeDeclaration>
+	<itemBody>
+		<p>
+			This item contains choice with multiple answers. The answers are shuffled (except the last one). 
+			This example also shows the use of picture and texts in choice.  
+		</p>
+
+		<choiceInteraction responseIdentifier="RESPONSE" shuffle="true" maxChoices="0">
+			<prompt>Can you quess which pictures represent Tokyo?<br/><br/><br/></prompt>
+			<simpleChoice identifier="ChoiceA"><img src="media/tokyo1.jpg"/><feedbackInline outcomeIdentifier="RESPONSE" identifier=".*ChoiceA.*" showHide="show" align="BOTTOM_CENTER">Yes.</feedbackInline></simpleChoice>
+			<simpleChoice identifier="ChoiceB"><img src="media/tokyo2.jpg"/><feedbackInline outcomeIdentifier="RESPONSE" identifier=".*ChoiceB.*" showHide="show" align="BOTTOM_RIGHT">Yes.</feedbackInline></simpleChoice>
+			<simpleChoice identifier="ChoiceC"><img src="media/warsaw.jpg"/><feedbackInline outcomeIdentifier="RESPONSE" identifier=".*ChoiceC.*" showHide="show" align="TOP_RIGHT">No.</feedbackInline></simpleChoice>
+			<simpleChoice identifier="ChoiceE" fixed="true">None of the above.</simpleChoice>
+		</choiceInteraction>
+	</itemBody>
+	<responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
+</assessmentItem>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 imsqti_v2p1.xsd" 
+identifier="inlineChoice" title="Interactive text" adaptive="false" timeDependent="false">
+	<responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+		<correctResponse>
+			<value>Y</value>
+		</correctResponse>
+	</responseDeclaration>
+	<responseDeclaration identifier="RESPONSE2" cardinality="single" baseType="identifier">
+		<correctResponse>
+			<value>Y</value>
+		</correctResponse>
+	</responseDeclaration>
+	<outcomeDeclaration identifier="SCORE" cardinality="single" baseType="integer"/>
+	<outcomeDeclaration identifier="SCOREHISTORY" cardinality="multiple" baseType="integer"/>
+	<outcomeDeclaration identifier="SCORECHANGES" cardinality="multiple" baseType="integer"/>
+	<itemBody>
+		<p>This page presents text interaction with inline choices.</p>
+		
+		<p>Identify the missing word in this famous quote from Shakespeare's Richard III.</p>
+		<blockquote>
+			<p>Now is the winter of our discontent<br/> Made glorious summer by this sun of
+                    <inlineChoiceInteraction responseIdentifier="RESPONSE" shuffle="false">
+					<inlineChoice identifier="G">Gloucester</inlineChoice>
+					<inlineChoice identifier="L">Lancaster</inlineChoice>
+					<inlineChoice identifier="Y">York</inlineChoice>
+					<feedbackInline outcomeIdentifier="RESPONSE" identifier="G" showHide="show"  senderIdentifier="^RESPONSE$" align="BOTTOM_LEFT">Feedback inline for Gloucester</feedbackInline>
+					<feedbackInline outcomeIdentifier="RESPONSE" identifier="L" showHide="show"  senderIdentifier="^RESPONSE$" align="BOTTOM_CENTER">Feedback inline for Lancaster</feedbackInline>
+					<feedbackInline outcomeIdentifier="RESPONSE" identifier="Y" showHide="show"  senderIdentifier="^RESPONSE$" align="BOTTOM_RIGHT">Feedback inline for York</feedbackInline>
+				</inlineChoiceInteraction>;<br/> And all the clouds that lour'd upon our house<br/>
+                In the deep bosom of the ocean buried.</p>
+		</blockquote>
+		
+		<p>Identify the missing word in this famous quote from Shakespeare's Richard III.</p>
+		<blockquote>
+			<p>Now is the winter of our discontent<br/> Made glorious summer by this sun of
+                    <inlineChoiceInteraction responseIdentifier="RESPONSE2" shuffle="false">
+					<inlineChoice identifier="G">Gloucester</inlineChoice>
+					<inlineChoice identifier="L">Lancaster</inlineChoice>
+					<inlineChoice identifier="Y">York</inlineChoice>
+					<feedbackInline outcomeIdentifier="RESPONSE2" identifier="G" showHide="show"  senderIdentifier="^RESPONSE2$" align="TOP_LEFT">Feedback inline for Gloucester</feedbackInline>
+					<feedbackInline outcomeIdentifier="RESPONSE2" identifier="L" showHide="show"  senderIdentifier="^RESPONSE2$" align="TOP_CENTER">Feedback inline for Lancaster</feedbackInline>
+					<feedbackInline outcomeIdentifier="RESPONSE2" identifier="Y" showHide="show"  senderIdentifier="^RESPONSE2$" align="TOP_RIGHT">Feedback inline for York</feedbackInline>
+				</inlineChoiceInteraction>;<br/> And all the clouds that lour'd upon our house<br/>
+                In the deep bosom of the ocean buried.</p>
+		</blockquote>
+	</itemBody>
+	<responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
+	<modalFeedback outcomeIdentifier="SCORECHANGES" identifier=".*;1$" senderIdentifier="^RESPONSE$" showHide="show">First combo is correct</modalFeedback>
+	<modalFeedback outcomeIdentifier="SCORECHANGES" identifier=".*;(0|(-1))$" senderIdentifier="^RESPONSE$" showHide="show">First combo is wrong</modalFeedback>
+	<modalFeedback outcomeIdentifier="SCORECHANGES" identifier=".*;1$" senderIdentifier="^RESPONSE2$" showHide="show">Second combo is correct</modalFeedback>
+	<modalFeedback outcomeIdentifier="SCORECHANGES" identifier=".*;(0|(-1))$" senderIdentifier="^RESPONSE2$" showHide="show">Second combo is wrong</modalFeedback>
+</assessmentItem>

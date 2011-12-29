@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+    <link type="text/css" rel="stylesheet" href="defaultplayer.css">
+
+    <title>QTI Player demo</title>
+    
+    <script type="text/javascript" language="javascript" src="locale_en.js"></script>    
+    <script type="text/javascript" language="javascript" src="config.js"></script> 
+    <script type="text/javascript" language="javascript" src="qtiplayer/qtiplayer.nocache.js"></script>
+    <script language="javascript">
+    var player1;
+      function qpOnAppLoaded(){
+        // Load assessment
+        player1 = qpCreatePlayer('player');
+		// overrides cofiguration prepared in js file
+		//player1.setFlowOptions({showToC: true, showSummary: true, itemsDisplayMode: "ONE", showCheck: true});
+		//player1.setDisplayOptions(["untagged", "tag0"]);
+        player1.load('content/demo.xml');
+        player1.setMasteryScore(10);
+		
+		player1.onAssessmentLoaded = function(){
+			// uncomment to init player on the selected page
+			//setState();
+			//player1.navigateGotoItem(3);
+		};
+		player1.onAssessmentSessionBegin = function(){
+			// uncomment to show answers on startup (for answers key printing)
+			//player1.navigateShowAnswers();
+		};
+		
+    	player1.onAssessmentSessionFinished = function(result){
+          //alert("score: " + player1.getResult().getScore() + " " + "max: " + player1.getResult().getMaxScore());
+    	}
+		player1.onTestPageSwitching = function(){
+			getValues();
+		}
+		player1.onTestPageSwitched = function(){
+			
+		}
+		
+      }
+      
+      function getState(){
+      	var state = player1.getStateString();
+	  }
+      function setState(){
+		player1.setStateString('["TOC",[[[[]],[["","",""]],[],[],[],[],[],[],[],[],[],[],[]],[[0,1,0,3,2,10,true],[0,1,0,99,9,10,true],null,null,null,null,null,null,null,null,null,null,null]]]');
+      }
+      function setState2(){
+		player1.setStateString('[0,[[[["id_8181232381612062 id_2578974310308695","id_26106282440014184 id_12673230725340545"]],[["","",""]],[],[],[],[],[],[],[],[],[],[],[]],[[0,1,0,3,4,16,true],[0,1,0,99,9,10,true],null,null,null,null,null,null,null,null,null,null,null]]]');
+      }
+      function report(){
+        var report = player1.getAssessmentSessionReport();
+        alert("time: " + report.getTime());
+        alert("score: " + report.getScore());
+        alert("max score: " + report.getScoreMax());
+        alert("lesson status: " + report.getLessonStatus());
+        alert("item: " + report.getItemIndex() + " / " + report.getItemsCount());
+		alert("mistakes: " + report.getTotalMistakes());
+		alert("checks: " + report.getTotalChecks());
+        
+      }
+	  
+	function itemReport(){
+		var selObj = document.getElementById("itemIndexCombo");
+		var valStr = selObj.options[selObj.selectedIndex].value;
+		var valInt = parseInt(valStr);
+        var report = player1.getAssessmentSessionReport();
+        alert("time: " + report.getItemTime(valInt));
+        alert("score: " + report.getItemScore(valInt));
+        alert("max score: " + report.getItemScoreMax(valInt));
+        alert("mistakes: " + report.getItemMistakes(valInt));
+		alert("checks: " + report.getItemChecks(valInt));
+	}
+	       
+	function getValues(){
+		var s = "page: " + player1.getAssessmentSessionReport().getItemIndex();
+		s += "\nResponse variables: " + player1.getCurrentItemResponseVariables();
+		s += "\nRESPONSE value: " + player1.getCurrentItemResponseVariableValue("RESPONSE1");
+		s += "\nRESPONSE cardinality: " + player1.getCurrentItemResponseVariableCardinality("RESPONSE");
+		s += "\nRESPONSE base type: " + player1.getCurrentItemResponseVariableBaseType("RESPONSE");
+
+		//alert(s);
+	} 
+    </script>
+    
+  </head>
+
+  <body onLoad="">
+	<INPUT TYPE="button" NAME="button" Value="accs" onClick="getValues();">
+	<INPUT TYPE="button" NAME="button" Value="next" onClick="player1.navigateNextItem();">
+	<INPUT TYPE="button" NAME="button" Value="previous" onClick="player1.navigatePreviousItem();">
+	<INPUT TYPE="button" NAME="button" Value="show answers" onClick="player1.navigateShowAnswers();">
+	<INPUT TYPE="button" NAME="button" Value="finish item" onClick="player1.navigateFinishItem();">
+	<INPUT TYPE="button" NAME="button" Value="finish assessment" onClick="player1.navigateFinishAssessment();">
+	<INPUT TYPE="button" NAME="button" Value="reset item" onClick="player1.navigateResetItem();"><br/>
+	<INPUT TYPE="button" NAME="button" Value="continue item" onClick="player1.navigateContinueItem();">
+	<INPUT TYPE="button" NAME="button" Value="summary" onClick="player1.navigateSummaryAssessment();">
+	<INPUT TYPE="button" NAME="button" Value="goto 2" onClick="player1.navigateGotoItem(1);">
+	<INPUT TYPE="button" NAME="button" Value="mode" onClick="alert(player1.getEngineMode().toString());">
+	<INPUT TYPE="button" NAME="button" Value="get state" onClick="getState();">
+	<INPUT TYPE="button" NAME="button" Value="set state 1" onClick="setState();">
+	<INPUT TYPE="button" NAME="button" Value="set state 2" onClick="setState2();">
+	<INPUT TYPE="button" NAME="button" Value="report" onClick="report();">
+	<INPUT TYPE="button" NAME="button" Value="item report" onClick="itemReport();">
+	<SELECT id="itemIndexCombo">
+		<option value="0" selected>0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+	</SELECT>
+	
+	<div id="player"></div>
+
+  </body>
+</html>

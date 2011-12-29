@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<assessmentTest xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1" 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 imsqti_v2p1.xsd" 
+                identifier="RTEST-13" 
+                title="Show player supported functionality">
+	<styleDeclaration>
+		<link href="demo.css" userAgent=".*mozilla.*"/>
+	</styleDeclaration>
+
+	<testPart>
+		<assessmentSection identifier="sectionA" title="Section A" visible="true">
+			<assessmentItemRef identifier="match" href="demo/math.xml"/>
+			<assessmentItemRef identifier="match" href="demo/text_entry_multiple.xml"/>
+			<assessmentItemRef identifier="match" href="demo/dragdrop.xml"/>
+			<assessmentItemRef identifier="match" href="demo/identification.xml"/>
+			<assessmentItemRef identifier="selection" href="demo/selection.xml"/>
+			<assessmentItemRef identifier="match" href="demo/match.xml"/>
+			<assessmentItemRef identifier="order" href="demo/order.xml"/>
+			<assessmentItemRef identifier="choice" href="demo/choice_single.xml"/>
+			<assessmentItemRef identifier="choice_multiple" href="demo/choice_multiple.xml"/>
+			<assessmentItemRef identifier="inline_choice" href="demo/inline_choice.xml"/>
+			<assessmentItemRef identifier="text_entry" href="demo/text_entry.xml"/>
+			<assessmentItemRef identifier="video" href="demo/video.xml"/>
+			<assessmentFeedback>
+				<assessmentFeedbackCase percentageScore="75">Feedback for 75%</assessmentFeedbackCase>
+				<assessmentFeedbackCase percentageScore="50">Feedback for 50%</assessmentFeedbackCase>
+				<assessmentFeedbackCase percentageScore="25">Feedback for 25%</assessmentFeedbackCase>
+			</assessmentFeedback>
+		</assessmentSection>
+	</testPart>
+</assessmentTest>

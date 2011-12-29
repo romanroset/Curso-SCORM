@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p0 imsqti_v2p0.xsd" identifier="order" title="Selection test" adaptive="false" timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="directedPair">
+        <correctResponse>
+            <value>Item1 ChoiceT</value>
+            <value>Item2 ChoiceF</value>
+            <value>Item3 ChoiceT</value>
+            <value>Item4 ChoiceU</value>
+        </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="integer"/>
+    <itemBody>
+		This is selection exercise, that allows to select one option for each choice.
+		<selectionInteraction responseIdentifier="RESPONSE" shuffle="true">
+			<prompt>Match the following options:<br/><br/><br/></prompt>
+			<simpleChoice identifier="ChoiceT">true<feedbackInline outcomeIdentifier="RESPONSE" identifier=".*Item1 ChoiceT.*" showHide="show">First one OK!</feedbackInline></simpleChoice>
+			<simpleChoice identifier="ChoiceF">false</simpleChoice>
+			<simpleChoice identifier="ChoiceU">unknown</simpleChoice>
+			<item identifier="Item1">Berlin</item>
+			<item identifier="Item2">New York<feedbackInline outcomeIdentifier="RESPONSE" identifier=".*Item2 ChoiceF.*" showHide="show">New York OK!</feedbackInline></item>
+			<item identifier="Item3">Philadelphia</item>
+			<item identifier="Item4" fixed="true">Kansas City</item>
+			<feedbackInline outcomeIdentifier="RESPONSE" identifier=".*Item3 ChoiceT.*" showHide="show"  senderIdentifier="^RESPONSE$">Good answer for 3rd question!</feedbackInline>
+		</selectionInteraction>
+		Make a good choice!
+    </itemBody>
+    <responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
+</assessmentItem>

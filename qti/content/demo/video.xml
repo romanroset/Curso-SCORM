@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Thie example adapted from the PET Handbook, copyright University of Cambridge ESOL Examinations -->
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 imsqti_v2p1.xsd" 
+identifier="choice" title="Video demo" adaptive="false" timeDependent="false">
+	<responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+		<correctResponse>
+			<value>ChoiceA</value>
+		</correctResponse>
+	</responseDeclaration>
+	<!-- outcomeDeclaration identifier="SCORE" cardinality="single" baseType="integer">
+		<defaultValue>
+			<value>0</value>
+		</defaultValue>
+	</outcomeDeclaration-->
+	<itemBody>
+	  <p>
+	  	It is possible to include sound:
+	  </p>
+	  <div>
+	  	<sound src="media/demo.mp3" controls="true">
+		  	<source src="media/demo-sound.mp3"/>
+		  	<source src="media/demo-sound.ogg"/>
+	  		You need modern web browser to play this sound.
+	  	</sound>
+	  </div>
+	  
+		<p>
+			And movie		
+		</p>
+	  <div>
+	  	<video controls="true">
+		  	<source src="media/demo.mp4"/>
+		  	<source src="media/demo.ogg"/>
+	  		You need modern web browser to display this video.
+		  </video>
+	  </div>
+		<p>
+			And movie 2	
+		</p>
+	  <div>
+	  	<object type="video/x-flv" data="media/v2.flv">
+			Video is not supported!
+		</object>
+	  </div>
+	  
+		<choiceInteraction responseIdentifier="RESPONSE" shuffle="true" maxChoices="1">
+			<prompt>Who won this race?</prompt>
+			<simpleChoice identifier="ChoiceA">Man.</simpleChoice>
+			<simpleChoice identifier="ChoiceB">Cheetah.</simpleChoice>
+			<simpleChoice identifier="ChoiceC">gazelle.</simpleChoice>
+		</choiceInteraction>
+	</itemBody>
+	<responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
+</assessmentItem>

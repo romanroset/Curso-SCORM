@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 imsqti_v2p1.xsd" 
+identifier="textEntry" title="Interactive text part 2" adaptive="false" timeDependent="false">
+	<responseDeclaration identifier="RESPONSE" cardinality="single" baseType="string">
+		<correctResponse>
+			<value>York</value>
+		</correctResponse>
+		<mapping defaultValue="0">
+			<mapEntry mapKey="York" mappedValue="1"/>
+			<mapEntry mapKey="york" mappedValue="0.5"/>
+		</mapping>
+	</responseDeclaration>
+	<responseDeclaration identifier="RESPONSE2" cardinality="single" baseType="string">
+		<correctResponse>
+			<value>123</value>
+		</correctResponse>
+		<mapping defaultValue="0">
+			<mapEntry mapKey="York" mappedValue="1"/>
+			<mapEntry mapKey="york" mappedValue="0.5"/>
+		</mapping>
+	</responseDeclaration>
+	<outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float"/>
+	<itemBody>
+		<p>This page presents text interaction with editable gaps.</p>
+		
+		<p>Identify the missing word in this famous quote from Shakespeare's Richard III.</p>
+		<blockquote>
+			<p>Now is the winter of our discontent<br/> Made glorious summer by this sun of
+                    <textEntryInteraction responseIdentifier="RESPONSE" expectedLength="15">
+						<feedbackInline outcomeIdentifier="RESPONSE" identifier="York" showHide="show"  senderIdentifier="^RESPONSE$">
+							Feedback inline for York
+						</feedbackInline>
+						<feedbackInline outcomeIdentifier="RESPONSE" identifier="York|^$" showHide="false"  senderIdentifier="^RESPONSE$">
+							Feedback inline something else
+						</feedbackInline>
+					</textEntryInteraction>
+				<br/>
+                And all the clouds that lour'd upon our house<br/> In the deep bosom of the ocean buried.</p>
+		</blockquote>
+		<br/>
+		<blockquote>
+			<p>Now is the winter of our discontent<br/> Made glorious summer by this sun of
+                    <textEntryInteraction responseIdentifier="RESPONSE2"/>;<br/>
+                And all the clouds that lour'd upon our house<br/> In the deep bosom of the ocean buried.</p>
+		</blockquote>
+	</itemBody>
+	<responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier="York" showHide="show"  senderIdentifier="^RESPONSE$">OK</modalFeedback>
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier="york" showHide="show"  senderIdentifier="^RESPONSE$">York is a city</modalFeedback>
+</assessmentItem>

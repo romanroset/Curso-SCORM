@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 imsqti_v2p1.xsd" 
+identifier="textEntry" title="Interactive text part 3" adaptive="false" timeDependent="false">
+	<responseDeclaration identifier="RESPONSE" cardinality="commutative" baseType="string">
+		<correctResponse>
+			<value group="0">2</value>
+			<value group="0">4</value>
+		</correctResponse>
+	</responseDeclaration>
+	<outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float"/>
+	<itemBody>
+		<p>This page presents text interaction with multiple editable gaps.</p>
+		
+		<blockquote>
+				<textEntryMultipleInteraction responseIdentifier="RESPONSE">
+					Calculate (expected values are 2 and 4):
+					<textEntry expectedLength="9">
+						<feedbackInline outcomeIdentifier="RESPONSE" identifier="^2;4$" showHide="show"  senderIdentifier="^RESPONSE$">
+							Correct!
+						</feedbackInline>
+						<feedbackInline outcomeIdentifier="RESPONSE" identifier="^4;2$" showHide="show"  senderIdentifier="^RESPONSE$">
+							Also correct!
+						</feedbackInline>
+					</textEntry>
+					+
+					<textEntry expectedLength="9">
+					</textEntry>
+					= 6
+				</textEntryMultipleInteraction>
+				<br/>
+		</blockquote>
+	</itemBody>
+	<responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier="York" showHide="show"  senderIdentifier="^RESPONSE$">OK</modalFeedback>
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier="york" showHide="show"  senderIdentifier="^RESPONSE$">York is a city</modalFeedback>
+</assessmentItem>

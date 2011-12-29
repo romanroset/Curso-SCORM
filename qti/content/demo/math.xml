@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p0 imsqti_v2p0.xsd" identifier="order" title="Math interaction" adaptive="false" timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="commutative" baseType="string">
+        <correctResponse>
+            <value group="0">1</value>
+            <value group="0">2</value>
+            <value>3</value>
+        </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="integer"/>
+    <itemBody>
+		This is math exercise:
+		<mathInteraction responseIdentifier="RESPONSE">
+			<apply><plus/><cn>2</cn><gap/><cn>3</cn><gap/><cn>4</cn><gap/></apply>
+		</mathInteraction>
+		Make a good choice!<br/><br/>
+		This is inline math:
+		<mathInline>
+			<apply><sin/><ci>x</ci></apply>
+		</mathInline>
+    </itemBody>
+    <responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
+</assessmentItem>
