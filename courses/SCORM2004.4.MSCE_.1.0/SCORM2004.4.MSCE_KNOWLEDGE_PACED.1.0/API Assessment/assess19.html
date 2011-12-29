@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+ADL SCORM 2004 4th Edition MSCE 
+
+The ADL SCORM 2004 4th Ed. MSCE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Assessment 19</title>
+<script src="../Shared Files/scripts/APIWrapper.js" type="text/javascript"></script>
+<script src="../Shared Files/scripts/Functions.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+   var key = [ "b" ];
+   
+   /**********************************************************************
+   **  Function: calcRawScore()
+   **  Description: This function is responsible for incrementing the raw
+   **               score (cmi.score.raw) if the question was 
+   **               answered correctly.  If not, it keeps the raw score
+   **               at its initial value (0).
+   **********************************************************************/
+   function calcRawScore()
+   {		
+      answer = -1;
+      rawScore = 0;
+		
+      for (var i=0; i <= 3; i++)
+      {   
+         if (document.examForm.Q1[i].checked)
+         {
+            answer = document.examForm.Q1[i].value;
+			break;
+         }
+      }
+
+      if (answer == key)
+      {
+         rawScore++;
+      } 
+   }
+-->
+</script>
+<link href="../Shared Files/css/Styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="loadPage();" onunload="javascript:onUnexpectedExit();">
+<div class="page">
+	<div class="content"> 
+		<form name="examForm" action="">
+			<p><em>Multiple choice.</em></p>
+			<p>The state that describes the conceptual communication state once the Initialize(&quot;&quot;) Application Programming Interface (API) method is successfully invoked by the Sharable Content Object (SCO) and before the Terminate(&quot;&quot;) API method call is successfully invoked by the SCO is ___.</p> 
+			<ul class="examchoices">
+				<li><input type="Radio" name="Q1" value="a" />Initialized</li>
+				<li><input type="Radio" name="Q1" value="b" />Running</li>  
+				<li><input type="Radio" name="Q1" value="c" />Terminated</li>
+				<li><input type="Radio" name="Q1" value="d" />Not Initialized</li>
+			</ul>
+		  	<input type="button" name="submitButton" value=" Submit Answer " onclick="calcScore()" />
+      	</form>
+		<div id="correct"><p>Correct. The state that describes the conceptual communication state once the Initialize(&quot;&quot;) API method is successfully invoked by the SCO and before the Terminate(&quot;&quot;) API method call is successfully invoked by the SCO is Running.</p></div>
+		<div id="incorrect"><p>Incorrect. The state that describes the conceptual communication state once the Initialize(&quot;&quot;) API method is successfully invoked by the SCO and before the Terminate(&quot;&quot;) API method call is successfully invoked by the SCO is Running.</p></div>
+		<div class="navigation"> <img class="prevBtn" alt="Previous" src="../Shared Files/images/previous.gif" width="78" height="25" border="0" onClick="javascript:PreviousQuiz();" style="VISIBILITY:hidden;" /> 
+        <img class="nextBtn" alt="Next" src="../Shared Files/images/next.gif" onClick="javascript:ContinueQuiz();" width="74" height="25" border="0" style="VISIBILITY:hidden;"/></div>	
+	</div>
+</div>
+</body>
+</html>

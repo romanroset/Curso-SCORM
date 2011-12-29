@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition SECE
+
+ 
+
+The ADL SCORM 2004 4th Ed. SECE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Sequencing Essentials</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/courseFunctions.js"></script>
+<style type="text/css" media="all">
+@import "../Shared Files/css/snstyle.css";
+</style>
+</head>
+
+<body onload="javascript:Initialize();" onunload="javascript:Terminate();">
+<div class="container"> 
+  <div class="header"> </div>
+  <div class="navigation"> 
+    <div id="previousBtn"> <a href="javascript:PreviousPage();"></a> </div>
+    <div id="nextBtn"> <a href="javascript:NextPage();"></a> </div>
+  </div>
+  <div class="page" id="p1"> 
+    <div class="content"> 
+      <h2>Overview</h2>
+      <p>If the instructional design determines that some content should not be 
+        delivered after certain conditions are met, the content developer has 
+        the ability to execute this request by use of <em>Limit Conditions. Limit 
+        Conditions</em> can be defined as conditions that specify when an activity 
+        will not be delivered. It is based on the activity&rsquo;s tracking status 
+        information. When the conditions are met or exceeded, the activity becomes 
+        unavailable for delivery.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p2"> 
+    <div class="content"> 
+      <h2>Attempt Limit</h2>
+      <p>If the instructional designer has determined in the design that the learner 
+        will be able to attempt the content only a limited number of times, the 
+        content developer can implement that request by the use of the <em>Limit 
+        Condition Attempt Limit</em> element. This element sets a maximum number 
+        of attempts the learner may have on a given activity. If this element 
+        is not used, the learner will have unlimited attempts on the content.</p>
+      <p>There are two aspects to the <em>Attempt Limit</em> element. In the table 
+        below are descriptions of the aspects.</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td width="28%" height="40">
+<div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Name</font></strong><strong><br>
+        </strong></div></td>
+    <td width="72%"><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Limit 
+        Condition Attempt Control</em></font></div></td>
+    <td><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Indicates 
+        that a limit condition on the number of attempts has been established 
+        for the activity.<br>
+        &nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;If the value is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>False</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">, 
+        there is no constraint on how many times the activity may be attempted.</font></div></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30">
+<div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Limit 
+        Condition Attempt Limit</em></font></div></td>
+    <td><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+        maximum number of attempts for this activity. A zero value indicates the 
+        activity may<br>
+        &nbsp;&nbsp;&nbsp;not be accessed.<br>
+        &nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;The value is unreliable unless <em>Limit Condition Attempt 
+        Control </em>is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font>.</div></td>
+
+</table>
+</font> 
+      <p>Note: Even though this table has two aspects, the Extensible Markup Language 
+        (XML) only has one. If a value for <em>Attempt Limit</em> is provided 
+        in the XML, the &ldquo;control&rdquo; value is True, otherwise it is False. 
+        A content developer should never be concerned with setting the &ldquo;control&rdquo; 
+        value, only the <em>Attempt Limit</em>.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p3"> 
+    <div class="content"> 
+      <h2>Conclusion</h2>
+      <p>The instructional designer and content developer have the opportunity 
+        to limit the number of times the learner can interact with content. By 
+        use of <em>Limit Conditions</em>, it is possible to set a maximum number 
+        of attempts the learner may have on content. The learning managment system 
+        (LMS) determines when the attempt on the activity begins.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+</div>
+</body>
+</html>

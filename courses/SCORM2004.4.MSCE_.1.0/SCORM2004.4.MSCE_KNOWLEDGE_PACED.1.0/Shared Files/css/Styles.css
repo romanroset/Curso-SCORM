@@ -1,0 +1,76 @@
+body {
+	background-color:#ffffff;
+	background-image: url(../images/background.gif);
+	background-repeat: no-repeat;
+	background-position: 10px 15px;
+}
+
+.page {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height:600px;
+}
+
+.content {
+	height: 270px;
+	margin-top: 50px;
+	margin-left: 250px;
+	width: 500px;
+}
+
+table {
+	font-size: 12px;
+}
+
+.navigation {
+	position:absolute;
+	width: 500px;
+	top: 590px;
+	left: 250px;
+}
+
+.prevBtn {
+	position: relative;
+	left: 10px;
+}
+
+.nextBtn {
+	position: relative;
+	left: 350px;
+}
+.vocabularyContainer {
+	font-family: "Courier New", Courier, mono;
+}
+.terms {
+	float: left;
+	width: 300px;
+}
+.definitions {
+	float: left;
+	width: 200px;
+	background-color:#CCCCCC;
+	height: 100%;
+}
+
+#one { margin: 3px; }
+#two { margin: 3px; }
+#three { margin: 3px; }
+#four { margin: 3px; }
+#five { margin: 3px; }
+#six { margin: 3px; }
+#seven { margin: 3px; }
+#eight { margin: 3px; }
+#nine { margin: 3px; }
+#ten { margin: 3px; }
+#eleven { margin: 3px; }
+#twelve { margin: 3px; }
+#thirteen { margin: 3px; }
+
+#correct { }
+#incorrect { }
+
+.examchoices {
+	list-style-position: outside;
+	list-style-type: none;
+	margin-bottom: 6px;
+}

@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition SECE
+
+ 
+
+The ADL SCORM 2004 4th Ed. SECE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Sequencing Essentials</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/courseFunctions.js"></script>
+<style type="text/css" media="all">
+@import "../Shared Files/css/snstyle.css";
+</style>
+</head>
+
+<body onload="javascript:Initialize();" onunload="javascript:Terminate();">
+<div class="container"> 
+  <div class="header"> </div>
+  <div class="navigation"> 
+    <div id="previousBtn"> <a href="javascript:PreviousPage();"></a> </div>
+    <div id="nextBtn"> <a href="javascript:NextPage();"></a> </div>
+  </div>
+  <div class="page" id="p1"> 
+    <div class="content"> 
+      <h2>Overview</h2>
+      <p>In Sharable Content Object Reference Model (SCORM&reg;) sequencing, any 
+        number of sequencing rules may be applied or none at all. The combination 
+        of these rules will give the instructional designer and the content developer 
+        flexibility in the way the course is sequenced.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p2"> 
+    <div class="content"> 
+      <h2>Sequencing Rule Description</h2>
+      <p>The sequencing rules consist of a set of conditions and an action. For 
+        example, if the instructional designer&rsquo;s intent is for the learner 
+        to skip content they have already shown mastery of, then <em>If Satisfied, 
+        then Skip</em> rules should be applied to the appropriate activities. 
+        By using the combination of the conditions and actions, the instructional 
+        intent of the content has been completed</p>
+      <img class="centered" src="images/sro2.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p3"> 
+    <div class="content"> 
+      <h2>Condition Combination</h2>
+      <p>Various conditions can be combined to create a set of conditions. If 
+        the combination of conditions is met, then an action will be generated. 
+        The <em>Condition Combination</em> element is defined to have one of the 
+        following values:</p>
+      <ul>
+        <li>All (<em>default value</em>) &mdash; The condition evaluates to <code>True</code> 
+          if and only if <em><strong>all</strong></em> of its individual conditions 
+          are set to <code>True</code>. The condition is generally thought of 
+          as the logical <em><strong>and</strong></em>.</li>
+        <li>Any &mdash; The condition set evaluates to <code>True</code> if <em><strong>any</strong></em> 
+          of the individual conditions evaluates to <code>True</code>. The condition 
+          is generally thought of as the logical <em><strong>or</strong></em>.</li>
+      </ul>
+      <font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td width="20%" height="40">
+<div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Name</font></strong><strong><br>
+        </strong></div></td>
+    <td width="80%"><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Condition 
+        Combination </em></font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">How 
+          rule conditions are combined in evaluating the rule.</font></p>
+      </div>
+      <ul>
+        <li> 
+          <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            &nbsp;&nbsp;&nbsp;<em>All </em>- The overall rule condition evaluates 
+            to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if and only if all of the individual conditions<br>
+            &nbsp;&nbsp;&nbsp;evaluate to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font> 
+            <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">(logical 
+            <em>and)</em></font></div>
+        </li>
+        <li>
+          <div align="left">
+            <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              &nbsp;&nbsp;&nbsp;<em>Any</em> - The overall rule condition evaluates 
+              to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              if and only if any of the individual conditions<br>
+              &nbsp;&nbsp;&nbsp;evaluate to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font> 
+              <font size="-1" face="Geneva, Arial, Helvetica, sans-serif">(logical 
+              <em>or)</em> </font></div>
+            <font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> </font></div>
+        </li>
+      </ul></td>
+  </tr>
+
+
+</table>
+</font></div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p4"> 
+    <div class="content"> 
+      <h2>Rule Conditions</h2>
+      <p>The <em>Rule Conditions</em> element contains a set of conditions for 
+        the sequencing of content activities. It consists of one or more elements 
+        that are combined and applied as sequencing rules.</p>
+      <p>The <em>Rule Conditions</em> are based on the Tracking Model. Information 
+        about the Tracking Model is available in the SCORM Sequencing and Navigation 
+        documentation.</p>
+      <p>Local status conditions are always evaluated against the existing activity, 
+        not other activities.</p>
+      <p>The table lists the various conditions and descriptions.</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td height="40">
+<div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition</font></strong><strong><br>
+        </strong></div></td>
+    <td><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Satisfied</font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+          evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+          if:</font></div>
+      <ul>
+        <li> 
+          <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+            Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+            the objective associated with the activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+            </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+            </code></font></div>
+        </li>
+        <li> 
+          <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+            Satisfied Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+            the objective associated with the activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font></div>
+        </li>
+      </ul></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30">
+<div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+        Status Known</font></div></td>
+    <td><div align="left"> 
+        <div align="left"> 
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"></font>Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+              Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the objective associated with the activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font></div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+    <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+        Measure Known</font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+          evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+          if:</font></div>
+      <ul>
+        <li> 
+          <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+            Measure Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+            the objective associated with the activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font></div>
+        </li>
+      </ul></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30">
+<div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+        Measure Greater<br>
+        &nbsp;&nbsp;&nbsp;Than </font></div></td>
+    <td><div align="left"> 
+        <div align="left"> 
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"></font>Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+              Measure Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the objective associated with the activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+              </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and<em> 
+              </em>the</font></div>
+          </li>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+              Normalized Measure </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the objective associated with the activity is greater than<br>
+              the <em>Rule Condition Measure Threshold</em></font></div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+    <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+        Measure Less<br>
+        &nbsp;&nbsp;&nbsp;Than </font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+          evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+          if:</font></div>
+      <ul>
+        <li> 
+          <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+            Measure Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+            the objective associated with the activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+            </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and</font><font face="Geneva, Arial, Helvetica, sans-serif"><code> 
+            </code></font></div>
+        </li>
+        <li> 
+          <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Objective 
+            Normalized Measure </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+            the objective associated with the activity is less than<br>
+            the <em>Rule Condition Measure Threshold</em></font></div>
+        </li>
+      </ul></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30">
+<div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Completed</font></div></td>
+    <td><div align="left"> 
+        <div align="left"> 
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"></font>Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Activity 
+              Progress Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              the activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+              </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and<em> 
+              </em>the</font></div>
+          </li>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempt 
+              Completion Status </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+              activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font></div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Activity 
+        Progress Known</font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+          evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+          if:</font></div>
+      <ul>
+        <li> 
+          <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Activity 
+            Progress Status</font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            for the activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+            </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and<em> 
+            </em>the</font></div>
+        </li>
+        <li> 
+          <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempt 
+            Progress Status</font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+            the activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font></div>
+        </li>
+      </ul></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30">
+<div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempted</font></div></td>
+    <td><div align="left"> 
+        <div align="left"> 
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"></font>Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Activity 
+              Attempt Count</font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              for the activity is positive</font></div>
+            <div align="left"> 
+              <div align="left"></div>
+            </div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Attempt 
+        Limit Exceeded</font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Condition 
+          evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+          if:</font></div>
+      <ul>
+        <li> 
+          <div align="left"><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Activity 
+            Progress Status</font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+            the activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+            </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and<em> 
+            </em>the</font></div>
+        </li>
+        <li><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Limit 
+          Condition Attempt Limit Control </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+          the activity is </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True 
+          </code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">and<em> 
+          </em>the</font></li>
+        <li><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Activity 
+          Attempt Count </font></em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">for 
+          the activity is greater than or equal to the </font><em><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Limit 
+          Condition Attempt Limit</font></em><code><font face="Geneva, Arial, Helvetica, sans-serif"><br>
+          for the activity</font></code></li>
+      </ul></td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="30">
+<div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Always</font></div></td>
+    <td><div align="left"> 
+        <div align="left"> 
+          <p><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"></font>Condition 
+            evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            if:</font></div>
+        <ul>
+          <li> 
+            <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif">Always</font></div>
+          </li>
+        </ul>
+      </div></td>
+  </tr>
+
+
+</table>
+</font></div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p5"> 
+    <div class="content"> 
+      <h2>Rule Condition Referenced Objective</h2>
+      <p>The <em>Rule Condition Referenced Objective</em> element applies to a 
+        specific <em>Rule Condition</em>. The element is used to determine which 
+        objective for the activity should be used during the evaluation of the 
+        <em>Rule Condition</em>. The <em>Rule Condition Referenced Objective</em> 
+        element is only used for the following conditions:</p>
+      <ul>
+        <li>Satisfied</li>
+        <li>Objective Status Known</li>
+        <li>Objective Measure Known</li>
+        <li>Objective Measure Greater Than</li>
+        <li>Objective Measure Less Than</li>
+      </ul>
+      <p>If any of the <em>Rule Conditions</em> do not reference an objective, 
+        the objective with <em>Objective Contributes to Rollup</em> is used by 
+        default.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p6"> 
+    <div class="content"> 
+      <h2>Rule Condition Measure Threshold</h2>
+      <p>The <em>Rule Condition Measure Threshold</em> element applies to a specific 
+        <em>Rule Condition</em> and is used with the <em>Rule Condition Referenced 
+        Objective</em>. It is used to enable a measure definition for comparison 
+        during the <em>Rule Condition</em>. The <em>Rule Condition Measure Threshold</em> 
+        is used with:</p>
+      <ul>
+        <li>Objective Measure Greater Than</li>
+        <li>Objective Measure Less Than</li>
+      </ul>
+      <p>The comparison measure is for greater than (&gt;) and less than (&lt;). 
+        There are no conditions that allow for greater than or equal to (&gt;=) 
+        or less than or equal to (&lt;=). The <em>Rule Condition Measure Threshold</em> 
+        does not have any affect if defined for other conditions.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p7"> 
+    <div class="content"> 
+      <h2>Rule Condition Operator</h2>
+      <p>This element, <em>Rule Condition Operator</em>, is an optional element 
+        that can be used with other <em>Rule Condition</em> elements. It has two 
+        options, NO-OP (the default), which indicates that the resulting condition 
+        evaluation should be used as it is and NOT, which indicates that the opposite 
+        of resulting condition evaluation should be used.</p>
+      <h2>Rule Action</h2>
+      <p><em>Rule Action</em> is responsible for taking action after the evaluation 
+        of the sequencing rules. There are three sets of action for timing of 
+        evaluation situations.</p>
+      <ul>
+        <li>Precondition Actions: apply when navigating through the Activity Tree 
+          to identify an activity for delivery.</li>
+        <li>Postcondition Actions: apply when an attempt on an activity ends.</li>
+        <li>Exit Actions: apply after a descendant activity&rsquo;s attempt terminates.</li>
+      </ul>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p8"> 
+    <div class="content"> 
+      <h2>Precondition Rule Actions</h2>
+      <p>The following table details the Precondition Rule Actions.</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td width="20%" height="40">
+<div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Name</font></strong><strong><br>
+        </strong></div></td>
+    <td width="80%"><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Rule 
+        Action </em></font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+          desired sequencing behavior if the rule evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font>.</p>
+      </div>
+      <ul>
+        <li> 
+          <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            &nbsp;&nbsp;&nbsp;<em>Skip</em> - The activity is not considered a 
+            candidate for delivery during a <em>Flow </em>sequencing request.</font></div>
+        </li>
+        <li> 
+          <div align="left"> 
+            <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              &nbsp;&nbsp;&nbsp;<em>Disabled</em> - The activity may not be the 
+              target of any sequencing or delivery request.</font></div>
+          </div>
+        </li>
+        <li> 
+          <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            &nbsp;&nbsp;&nbsp;<em>Hidden from Choice</em> - The activity may not 
+            be the target of a <em>Choice </em>sequencing request.</font></div>
+        </li>
+        <li> 
+          <div align="left"> 
+            <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              &nbsp;&nbsp;&nbsp;<em>Stop Forward Traversal</em> - The activity 
+              will prevent activities following it (further down in the activity 
+              tree) &nbsp;&nbsp;&nbsp;from being considered candidates for delivery.</font></div>
+          </div>
+        </li>
+      </ul></td>
+  </tr>
+
+
+</table>
+</font></div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p9"> 
+    <div class="content"> 
+      <h2>Postcondition Actions</h2>
+      <p>The following table details the Rule Action Postcondition Actions.</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td width="20%" height="40">
+<div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Name</font></strong><strong><br>
+        </strong></div></td>
+    <td width="80%"><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Rule 
+        Action </em></font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+          desired sequencing behavior if the rule evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font>.</p>
+      </div>
+      <ul>
+        <li> 
+          <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            &nbsp;&nbsp;&nbsp;<em>Exit Parent</em> - Process an <em>Exit Parent</em> 
+            termination request.</font></div>
+        </li>
+        <li> 
+          <div align="left"> 
+            <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              &nbsp;&nbsp;&nbsp;<em>Exit All</em> - Process an <em>Exit All </em>termination 
+              request and return an <em>Exit </em>sequencing request.</font></div>
+          </div>
+        </li>
+        <li> 
+          <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            &nbsp;&nbsp;&nbsp;<em>Retry</em> - Return a <em>Retry </em>sequencing 
+            request.</font></div>
+        </li>
+        <li> 
+          <div align="left"> 
+            <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              &nbsp;&nbsp;&nbsp;<em>Retry All </em>- Process an <em>Exit All </em>termination 
+              request and return a <em>Start </em>sequencing request.</font></div>
+          </div>
+        </li>
+        <li> 
+          <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            &nbsp;&nbsp;&nbsp;<em>Continue</em> - Return a <em>Continue</em> sequencing 
+            request.</font></div>
+        </li>
+        <li> 
+          <div align="left"> 
+            <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+              &nbsp;&nbsp;&nbsp;<em>Previous</em> - Return a <em>Continue</em> 
+              sequencing request.</font></div>
+          </div>
+        </li>
+      </ul></td>
+  </tr>
+
+
+</table>
+</font></div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p10"> 
+    <div class="content"> 
+      <h2>Exit Rule Action</h2>
+      <p>The Exit Rule Actions are described in this table.</p>
+      <font face="Geneva, Arial, Helvetica, sans-serif">
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#F0E0C0"> 
+    <td width="20%" height="40">
+<div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Name</font></strong><strong><br>
+        </strong></div></td>
+    <td width="80%"><div align="left"><strong> &nbsp;&nbsp;&nbsp;<font size="-1">Description</font><br>
+        </strong></div></td>
+  </tr>
+  <tr bgcolor="E7EAEC"> 
+    <td height="30"><div align="left">&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif"><em>Rule 
+        Action </em></font></div></td>
+    <td><div align="left"> 
+        <p>&nbsp;&nbsp;&nbsp;<font size="-1" face="Geneva, Arial, Helvetica, sans-serif">The 
+          desired sequencing behavior if the rule evaluates to </font><font face="Geneva, Arial, Helvetica, sans-serif"><code>True</code></font>.</p>
+      </div>
+      <ul>
+        <li> 
+          <div align="left"><font size="-1" face="Geneva, Arial, Helvetica, sans-serif"> 
+            &nbsp;&nbsp;&nbsp;<em>Exit </em> - Unconditionally terminate the activity.</font></div>
+        </li>
+      </ul></td>
+  </tr>
+
+
+</table>
+</font> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p11"> 
+    <div class="content"> 
+      <h2>Conclusion</h2>
+      <p>By gaining knowledge of the sequencing rules, the content developer will 
+        be more aware of how to implement the instructional sequencing strategy 
+        as described by the instructional design. The sequencing rules are a set 
+        of conditions and a resulting action. By understanding the options available 
+        to the sequencing aspect, a more involved set of content will evolve and 
+        better engage the learner.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+</div>
+</body>
+</html>

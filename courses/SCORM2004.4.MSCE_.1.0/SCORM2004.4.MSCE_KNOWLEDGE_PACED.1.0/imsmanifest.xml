@@ -1,0 +1,1578 @@
+<?xml version = "1.0" standalone = "no"?>
+<manifest identifier = "LMSTestPackage_RU-12b" version = "1.0"
+    xmlns = "http://www.imsglobal.org/xsd/imscp_v1p1"
+    xmlns:adlcp = "http://www.adlnet.org/xsd/adlcp_v1p3"
+    xmlns:adlseq = "http://www.adlnet.org/xsd/adlseq_v1p3"
+   xmlns:adlnav = "http://www.adlnet.org/xsd/adlnav_v1p3"
+    xmlns:imsss = "http://www.imsglobal.org/xsd/imsss"
+    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation = "http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+                        http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd
+                        http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd
+                        http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd
+                        http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd"  >
+   <metadata>
+      <schema>ADL SCORM</schema>
+      <schemaversion>2004 4th Edition</schemaversion>
+   </metadata>
+<organizations default="org1">
+    <organization identifier="org1">
+      <title>SCORM 2004 4th Edition Multiple Sequencing Content Example 1.0 Knowledge Paced Strategy</title>
+      <item identifier="intro" identifierref="res-intro">
+        <title>Introduction</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+      <item identifier="module1">
+        <title>API Overview</title>
+        <item identifier="pre-assess-module1">
+          <title>Pre-Assessment</title>
+          <item identifier="pre-question01" identifierref="res-assess01">
+          <title>Question 1</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question02" identifierref="res-assess02">
+          <title>Question 2</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question03" identifierref="res-assess03">
+          <title>Question 3</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question04" identifierref="res-assess04">
+          <title>Question 4</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+          <imsss:sequencing>
+            <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+            <imsss:rollupRules>
+              <imsss:rollupRule childActivitySet="all">
+                <imsss:rollupConditions>
+                  <imsss:rollupCondition condition="attempted" />
+                </imsss:rollupConditions>
+                <imsss:rollupAction action="completed" />
+              </imsss:rollupRule>
+            </imsss:rollupRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_1" readSatisfiedStatus="false" readNormalizedMeasure="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+          </imsss:sequencing>
+        </item>
+        <item identifier="lessons01">
+          <title>API Overview Lessons</title>
+          <item identifier="lesson01" identifierref="res-ao">
+          <title>API Overview</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+          <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_1" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+          </imsss:sequencing>
+        </item>
+          <imsss:sequencing>
+            <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+            <imsss:rollupRules rollupObjectiveSatisfied="false" rollupProgressCompletion="false" />
+          </imsss:sequencing>
+        </item>
+        <item identifier="assess-module1">
+          <title>Post-Assessment</title>
+         <item identifier="post-question01" identifierref="res-assess01">
+          <title>Question 1</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question02" identifierref="res-assess02">
+          <title>Question 2</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question03" identifierref="res-assess03">
+          <title>Question 3</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question04" identifierref="res-assess04">
+          <title>Question 4</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+          <imsss:sequencing>
+            <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:rollupRules>
+              <imsss:rollupRule childActivitySet="all">
+                <imsss:rollupConditions>
+                  <imsss:rollupCondition condition="attempted" />
+                </imsss:rollupConditions>
+                <imsss:rollupAction action="completed" />
+              </imsss:rollupRule>
+            </imsss:rollupRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_1" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+          </imsss:sequencing>
+        </item>
+        <imsss:sequencing>
+          <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+          <imsss:rollupRules rollupObjectiveSatisfied="false" rollupProgressCompletion="false" />
+        </imsss:sequencing>
+      </item>
+      <item identifier="module2">
+        <title>API Communication and Methods</title>
+        <item identifier="pre-assess-module2">
+          <title>Pre-Assessment</title>
+        <item identifier="pre-question05" identifierref="res-assess05">
+          <title>Question 5</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question06" identifierref="res-assess06">
+          <title>Question 6</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question07" identifierref="res-assess07">
+          <title>Question 7</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question08" identifierref="res-assess08">
+          <title>Question 8</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question09" identifierref="res-assess09">
+          <title>Question 9</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question11" identifierref="res-assess11">
+          <title>Question 11</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question12" identifierref="res-assess12">
+          <title>Question 12</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question13" identifierref="res-assess13">
+          <title>Question 13</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question14" identifierref="res-assess14">
+          <title>Question 14</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question15" identifierref="res-assess15">
+          <title>Question 15</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question16" identifierref="res-assess16">
+          <title>Question 16</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question17" identifierref="res-assess17">
+          <title>Question 17</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question18" identifierref="res-assess18">
+          <title>Question 18</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question19" identifierref="res-assess19">
+          <title>Question 19</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question20" identifierref="res-assess20">
+          <title>Question 20</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question21" identifierref="res-assess21">
+          <title>Question 21</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question22" identifierref="res-assess22">
+          <title>Question 22</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question23" identifierref="res-assess23">
+          <title>Question 23</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question24" identifierref="res-assess24">
+          <title>Question 24</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question25" identifierref="res-assess25">
+          <title>Question 25</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+          <imsss:sequencing>
+            <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+            <imsss:rollupRules>
+              <imsss:rollupRule childActivitySet="all">
+                <imsss:rollupConditions>
+                  <imsss:rollupCondition condition="attempted" />
+                </imsss:rollupConditions>
+                <imsss:rollupAction action="completed" />
+              </imsss:rollupRule>
+            </imsss:rollupRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_2" readSatisfiedStatus="false" readNormalizedMeasure="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+          </imsss:sequencing>
+        </item>
+        <item identifier="lessons02">
+          <title>API Communication and Methods Lessons</title>
+                 <item identifier="lesson02" identifierref="res-ams">
+          <title>API Methods and Syntax</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+          <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_2" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+        <item identifier="lesson03" identifierref="res-sm">
+          <title>Session Methods</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+	           <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_2" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+        <item identifier="lesson04" identifierref="res-dtm">
+          <title>Data-Transfer Methods</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+                  <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_2" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+        <item identifier="lesson05" identifierref="res-supm">
+          <title>Support Methods</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+                  <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_2" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+        <item identifier="lesson06" identifierref="res-cssm">
+          <title>Communication Session State Model</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+                  <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_2" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+        <item identifier="lesson07" identifierref="res-lmsr">
+          <title>Learning Management System Responsibilities</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+                  <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_2" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+        <item identifier="lesson08" identifierref="res-scor">
+          <title>Sharable Content Object Responsibilities</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+                  <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_2" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+          <imsss:sequencing>
+            <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+            <imsss:rollupRules rollupObjectiveSatisfied="false" rollupProgressCompletion="false" />
+          </imsss:sequencing>
+        </item>
+        <item identifier="post-assess-module2">
+          <title>Post-Assessment</title>
+         <item identifier="post-question05" identifierref="res-assess05">
+          <title>Question 5</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question06" identifierref="res-assess06">
+          <title>Question 6</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question07" identifierref="res-assess07">
+          <title>Question 7</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question08" identifierref="res-assess08">
+          <title>Question 8</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question09" identifierref="res-assess09">
+          <title>Question 9</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question11" identifierref="res-assess11">
+          <title>Question 11</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question12" identifierref="res-assess12">
+          <title>Question 12</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question13" identifierref="res-assess13">
+          <title>Question 13</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question14" identifierref="res-assess14">
+          <title>Question 14</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question15" identifierref="res-assess15">
+          <title>Question 15</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question16" identifierref="res-assess16">
+          <title>Question 16</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question17" identifierref="res-assess17">
+          <title>Question 17</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question18" identifierref="res-assess18">
+          <title>Question 18</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question19" identifierref="res-assess19">
+          <title>Question 19</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question20" identifierref="res-assess20">
+          <title>Question 20</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question21" identifierref="res-assess21">
+          <title>Question 21</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question22" identifierref="res-assess22">
+          <title>Question 22</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question23" identifierref="res-assess23">
+          <title>Question 23</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question24" identifierref="res-assess24">
+          <title>Question 24</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question25" identifierref="res-assess25">
+          <title>Question 25</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+          <imsss:sequencing>
+            <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:rollupRules>
+              <imsss:rollupRule childActivitySet="all">
+                <imsss:rollupConditions>
+                  <imsss:rollupCondition condition="attempted" />
+                </imsss:rollupConditions>
+                <imsss:rollupAction action="completed" />
+              </imsss:rollupRule>
+            </imsss:rollupRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_2" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+          </imsss:sequencing>
+        </item>
+        <imsss:sequencing>
+          <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+          <imsss:rollupRules rollupObjectiveSatisfied="false" rollupProgressCompletion="false" />
+        </imsss:sequencing>
+      </item>
+      <item identifier="module3">
+        <title>Error Codes</title>
+        <item identifier="pre-assess-module03">
+          <title>Pre-Assessment</title>
+        <item identifier="pre-question26" identifierref="res-assess26">
+          <title>Question 26</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question27" identifierref="res-assess27">
+          <title>Question 27</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question28" identifierref="res-assess28">
+          <title>Question 28</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question29" identifierref="res-assess29">
+          <title>Question 29</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question30" identifierref="res-assess30">
+          <title>Question 30</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question31" identifierref="res-assess31">
+          <title>Question 31</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question32" identifierref="res-assess32">
+          <title>Question 32</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question33" identifierref="res-assess33">
+          <title>Question 33</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question34" identifierref="res-assess34">
+          <title>Question 34</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="pre-question35" identifierref="res-assess35">
+          <title>Question 35</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+          <imsss:sequencing>
+            <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+            <imsss:rollupRules>
+              <imsss:rollupRule childActivitySet="all">
+                <imsss:rollupConditions>
+                  <imsss:rollupCondition condition="attempted" />
+                </imsss:rollupConditions>
+                <imsss:rollupAction action="completed" />
+              </imsss:rollupRule>
+            </imsss:rollupRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_3" readSatisfiedStatus="false" readNormalizedMeasure="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+          </imsss:sequencing>
+        </item>
+        <item identifier="lessons03">
+          <title>Error Codes Lessons</title>
+        <item identifier="lesson09" identifierref="res-eco">
+          <title>Error Codes Overview</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+                  <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_3" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+        <item identifier="lesson10" identifierref="res-gec">
+          <title>General Error Codes</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+                  <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_3" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+        <item identifier="lesson11" identifierref="res-sec">
+          <title>Syntax Error Codes</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+                  <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_3" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+        <item identifier="lesson12" identifierref="res-rec">
+          <title>RTS Error Codes</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+                  <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_3" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+        <item identifier="lesson13" identifierref="res-dmec">
+          <title>Data Model Error Codes</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+                  <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_3" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+        <item identifier="lesson14" identifierref="res-seec">
+          <title>SCORM Extension Error Codes</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+                  <imsss:sequencing>
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_3" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+        </imsss:sequencing>
+	</item>
+          <imsss:sequencing>
+            <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+            <imsss:rollupRules rollupObjectiveSatisfied="false" rollupProgressCompletion="false" />
+          </imsss:sequencing>
+        </item>
+        <item identifier="post-assess-module03">
+          <title>Post-Assessment</title>
+        <item identifier="post-question26" identifierref="res-assess26">
+          <title>Question 26</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question27" identifierref="res-assess27">
+          <title>Question 27</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question28" identifierref="res-assess28">
+          <title>Question 28</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question29" identifierref="res-assess29">
+          <title>Question 29</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question30" identifierref="res-assess30">
+          <title>Question 30</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question31" identifierref="res-assess31">
+          <title>Question 31</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question32" identifierref="res-assess32">
+          <title>Question 32</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question33" identifierref="res-assess33">
+          <title>Question 33</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question34" identifierref="res-assess34">
+          <title>Question 34</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+        <item identifier="post-question35" identifierref="res-assess35">
+          <title>Question 35</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+          <imsss:sequencing>
+            <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+            <imsss:sequencingRules>
+              <imsss:preConditionRule>
+                <imsss:ruleConditions>
+                  <imsss:ruleCondition condition="satisfied" />
+                </imsss:ruleConditions>
+                <imsss:ruleAction action="skip" />
+              </imsss:preConditionRule>
+            </imsss:sequencingRules>
+            <imsss:rollupRules>
+              <imsss:rollupRule childActivitySet="all">
+                <imsss:rollupConditions>
+                  <imsss:rollupCondition condition="attempted" />
+                </imsss:rollupConditions>
+                <imsss:rollupAction action="completed" />
+              </imsss:rollupRule>
+            </imsss:rollupRules>
+            <imsss:objectives>
+              <imsss:primaryObjective satisfiedByMeasure="true" objectiveID="PRIMARYOBJ">
+                <imsss:minNormalizedMeasure>0.75</imsss:minNormalizedMeasure>
+                <imsss:mapInfo targetObjectiveID="obj_module_3" readSatisfiedStatus="false" writeSatisfiedStatus="true" writeNormalizedMeasure="true" />
+              </imsss:primaryObjective>
+            </imsss:objectives>
+            <adlseq:rollupConsiderations requiredForCompleted="ifNotSkipped" />
+          </imsss:sequencing>
+        </item>
+        <imsss:sequencing>
+          <imsss:controlMode choice="false" flow="true" forwardOnly="true" />
+          <imsss:rollupRules rollupObjectiveSatisfied="false" rollupProgressCompletion="false" />
+        </imsss:sequencing>
+      </item>
+      <item identifier="results" identifierref="res-results">
+        <title>Results</title>
+        <imsss:sequencing>
+          <imsss:rollupRules rollupObjectiveSatisfied="false" />
+          <imsss:objectives>
+            <imsss:primaryObjective objectiveID="PRIMARYOBJ" />
+            <imsss:objective objectiveID="obj_module_1">
+              <imsss:mapInfo targetObjectiveID="obj_module_1" />
+            </imsss:objective>
+            <imsss:objective objectiveID="obj_module_2">
+              <imsss:mapInfo targetObjectiveID="obj_module_2" />
+            </imsss:objective>
+            <imsss:objective objectiveID="obj_module_3">
+              <imsss:mapInfo targetObjectiveID="obj_module_3" />
+            </imsss:objective>
+          </imsss:objectives>
+        </imsss:sequencing>
+      </item>
+	  <item identifier="conclude" identifierref="res-conclude">
+        <title>Conclusion</title>
+        <adlnav:presentation>
+               <adlnav:navigationInterface>
+                  <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+                 <adlnav:hideLMSUI>previous</adlnav:hideLMSUI>
+                  <adlnav:hideLMSUI>suspendAll</adlnav:hideLMSUI>
+                  </adlnav:navigationInterface>
+            </adlnav:presentation>
+        </item>
+      <imsss:sequencing>
+        <imsss:controlMode choice="false" flow="true" />
+        <imsss:sequencingRules>
+          <imsss:exitConditionRule>
+            <imsss:ruleConditions>
+              <imsss:ruleCondition condition="completed" />
+            </imsss:ruleConditions>
+            <imsss:ruleAction action="exit" />
+          </imsss:exitConditionRule>
+        </imsss:sequencingRules>
+      </imsss:sequencing>
+    </organization>
+  </organizations>
+ <resources>
+    <resource identifier="res-intro" href="Knowledge%20Paced%20Strategy%20Introduction/introduction_knowledge_paced.html" adlcp:scormType="asset" type="webcontent">
+      <file href="Knowledge%20Paced%20Strategy%20Introduction/introduction_knowledge_paced.html" />
+	  <dependency identifierref="SharedFiles" />
+    </resource>
+   <resource identifier="res-ao" href="API%20Overview/ao_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Overview/ao_p1.html" />
+	  <file href="API%20Overview/ao_p2.html" />
+	  <file href="API%20Overview/ao_p3.html" />
+	  <file href="API%20Overview/ao_p4.html" />
+	  <file href="API%20Overview/ao_p5.html" />
+      <file href="API%20Overview/Images/ao1.jpg" />
+	  <dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-ams" href="API%20Methods%20and%20Syntax/ams_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Methods%20and%20Syntax/ams_p1.html" />
+	  <file href="API%20Methods%20and%20Syntax/ams_p2.html" />
+	  <file href="API%20Methods%20and%20Syntax/ams_p3.html" />
+	  <file href="API%20Methods%20and%20Syntax/ams_p4.html" />
+	  <file href="API%20Methods%20and%20Syntax/ams_p5.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-sm" href="Session%20Methods/sm_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="Session%20Methods/sm_p1.html" />
+	  <file href="Session%20Methods/sm_p2.html" />
+	  <file href="Session%20Methods/sm_p3.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-dtm" href="Data-Transfer%20Methods/dtm_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="Data-Transfer%20Methods/dtm_p1.html" />
+	  <file href="Data-Transfer%20Methods/dtm_p2.html" />
+	  <file href="Data-Transfer%20Methods/dtm_p3.html" />
+	  <file href="Data-Transfer%20Methods/dtm_p4.html" />
+	  <file href="Data-Transfer%20Methods/dtm_p5.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-supm" href="Support%20Methods/supm_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="Support%20Methods/supm_p1.html" />
+	  <file href="Support%20Methods/supm_p2.html" />
+	  <file href="Support%20Methods/supm_p3.html" />
+	  <file href="Support%20Methods/supm_p4.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-cssm" href="Communication%20Session%20State%20Model/cssm_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="Communication%20Session%20State%20Model/cssm_p1.html" />
+	  <file href="Communication%20Session%20State%20Model/cssm_p2.html" />
+	  <file href="Communication%20Session%20State%20Model/cssm_p3.html" />
+	  <file href="Communication%20Session%20State%20Model/cssm_p4.html" />
+      <file href="Communication%20Session%20State%20Model/Images/cssm1.jpg" />
+	  <dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-lmsr" href="Learning%20Management%20System%20Responsibilities/lmsr_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="Learning%20Management%20System%20Responsibilities/lmsr_p1.html" />
+	  <file href="Learning%20Management%20System%20Responsibilities/lmsr_p2.html" />
+	  <file href="Learning%20Management%20System%20Responsibilities/lmsr_p3.html" />
+	  <file href="Learning%20Management%20System%20Responsibilities/lmsr_p4.html" />
+	  <file href="Learning%20Management%20System%20Responsibilities/lmsr_p5.html" />
+	  <file href="Learning%20Management%20System%20Responsibilities/lmsr_p6.html" />
+	  <file href="Learning%20Management%20System%20Responsibilities/lmsr_p7.html" />
+      <file href="Learning%20Management%20System%20Responsibilities/Images/lmsr1.jpg" />
+      <file href="Learning%20Management%20System%20Responsibilities/Images/lmsr2.jpg" />
+      <file href="Learning%20Management%20System%20Responsibilities/Images/lmsr3.jpg" />
+	  <dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-scor" href="Sharable%20Content%20Object%20Responsibilities/scor_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="Sharable%20Content%20Object%20Responsibilities/scor_p1.html" />
+	  <file href="Sharable%20Content%20Object%20Responsibilities/scor_p2.html" />
+	  <file href="Sharable%20Content%20Object%20Responsibilities/scor_p3.html" />
+	  <file href="Sharable%20Content%20Object%20Responsibilities/scor_p4.html" />
+      <file href="Sharable%20Content%20Object%20Responsibilities/Images/scor1.jpg" />
+	  <dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-eco" href="Error%20Codes%20Overview/eco_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="Error%20Codes%20Overview/eco_p1.html" />
+	  <file href="Error%20Codes%20Overview/eco_p2.html" />
+	  <file href="Error%20Codes%20Overview/eco_p3.html" />
+	  <file href="Error%20Codes%20Overview/eco_p4.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-gec" href="General%20Error%20Codes/gec_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="General%20Error%20Codes/gec_p1.html" />
+	  <file href="General%20Error%20Codes/gec_p2.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-sec" href="Syntax%20Error%20Codes/sec_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="Syntax%20Error%20Codes/sec_p1.html" />
+      <file href="Syntax%20Error%20Codes/sec_p2.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-rec" href="RTS%20Error%20Codes/rec_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="RTS%20Error%20Codes/rec_p1.html" />
+      <file href="RTS%20Error%20Codes/rec_p2.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-dmec" href="Data%20Model%20Error%20Codes/dmec_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="Data%20Model%20Error%20Codes/dmec_p1.html" />
+      <file href="Data%20Model%20Error%20Codes/dmec_p2.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-seec" href="SCORM%20Extension%20Error%20Codes/seec_p1.html" adlcp:scormType="sco" type="webcontent">
+      <file href="SCORM%20Extension%20Error%20Codes/seec_p1.html" />
+      <file href="SCORM%20Extension%20Error%20Codes/seec_p2.html" />
+      <file href="SCORM%20Extension%20Error%20Codes/seec_p3.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess01" href="API%20Assessment/assess01.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess01.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess02" href="API%20Assessment/assess02.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess02.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess03" href="API%20Assessment/assess03.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess03.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess04" href="API%20Assessment/assess04.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess04.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess05" href="API%20Assessment/assess05.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess05.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess06" href="API%20Assessment/assess06.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess06.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess07" href="API%20Assessment/assess07.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess07.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess08" href="API%20Assessment/assess08.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess08.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess09" href="API%20Assessment/assess09.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess09.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess11" href="API%20Assessment/assess11.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess11.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess12" href="API%20Assessment/assess12.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess12.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess13" href="API%20Assessment/assess13.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess13.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess14" href="API%20Assessment/assess14.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess14.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess15" href="API%20Assessment/assess15.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess15.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess16" href="API%20Assessment/assess16.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess16.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess17" href="API%20Assessment/assess17.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess17.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess18" href="API%20Assessment/assess18.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess18.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess19" href="API%20Assessment/assess19.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess19.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess20" href="API%20Assessment/assess20.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess20.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess21" href="API%20Assessment/assess21.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess21.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess22" href="API%20Assessment/assess22.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess22.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess23" href="API%20Assessment/assess23.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess23.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess24" href="API%20Assessment/assess24.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess24.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess25" href="API%20Assessment/assess25.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess25.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess26" href="API%20Assessment/assess26.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess26.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess27" href="API%20Assessment/assess27.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess27.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess28" href="API%20Assessment/assess28.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess28.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess29" href="API%20Assessment/assess29.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess29.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess30" href="API%20Assessment/assess30.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess30.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess31" href="API%20Assessment/assess31.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess31.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess32" href="API%20Assessment/assess32.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess32.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess33" href="API%20Assessment/assess33.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess33.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess34" href="API%20Assessment/assess34.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess34.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+    <resource identifier="res-assess35" href="API%20Assessment/assess35.html" adlcp:scormType="sco" type="webcontent">
+      <file href="API%20Assessment/assess35.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+	<resource identifier="res-results" href="Results/results.html" adlcp:scormType="asset" type="webcontent">
+      <file href="Results/results.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+	<resource identifier="res-conclude" href="Knowledge%20Paced%20Strategy%20Conclusion/conclusion_knowledge_paced.html" adlcp:scormType="asset" type="webcontent">
+      <file href="Knowledge%20Paced%20Strategy%20Conclusion/conclusion_knowledge_paced.html" />
+	<dependency identifierref="SharedFiles" />
+    </resource>
+	<resource identifier="SharedFiles" adlcp:scormType="asset" type="webcontent">
+      <file href="Shared%20Files/css/Styles.css" />
+      <file href="Shared%20Files/images/background.gif" />
+      <file href="Shared%20Files/images/previous.gif" />
+      <file href="Shared%20Files/images/next.gif" />
+      <file href="Shared%20Files/scripts/APIWrapper.js" />
+      <file href="Shared%20Files/scripts/Functions.js" />
+    </resource>
+  </resources>
+</manifest>
+

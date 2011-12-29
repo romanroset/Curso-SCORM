@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+ADL SCORM 2004 4th Edition MSCE 
+
+The ADL SCORM 2004 4th Ed. MSCE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Data Model Error Codes</title>
+<script type="text/javascript" src="../Shared Files/scripts/Functions.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript">
+<!--
+function showDiv( exempt )
+{
+	// if older browsers can't understand a document.getElementsByTagName
+	if (!document.getElementsByTagName) {
+		return null;
+	}
+	// otherwise, proceed...
+	var divs = document.getElementsByTagName("div");
+	for ( var i = 0; i < divs.length; i++ )
+	{
+		var div = divs[i];
+		var id = div.id;
+		if ( ( id == "default" ) || ( id == "one" ) || ( id == "two" ) || ( id == "three" ) || ( id == "four" ) || ( id == "five" ) || ( id == "six" ) || ( id == "seven" ) || ( id == "eight" ) || ( id == "nine" ) || ( id == "ten" ) || ( id == "eleven" ) || ( id == "twelve" ) || ( id == "thirteen" ) )
+		{
+			div.style.display = "none";
+		}
+		if ( ( id == exempt ) )
+		{
+			div.style.display = "block";
+		}
+
+	}
+}
+-->
+</script>
+<link href="../Shared Files/css/Styles.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body onLoad="javascript:showDiv( 'default' ),SetContinue(); " onUnload="javascript:onUnexpectedExit();">
+<div class="page">
+	<div class="content">
+		<p><strong>Data Model Error Codes</strong></p>
+		
+    <p>Data Model error codes describe errors that occur during the communication 
+      and retrieval of data to and from a learning management system (LMS). </p>
+		
+    <p>There are eight error conditions within Data Model error codes:</p>
+		<div class="vocabularyContainer">
+			<div class="terms">
+				<p>
+					<a href="javascript:showDiv('one');">Undefined Data Model element (401)</a><br />
+					<a href="javascript:showDiv('two');">Unimplemented Data Model Element (402)</a><br />
+					<a href="javascript:showDiv('three');">Data Model Element Value Not Initialized (403)</a><br />
+					<a href="javascript:showDiv('four');">Data Model Element Is Read Only (404)</a><br />
+					<a href="javascript:showDiv('five');">Data Model Element Is Write Only (405)</a><br />
+					<a href="javascript:showDiv('six');">Data Model Element Type Mismatch (406)</a><br />
+					<a href="javascript:showDiv('seven');">Data Model Element Value Out Of Range (407)</a><br />
+					<a href="javascript:showDiv('eight');">Data Model Dependency Not Established (408).</a><br />
+				</p>
+			</div>
+			<div class="definitions">
+				<div id="default"><p><em>Click the error conditions to learn more about them.</em></p></div>
+				<div id="one"><p><strong>Undefined Data Model Error Element</strong> - The data model element passed as <strong>parameter</strong> in <strong>GetValue</strong> or <strong>parameter_1</strong> in <strong>SetValue</strong> is undefined. An attempt was made to use a data model element that is not recognized.  This error can only occur if the conceptual communication state is &quot;Running&quot; and once the error is encountered the conceptual communication state remains &quot;Running&quot;.</p></div>
+				<div id="two"><p><strong>Unimplemented Data Model Error Element</strong> - The data model element passed as <strong>parameter</strong> in <strong>GetValue</strong> or <strong>parameter_1</strong> in <strong>SetValue</strong> is recognized as a valid element but is not supported.</p></div>
+				<div id="three"><p><strong>Data Model Element Value Not Initialized</strong> - The data model element passed as <strong>parameter</strong> in <strong>GetValue</strong> has not been initialized. The value returned by <strong>GetValue</strong> is an empty string (&quot;&quot;).</p></div>
+				<div id="four"><p><strong>Data Model Element Is Read Only</strong> - The data model element passed as <strong>parameter_1</strong> in <strong>SetValue</strong> is implemented as a read-only data model element. <em>Note:  This Standard does not specify access rights for data model elements.</em></p></div>
+				<div id="five"><p><strong>Data Model Element Is Write Only</strong> - The data model element passed as <strong>parameter</strong> in <strong>GetValue</strong> is implemented as a write-only data model element. <em>Note:  This Standard does not specify the access rights for data model elements.</em></p></div>
+				<div id="six"><p><strong>Data Model Element Type Mismatch</strong> - The value passed as <strong>parameter_2</strong> in <strong>SetValue</strong> does not evaluate to a valid type for the data model element indicated in <strong>parameter_1</strong> of a <strong>SetValue</strong>.  <em>Note:  This Standard does not specify types specific to a data model.</em></p></div>
+				<div id="seven"><p><strong>Data Model Element Value Out Of Range</strong> - The value passed as <strong>parameter_2</strong> in <strong>SetValue</strong> is out of range for the data model element indicated in <strong>parameter_1</strong> of a <strong>SetValue</strong>.</p></div>
+				<div id="eight"><p><strong>Data Model Dependency Not Established</strong> - The data model element passed as <strong>parameter</strong> in <strong>GetValue</strong> or <strong>parameter_1</strong> in <strong>SetValue</strong> is dependent on one or more related data model elements that have a value or values that are unassigned or invalid. The value returned by <strong>GetValue</strong> is an empty string (&quot;&quot;) or a <strong>SetValue</strong> failed.</p></div>
+			</div>
+		</div>
+	</div>
+
+  <div class="navigation"> <img class="prevBtn" alt="Previous" src="../Shared Files/images/previous.gif" onClick="javascript:GoToPage( 'dmec_p1.html' );" width="78" height="25" border="0" /></a>
+        <img class="nextBtn" alt="Next" src="../Shared Files/images/next.gif" onClick="javascript:Continue();" width="74" height="25" border="0" style="VISIBILITY:hidden;"/></div>
+</div>
+</body>
+</html>
+

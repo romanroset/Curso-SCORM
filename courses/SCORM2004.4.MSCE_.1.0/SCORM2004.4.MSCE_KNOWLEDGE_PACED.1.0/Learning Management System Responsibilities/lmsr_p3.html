@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition MSCE 
+
+The ADL SCORM 2004 4th Ed. MSCE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Error Codes Overview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../Shared Files/css/Styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Shared Files/scripts/Functions.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+</head>
+<body onUnload="javascript:onUnexpectedExit();">
+<div class="page">
+	<div class="content">
+		
+<p><strong>API Instance</strong></p>
+			<p>SCORM requires that a LMS supply an API Instance that implements the required API functionality. In order for a SCO to use the API Instance developed by a LMS, the LMS has certain requirements on where and how to provide access to the API Instance. To provide for an interoperable means to locate the API Instance, the LMS's API Instance must be accessible through the Document Object Model (DOM) as an object named &quot;API_1484_11&quot;, the name for the API Implementation. The LMS must provide the ability for the SCO to access the API Instance through JavaScript. </p>
+			<p>In order for SCOs to find the LMS-provided API Instance, the LMS is responsible for launching SCOs in a particular DOM hierarchy. The LMS launches the SCO in a browser window that is a child window or frame of the LMS window that contains the API Instance. </p>
+			<p>A LMS is permitted to place its API Instance in the following valid locations in the DOM hierarchy:</p>
+			<ul>
+			  
+      <li>Chain of parents</li>
+			  <li>Opener</li>
+			  
+      <li>Chain of parents of the opener</li>
+		  	</ul>
+			<p>The algorithm defined by the IEEE standard is built to search for the API Instance in specific locations and in a specific order. The specific locations that a LMS can provide an API Instance is determined based on the implementation requirements of the LMS.</p>
+			
+		    
+            <div class="navigation"> <img class="prevBtn" alt="Previous" src="../Shared Files/images/previous.gif" onClick="javascript:GoToPage( 'lmsr_p2.html' );" width="78" height="25" border="0" /></a> 
+        <img class="nextBtn" alt="Next" src="../Shared Files/images/next.gif" onClick="javascript:GoToPage( 'lmsr_p4.html' );" width="74" height="25" border="0"/></div>
+		
+	</div>
+</div>		</body>
+</html>

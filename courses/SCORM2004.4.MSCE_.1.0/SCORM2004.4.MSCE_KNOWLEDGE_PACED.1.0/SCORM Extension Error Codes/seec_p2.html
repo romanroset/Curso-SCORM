@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+ADL SCORM 2004 4th Edition MSCE 
+
+The ADL SCORM 2004 4th Ed. MSCE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SCORM Extension Error Codes</title>
+<link href="../Shared Files/css/Styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Shared Files/scripts/Functions.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+
+</head>
+
+<body onUnload="javascript:onUnexpectedExit();">
+<div class="page">
+	<div class="content">
+		<p><strong>SCORM Extension Error Codes</strong></p>
+		<p>The nature of the SCORM Run-Time Environment (RTE) Data Model elements and the binding of the data model elements (dot-notation) have caused SCORM to define extension error conditions.  These error conditions cover scenarios that can occur in a SCORM environment but do not fall under any of the other error code categories.</p>
+		<p>If these error conditions are encountered, the Application Programming Interface (API) Instance behaves as follows:</p>
+		<ul>
+			<li>Set the error code to &quot;<span class="vocabularyContainer">301</span>&quot; (for <span class="vocabularyContainer">GetValue()</span> failures) or &quot;<span class="vocabularyContainer">351</span>&quot; (for <span class="vocabularyContainer">SetValue()</span> failures), and return &quot;<span class="vocabularyContainer">false</span>&quot;</li>
+			<li>If requested by a Sharable Content Object (SCO) to return more information about the error encountered (<span class="vocabularyContainer">GetDiagnostic()</span>), it is recommended that the learning management system (LMS) return information detailing the error conditions.</li>
+		</ul>
+	</div>
+	
+              
+  <div class="navigation"> <img class="prevBtn" alt="Previous" src="../Shared Files/images/previous.gif" onClick="javascript:GoToPage( 'seec_p1.html' );" width="78" height="25" border="0" /></a> 
+    <img class="nextBtn" alt="Next" src="../Shared Files/images/next.gif" onClick="javascript:GoToPage( 'seec_p3.html' );" width="74" height="25" border="0"/></div>
+  
+</div>
+</body>
+</html>

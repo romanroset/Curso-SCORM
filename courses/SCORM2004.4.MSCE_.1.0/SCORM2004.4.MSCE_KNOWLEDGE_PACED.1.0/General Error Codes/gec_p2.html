@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+ADL SCORM 2004 4th Edition MSCE 
+
+The ADL SCORM 2004 4th Ed. MSCE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>General Error Codes</title>
+<script type="text/javascript" src="../Shared Files/scripts/Functions.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript">
+<!--
+function showDiv( exempt )
+{
+	// if older browsers can't understand a document.getElementsByTagName
+	if (!document.getElementsByTagName) {
+		return null;
+	}
+	// otherwise, proceed...
+	var divs = document.getElementsByTagName("div");
+	for ( var i = 0; i < divs.length; i++ )
+	{
+		var div = divs[i];
+		var id = div.id;
+		if ( ( id == "default" ) || ( id == "one" ) || ( id == "two" ) || ( id == "three" ) || ( id == "four" ) || ( id == "five" ) || ( id == "six" ) || ( id == "seven" ) || ( id == "eight" ) || ( id == "nine" ) || ( id == "ten" ) || ( id == "eleven" ) || ( id == "twelve" ) || ( id == "thirteen" ) )
+		{
+			div.style.display = "none";
+		}
+		if ( ( id == exempt ) )
+		{
+			div.style.display = "block";
+		}
+
+	}
+}
+-->
+</script>
+<link href="../Shared Files/css/Styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onLoad="javascript:showDiv( 'default' ),SetContinue(); " onUnload="javascript:onUnexpectedExit();">
+<div class="page">
+	<div class="content">
+		<p><strong>General Error Codes</strong></p>
+		<p>General Error codes describe errors that occur during the processing of API method requests. These errors are based on: </p>
+		<ul>
+          <li>The current state of the conceptual communication state model (ex: initialized, running, terminated, etc.) </li>
+          <li>The type of API request being processed by the API Instance </li>
+	  </ul>
+		<p>There are 13 error conditions within General Error codes. They are: </p>
+		<div class="vocabularyContainer">
+			<div class="terms">
+				<p>
+					<a href="javascript:showDiv('one');">General Exception (101)</a><br />
+					<a href="javascript:showDiv('two');">General Initialization Failure (102)</a><br />
+					<a href="javascript:showDiv('three');">Already Initiated (103)</a><br />
+					<a href="javascript:showDiv('four');">Content Instance Terminated (104)</a><br />
+					<a href="javascript:showDiv('five');">General Termination Failure (111)</a><br />
+					<a href="javascript:showDiv('six');">Termination Before Initialization (112)</a><br />
+					<a href="javascript:showDiv('seven');">Termination After Termination (113)</a><br />
+					<a href="javascript:showDiv('eight');">Retrieve Data Before Initialization (122)</a><br />
+					<a href="javascript:showDiv('nine');">Retrieve Data After Termination (123)</a><br />
+					<a href="javascript:showDiv('ten');">Store Data Before Initialization (132)</a><br />
+					<a href="javascript:showDiv('eleven');">Store Data After Termination (133)</a><br />
+					<a href="javascript:showDiv('twelve');">Commit Before Initialization (142)</a><br />
+					<a href="javascript:showDiv('thirteen');">Commit After Termination (143)</a>
+				</p>
+			</div>
+			<div class="definitions">
+				<div id="default"><p><em>Click the error conditions to learn more about them.</em></p></div>
+				<div id="one"><p><strong>General Exception</strong> - An exception has occurred and a more specific error code is not available.</p></div>
+				<div id="two"><p><strong>General Initialization Failure</strong> - A failure occurred while attempting to initialize the communication session.  The conceptual communication state remains &quot;Not Initialized&quot;.</p></div>
+				<div id="three"><p><strong>Already Initialized</strong> - An attempt was made to reinitialize communication that has already been initialized.  The conceptual communication state remains &quot;Running&quot;.</p></div>
+				<div id="four"><p><strong>Content Instance Terminated</strong> - An attempt was made to reinitialize communication by an instance of a content object with a communication state of &quot;Terminated&quot;.  The conceptual communication state remains &quot;Terminated&quot;.</p></div>
+				<div id="five"><p><strong>General Termination Failure</strong> - An attempt to terminate the communication session failed. No other error information is available.  The conceptual communication state remains &quot;Running&quot;.</p></div>
+				<div id="six"><p><strong>Termination Before Initialization</strong> - An attempt was made to terminate communication before the session was even initialized.  The conceptual communication state remains &quot;Not Initialized&quot;.</p></div>
+				<div id="seven"><p><strong>Termination After Termination</strong> - An attempt was made to terminate communication that had already been terminated.  The conceptual communication state remains &quot;Terminated&quot;.</p></div>
+				<div id="eight"><p><strong>Retrieve Data Before Initialization</strong> - An attempt was made to retrieve a value for a data element before communication had been initialized.  The conceptual communication state remains &quot;Not Initialized&quot;.</p></div>
+				<div id="nine"><p><strong>Retrieve Data After Termination</strong> - An attempt was made to retrieve a value for a data element after communication had been terminated.  The conceptual communication state remains &quot;Terminated&quot;.</p></div>
+				<div id="ten"><p><strong>Store Data Before Initialization</strong> - An attempt was made to store a value for a data element before communication had been initialized.  The conceptual communication state remains &quot;Not Initialized&quot;.</p></div>
+				<div id="eleven"><p><strong>Store Data After Termination</strong> - An attempt was made to store a value for a data element after communication had been terminated.  The conceptual communication state remains &quot;Terminated&quot;.</p></div>
+				<div id="twelve"><p><strong>Commit Before Initialization</strong> - An attempt was made to commit data to storage before communication had been initialized.  The conceptual communication state remains &quot;Not Initialized&quot;.</p></div>
+				<div id="thirteen"><p><strong>Commit After Termination</strong> - An attempt was made to commit data to storage after communication had been terminated. The conceptual communication state remains &quot;Terminated&quot;.</p></div>
+			</div>
+		</div>
+	</div>
+
+  <div class="navigation"> <img class="prevBtn" alt="Previous" src="../Shared Files/images/previous.gif" onClick="javascript:GoToPage( 'gec_p1.html' );" width="78" height="25" border="0" /></a> 
+    <img class="nextBtn" alt="Next" src="../Shared Files/images/next.gif" onClick="javascript:Continue();" width="74" height="25" border="0" style="VISIBILITY:hidden;"/></div>
+</div>
+</body>
+</html>

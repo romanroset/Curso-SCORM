@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--
+ADL SCORM 2004 4th Edition SECE
+
+ 
+
+The ADL SCORM 2004 4th Ed. SECE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<title>Sequencing Essentials</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/courseFunctions.js"></script>
+<style type="text/css" media="all">
+@import "../Shared Files/css/snstyle.css";
+</style>
+</head>
+
+<body onload="javascript:Initialize();" onunload="javascript:Terminate();">
+<div class="container"> 
+  <div class="header"> </div>
+  <div class="navigation"> 
+    <div id="previousBtn"> <a href="javascript:PreviousPage();"></a> </div>
+    <div id="nextBtn"> <a href="javascript:NextPage();"></a> </div>
+  </div>
+  <div class="page" id="p1"> 
+    <div class="content"> 
+      <h2>Overview</h2>
+      <p>An attempt on an activity always occurs within the context of an attempt 
+        on its ancestors. If you are reading a sentence in a book, you are also:</p>
+      <ul>
+        <li>Reading a paragraph</li>
+        <li>Reading a page</li>
+        <li>Reading a chapter</li>
+        <li>Reading the book </li>
+      </ul>
+      <p>As a learner progresses through a series of content objects, those content 
+        objects may report status; therefore, the status of the parent activity 
+        is dependent on the status of its children activities.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p2"> 
+    <div class="content"> 
+      <h2>Rollup</h2>
+      <p>Rollup is the process of determining a cluster activity&rsquo;s status 
+        information based on its children&rsquo;s status information. Learners 
+        do not directly interact with a cluster; therefore, rollup is the only 
+        mechanism for the status of a cluster to be determined. The image below 
+        shows that Activity A&rsquo;s status information is rolled up from its 
+        children, Activity 1, Activity 2 and Activity 3. The status shown for 
+        Activity A is the &ldquo;after rollup&rdquo; status. It is the status 
+        that resulted from measure rollup.</p>
+      <img class="centered" src="images/ro2.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p3"> 
+    <div class="content"> 
+      <h2>Rollup Measure</h2>
+      <p>Measure (score) always rolls up, if it exists (is not &ldquo;<code>unknown</code>&rdquo;) 
+        for any child. Content developers can &lsquo;turn off&rsquo; a measure, 
+        at any level, by setting its weight to zero. By default, measure does 
+        not affect satisfaction status; however, a Minimum Objective Measure may 
+        be applied.</p>
+      <p>If a Minimum Objective Measure is applied, the activity&rsquo;s measure 
+        will be evaluated against a threshold to determine the activity&rsquo;s 
+        satisfaction status.</p>
+      <img class="centered" src="images/ro3.jpg" alt="" /> </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p4"> 
+    <div class="content"> 
+      <h2>Rolling Incomplete Information</h2>
+      <p>In some cases, rollup will not be able to determine an activity&rsquo;s 
+        status if some child activity has an &ldquo;<code>unknown</code>&rdquo; status. Also, 
+        by default, <em>Suspended</em> activities <strong>DO</strong> contribute 
+        to rollup, which is not always the desired result &mdash; this can result 
+        in premature success and failure.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+  <div class="page" id="p5"> 
+    <div class="content"> 
+      <h2>Conclusion</h2>
+      <p>In general, rollup is used to provide a form of feedback about the learner&rsquo;s 
+        experience through an activity by looking at the sum of an activity&rsquo;s 
+        parts. Therefore, the idea of rollup is to simply sum up the parts of 
+        a cluster.</p>
+    </div>
+    <div class="instructions"> </div>
+  </div>
+</div>
+</body>
+</html>
+
+

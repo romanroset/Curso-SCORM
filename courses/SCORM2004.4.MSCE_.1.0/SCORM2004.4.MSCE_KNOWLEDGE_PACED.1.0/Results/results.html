@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+ADL SCORM 2004 4th Edition MSCE 
+
+The ADL SCORM 2004 4th Ed. MSCE is licensed under
+
+Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States.
+
+ 
+
+The Advanced Distributed Learning Initiative allows you to:
+
+  *  Share - to copy, distribute and transmit the work.
+
+  *  Remix - to adapt the work. 
+
+ 
+
+Under the following conditions:
+
+  *  Attribution. You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+
+  *  Noncommercial. You may not use this work for commercial purposes. 
+
+  *  Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one. 
+
+ 
+
+For any reuse or distribution, you must make clear to others the license terms of this work. 
+
+Any of the above conditions can be waived if you get permission from the ADL Initiative. 
+
+Nothing in this license impairs or restricts the author's moral rights.
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Summary</title>
+<script type="text/javascript" src="../Shared Files/scripts/Functions.js"></script>
+<script type="text/javascript" src="../Shared Files/scripts/APIWrapper.js"></script>
+<script type="text/javascript">
+<!--
+
+   var obj1_scaledScore;
+   var obj2_scaledScore;
+   var obj3_scaledScore;
+   
+   /**********************************************************************
+    **  Function: findObjective()
+    **  Description: This function is used to find the approriate
+    **               objective (using the identifier).
+    **********************************************************************/
+   function findObjective(obj)
+   {
+	   var numOfObj = doGetValue("cmi.objectives._count");
+	   var objectiveLocation = -1;
+
+	   for ( var i=0; i < numOfObj; i++ ) 
+	   {
+          if ( doGetValue("cmi.objectives." + i + ".id") == obj )
+		  {
+			 objectiveLocation = i;
+			 break;
+		  }
+	   }
+       if ( objectiveLocation == -1 ) 
+       {
+          objectiveLocation = numOfObj;
+          doSetValue( "cmi.objectives." + objectiveLocation + ".id", obj);
+       }
+
+	   return objectiveLocation;
+   }
+   
+   
+   /**********************************************************************
+   **  Function: stripDecimal( tempVal )
+   **  Description: This function is used to write the percent score and
+   **               status bar for each module
+   **********************************************************************/
+   function stripDecimal( ioPercent )
+   {
+      var stringIoPercent = String( ioPercent); 
+      var decimalIndex = stringIoPercent.indexOf(".");
+      
+      var returnVal;
+      
+      if ( ! (decimalIndex == -1) )
+      {
+         
+         returnVal = stringIoPercent.substring(0,decimalIndex);
+      } 
+      else
+      {
+        returnVal = stringIoPercent;
+      }
+      
+      return returnVal;
+   }
+   
+   
+   /**********************************************************************
+   **  Function: getObjectivesStatus()
+   **  Description: This function is used to find the approriate
+   **               objective (using the identifier).
+   **********************************************************************/
+   function getObjectivesStatus()
+   {
+      var tempIndex = findObjective("obj_module_1");
+      var tempObjScore = "cmi.objectives." + tempIndex + ".score.scaled";
+      obj1_scaledScore = doGetValue(tempObjScore);
+      if ( obj1_scaledScore == null)
+      {
+         obj1_scaledScore = 0;
+      }
+      
+      tempIndex = findObjective("obj_module_2");
+      tempObjScore = "cmi.objectives." + tempIndex + ".score.scaled";
+      obj2_scaledScore = doGetValue(tempObjScore);
+      if ( obj2_scaledScore == null)
+      {
+         obj2_scaledScore = 0;
+      }
+   
+      tempIndex = findObjective("obj_module_3");
+      tempObjScore = "cmi.objectives." + tempIndex + ".score.scaled";
+      obj3_scaledScore = doGetValue(tempObjScore);
+      if ( obj3_scaledScore == null)
+      {
+         obj3_scaledScore = 0;
+      }
+   }
+     
+   /**********************************************************************
+   **  Function: unloadPage()
+   **  Description: This function is called in the case that the user
+   **               does not finish the SCO "gracefully".  For example, 
+   **               the user may click the "continue" button before
+   **               submitting an answer to a question.  In this case,
+   **               this function is called as part of the page unloading.
+   **               This function ensures that Terminate() is called
+   **               even if the user closes the SCO window or navigates
+   **               away before finishing the SCO.
+   **********************************************************************/
+   function unloadPage()
+   {
+    
+   	if (exitPageStatus != true)
+   	{
+   		doQuit();
+   	}
+   
+   	// NOTE: don't return anything that resembles a javascript
+   	//		   string from this function or IE will take the
+   	//		   liberty of displaying a confirm message box
+   }
+   
+   /**********************************************************************
+   **  Function: loadPage()
+   **  Description: This is called when a SCO is first loaded in the
+   **               browser (onload()).  It finds the API if it was not
+   **               already located and calls Initialize().  In
+   **               the exitPageStatus global variable is set to false
+   **               indicating that the SCO is not yet finished.
+   **********************************************************************/
+   function loadResultsPage()
+   {  
+   
+      Initialize();
+	  SetContinue();
+      exitPageStatus = false;
+   		 
+      var result = doInitialize();
+      exitPageStatus = false;
+      
+      getObjectivesStatus();
+      var tempVal = obj1_scaledScore * 100;
+      tempVal = stripDecimal(tempVal);
+   
+      var tempVal2 = obj2_scaledScore * 100;
+      tempVal2 = stripDecimal(tempVal2);
+      
+      var tempVal3 = obj3_scaledScore * 100;
+      tempVal3 = stripDecimal(tempVal3);
+      document.all.obj_report.innerHTML = "<p>API Overview Lessons Objective:&nbsp;" + tempVal + "%</p>" + 
+							"<p>API Communication and Methods Objective:&nbsp;" + tempVal2 + "%</p>" +
+							"<p>Error Codes Objective:&nbsp;" + tempVal3 + "%</p>"; 
+   }
+   
+   /**********************************************************************
+   **  Function: doQuit()
+   **  Description: This function is called in the case that the user
+   **               does not finish the SCO "gracefully".  For example, 
+   **               the user may click the "continue" button before
+   **               submitting an answer to a question.  In this case,
+   **               this function is called as part of the page unloading.
+   **               This function ensures that Terminate() is called
+   **               and that the correct statuses are set even if the 
+   **               user closes the SCO window or navigates away before 
+   **               finishing the SCO.
+   **********************************************************************/
+   function doQuit()
+   {   
+      //  Set the SCO to completed with a normal exit
+      doSetValue( "cmi.completion_status", "completed" );
+      doSetValue( "cmi.exit", "" );
+
+      //  Indicate that the SCO was finished normally
+      exitPageStatus = true;
+
+      var result = doTerminate();
+   }
+-->
+</script>
+<link href="../Shared Files/css/Styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="loadResultsPage()" onunload="javascript:onUnexpectedExit();">
+<div class="page">
+	<div class="content">
+		<p>Thank You for completing the content.</p>
+		
+		
+			<div class="navigation"> <img class="prevBtn" alt="Previous" src="../Shared Files/images/previous.gif" width="78" height="25" border="0" onClick="javascript:PreviousQuiz();" style="VISIBILITY:hidden;" /> 
+        <img class="nextBtn" alt="Next" src="../Shared Files/images/next.gif" onClick="javascript:ContinueQuiz();" width="74" height="25" border="0" style="VISIBILITY:hidden;"/></div>	
+		<div id="obj_report" />
+	</div>
+
+</div>
+
+</body>
+
+</html>
