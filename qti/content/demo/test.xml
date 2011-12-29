@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 http://www.imsglobal.org/xsd/imsqti_v2p1.xsd" 
+identifier="choiceMultiple" title="Composition of Water" adaptive="false" timeDependent="false">
+	<responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="identifier">
+		<correctResponse>
+			<value>H</value>
+			<value>O</value>
+		</correctResponse>
+		<!-- mapping lowerBound="0" upperBound="2" defaultValue="-2">
+			<mapEntry mapKey="H" mappedValue="1"/>
+			<mapEntry mapKey="O" mappedValue="1"/>
+			<mapEntry mapKey="Cl" mappedValue="-1"/>
+		</mapping-->
+	</responseDeclaration>
+	<outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float"/>
+	<outcomeDeclaration identifier="RESPONSE-SCORE" cardinality="single" baseType="float"/>
+	<outcomeDeclaration identifier="RESPONSE-SCOREHISTORY" cardinality="single" baseType="float"/>
+	<itemBody>
+		<choiceInteraction responseIdentifier="RESPONSE" shuffle="true" maxChoices="0">
+			<prompt>Which of the following elements are used to form water?</prompt>
+			<simpleChoice identifier="H" fixed="false">Hydrogen</simpleChoice>
+			<simpleChoice identifier="He" fixed="false">Helium</simpleChoice>
+			<simpleChoice identifier="C" fixed="false">Carbon</simpleChoice>
+			<simpleChoice identifier="O" fixed="false">Oxygen</simpleChoice>
+			<simpleChoice identifier="N" fixed="false">Nitrogen</simpleChoice>
+			<simpleChoice identifier="Cl" fixed="false">Chlorine</simpleChoice>
+		</choiceInteraction>
+	</itemBody>
+	<responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
+	<modalFeedback outcomeIdentifier="SCORE" identifier="==1" showHide="hide">SCORE is not 1</modalFeedback>	
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier="Cl" showHide="show">Only Chlorine is selected</modalFeedback>
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier=".*O.*" showHide="show">Oxygen is selected</modalFeedback>
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier=".*O.*" showHide="hide">Oxygen is not selected</modalFeedback>
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier="N" showHide="show" sound="beep.mp3">Sound played if Nitrogen is selected</modalFeedback>
+	<modalFeedback outcomeIdentifier="RESPONSE" identifier="(O;He)|(He;O)" showHide="show" sound="http://qti-player.googlecode.com/svn/trunk/qtiplayer/war/content/test/click.mp3">Sound played if O + H are selected</modalFeedback>
+	<modalFeedback outcomeIdentifier="RESPONSE-SCORE" identifier=">=1" showHide="show">Score for the module RESPONSE is >=1</modalFeedback>	
+	<modalFeedback outcomeIdentifier="RESPONSE-SCOREHISTORY" identifier=".*0;0;1$" showHide="show">Two wrong answers and the third correct</modalFeedback>	
+</assessmentItem>

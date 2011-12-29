@@ -11,6 +11,7 @@
 	<testPart>
 		<assessmentSection identifier="sectionA" title="Section A" visible="true">
 			<assessmentItemRef identifier="match" href="demo/math.xml"/>
+			<assessmentItemRef identifier="choiceMultiple" href="demo/test.xml"/>
 			<assessmentItemRef identifier="match" href="demo/text_entry_multiple.xml"/>
 			<assessmentItemRef identifier="match" href="demo/dragdrop.xml"/>
 			<assessmentItemRef identifier="match" href="demo/identification.xml"/>

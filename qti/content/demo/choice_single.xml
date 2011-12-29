@@ -36,6 +36,7 @@ identifier="choice" title="Simple choice and picture inside a text." adaptive="f
 		</choiceInteraction>
 		
 		
+		
 	</itemBody>
 	<responseProcessing template="http://www.ydp.eu/qti/rptemplates/match_correct_multiple"/>
 </assessmentItem>
